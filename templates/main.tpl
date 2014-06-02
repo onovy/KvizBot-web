@@ -9,11 +9,6 @@
 <div>
 {/if}
 
-<strong>
-<a href='aktuality.htm'>POZOR: Konec Kvizu!</a>
-</strong>
-<br />
-
 {if $main_onovyPHPlib}
     {include file="../onovyPHPlib/templates/$main.tpl"}
 {else}
