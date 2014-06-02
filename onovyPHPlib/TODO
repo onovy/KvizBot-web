@@ -1,0 +1,8 @@
+db_init:
+    Indexy
+    Zobrazovani seznamu tabulek, ktere jsou v DB a nejsou v definici
+ot2html:
+    validace vystupniho XHTML
+    podseznamy (vice urovni <ul>)
+    vyresit vytvareni prazdnych <p></p> kdyz nasleduji ruzne bloky hned za sebou
+    (napr. tabulka hned za seznamem, atd.)

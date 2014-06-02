@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^([a-zA-Z0-9_\-]+).htm$         /index.php?page=$1          [QSA,L]
+    RewriteRule ^nomenu/([a-zA-Z0-9_\-]+).htm$         /index.php?topmenu=1&page=$1          [QSA,L]
+    RewriteRule ^topmenu/([a-zA-Z0-9_\-]+).htm$         /index.php?topmenu=1&page=$1          [QSA,L]
+    RewriteRule ^registrace.htm\/([a-zA-Z0-9_\-]+)$         /index.php?page=registrace&w=password&hash=$1          [QSA,L]
+
+    RewriteCond %{REQUEST_FILENAME} !.+.php$
+    RewriteRule ^([a-zA-Z0-9_\-\.]+)$         	/skore.htm?w=info&nick=$1          [QSA,L]
+</IfModule>

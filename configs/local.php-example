@@ -1,0 +1,38 @@
+<?
+
+// Absolutni cesta k adresari s webem (bez / na konci)
+$local_config['web_dir']='/var/www/html';
+
+// Adresa webu (bez / na konci)
+$local_config['web_www']='http://www.xkviz.net';
+
+// Verbose
+// 1 -- overuje vse mozne a pise varovani
+// 2 -- pise debug veci
+$local_config['verbose']=0;
+
+// Uroven reportovani chyb v PHP
+$local_config['error_reporting']=E_ALL & ~E_NOTICE;
+
+// Presmerovavat na prefix (prazdny retezec znamena NIKDY nepresmerovavat) 
+$local_config['http_redir_with_prefix']='www.';
+
+// Nastaveni databaze
+$local_config['sql_name']='xkviz';
+$local_config['sql_user']='xkviz';
+$local_config['sql_pass']='';
+$local_config['sql_host']='localhost';
+
+// Nastaveni databaze - phpbb
+$local_config['phpbb_sql_name']='xkviz_phpbb';
+$local_config['phpbb_sql_user']='xkviz';
+$local_config['phpbb_sql_pass']='';
+$local_config['phpbb_sql_host']='localhost';
+
+// Nastaveni SMARTY
+$local_config['compile_check']=true;
+
+// Nastaveni cache
+$local_config['use_cache']=true;
+
+?>

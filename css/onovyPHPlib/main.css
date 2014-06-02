@@ -1,0 +1,33 @@
+/* ---------- Formulare ---------- */
+table.form {
+	border: 0;
+}
+table.form td{
+	border: 0;
+}
+table.form th{
+	border: 0;
+}
+fieldset {
+        border: 0;
+}	
+
+/* ---------- Zpravy ---------- */
+p.error {
+    color: #f00;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-indent: 0;
+    text-align: center;
+}
+p.message {
+    color: #0f0;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-indent: 0;
+    text-align: center;
+}
+/* ---------- Texty ---------- */
+div.nahled{
+    border: 1px solid #000;
+}

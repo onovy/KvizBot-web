@@ -1,0 +1,16 @@
++-------------+
+| onovyPHPlib |
++-------------+
+
+ Instalace
+-----------
+Vsechny cesty jsou relativni k / webu
+
+1. Do onovyPHPlib/extlib/Smarty nainstalovat Smarty/libs (http://smarty.php.net/)
+
+2. Zkopirovat onovyPHPlib/skell do / (krome souboru .htaccess, misto nej pouzit
+   .htaccess.example a pripadne upravit)
+
+3. Upravit configs/*
+
+4. Nastavit prava zapisu pro web server na adresare 'templates_c' a 'cache'
