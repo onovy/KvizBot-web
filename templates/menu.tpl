@@ -18,7 +18,6 @@
     <li {if $menu=="chyby"}class="tp_active"{/if}><a href='/topmenu/chyby.htm'>CHYBY</a></li>
 {/if}
     <li {if $menu=="hlasovani"}class="tp_active"{/if}><a href='/topmenu/hlasovani.htm'>HLASOVÁNÍ</a></li>
-    <li><a href='/forum/' target='_blank'>FÓRUM</a></li>
 {if $auth->id==0}
     <li {if $menu=="registrace"}class="tp_active"{/if}><a href='/topmenu/registrace.htm'>REGISTRACE</a></li>
     <li {if $menu=="login"}class="tp_active"{/if}><a href='/login.htm?topmenu=1'>PØIHLÁSIT SE</a></li>
@@ -43,7 +42,6 @@
     <li><a href='chyby.htm' {if $menu=="chyby"}class="active"{/if}>CHYBY</a></li>
 {/if}
     <li><a href='hlasovani.htm' {if $menu=="hlasovani"}class="active"{/if}>HLASOVÁNÍ</a></li>
-    <li><a href='forum/' {if $menu=="forum"}class="active"{/if}>FÓRUM</a></li>
 {if $auth->id!=0}
     {if $auth->perm_p}
     <li><a href='perms.htm' {if $menu=="perms"}class="active"{/if}>PRÁVA</a></li>
