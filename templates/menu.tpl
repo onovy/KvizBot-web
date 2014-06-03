@@ -68,24 +68,6 @@
 </div>
 {/if}
 
-<div id="google">
-<script type="text/javascript"><!--
-window.google_analytics_uacct = "UA-10374250-2";
-//-->
-</script>
-<script type="text/javascript"><!--
-    google_ad_client = "pub-7101201080264374";
-    /* xkviz.net */
-    google_ad_slot = "4698378506";
-    google_ad_width = 120;
-    google_ad_height = 600;
-    //-->
-</script>
-<script type="text/javascript"
-    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-</div>
-
 </div>
 
 {/if}
