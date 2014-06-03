@@ -73,4 +73,3 @@ function auth_show401() {
 
 auth_user();
 $smarty->assign('auth',$auth);
-?>

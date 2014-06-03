@@ -212,4 +212,3 @@ while ($fa=db_fetch_array($q_otazky)) {
 $smarty->assign('otazky',$otazky);
 
 $smarty->assign('main','hlasovani');
-?>

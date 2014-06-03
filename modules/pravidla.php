@@ -11,4 +11,3 @@ if ($w=='edit' && $auth->perm_t) {
 } else {
     show_text(2);
 }
-?>

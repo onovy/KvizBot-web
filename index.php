@@ -19,4 +19,3 @@ include 'modules/'.$page.'.php';
 
 
 $smarty->display('main.tpl');
-?>

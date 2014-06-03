@@ -60,4 +60,3 @@ function input_checkbox($var) {
 function HE($s) {
  return htmlspecialchars($s, null, 'ISO8859-1');
 }
-?>

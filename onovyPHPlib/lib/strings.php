@@ -13,4 +13,3 @@ function str_findFirstNotOf($s,$ch) {
     }
     return -1;
 }
-?>

@@ -24,4 +24,3 @@ if ($_REQUEST['cache']=='off') {
 }
 
 $header=true;
-?>

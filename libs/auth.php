@@ -34,4 +34,3 @@ function my_auth_user() {
 
 my_auth_user();
 $smarty->assign('auth',$auth);
-?>

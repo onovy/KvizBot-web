@@ -56,4 +56,3 @@ if ($_GET['w'] == 'income') {
 readfile($file);
 unlink($file);
 exit;
-?>

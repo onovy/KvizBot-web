@@ -34,5 +34,3 @@ function fa2smarty($line,$array) {
 }
 
 $smarty->assign('main_onovyPHPlib',0);
-
-?>

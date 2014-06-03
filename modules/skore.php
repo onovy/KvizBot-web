@@ -248,6 +248,3 @@ function infouser($id,$typ,$table='') {
     
     return array($pozice,$bodu,$nick,$added);
 }
-
-
-?>

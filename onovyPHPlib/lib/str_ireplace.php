@@ -109,5 +109,3 @@ if (!function_exists('str_ireplace')) {
         return $result;
     }
 }
-
-?>

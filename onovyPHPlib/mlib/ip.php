@@ -24,5 +24,3 @@ function printable_ip($ip) {
     if ($ip == $reverz) return $ip;
     return $reverz . ' ('. $ip.')';
 }
-
-?>

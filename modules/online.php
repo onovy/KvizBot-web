@@ -43,4 +43,3 @@ $smarty->assign('count',count($online));
 $smarty->assign('menu','online');
 $smarty->assign('title','Online');
 $smarty->assign('main','online');
-?>

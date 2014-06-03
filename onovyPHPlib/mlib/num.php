@@ -42,6 +42,3 @@ function priceformat($s,$type='round') {
      
     return $out; 
 } 
-
-
-?>

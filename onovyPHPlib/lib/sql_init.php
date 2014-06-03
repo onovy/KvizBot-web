@@ -147,5 +147,3 @@ function modules_sql_init(&$errors) {
 	}
     }
 }
-
-?>

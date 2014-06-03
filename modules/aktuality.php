@@ -25,4 +25,3 @@ $smarty->assign('aktuality',$aktuality);
 $smarty->assign('menu','aktuality');
 $smarty->assign('title','Aktuality');
 $smarty->assign('main','aktuality');
-?>

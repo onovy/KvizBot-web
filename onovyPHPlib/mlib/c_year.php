@@ -21,4 +21,3 @@ if ($rok!=$from) {
 } else {
     $smarty->assign('c_rok',$from);
 }
-?>

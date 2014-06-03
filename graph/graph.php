@@ -37,5 +37,3 @@ $same =
 system('rrdtool graph rrd/online_week.png --title "Online week" --start now-1w ' . $same);
 system('rrdtool graph rrd/online_month.png --title "Online month" --start now-1m ' . $same);
 system('rrdtool graph rrd/online_year.png --title "Online year" --start now-1y ' . $same);
-
-?>

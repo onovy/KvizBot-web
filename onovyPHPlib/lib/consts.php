@@ -25,4 +25,3 @@ $consts['months_name']=array(
     11=> 'listopad',
     12=> 'prosinec'
 );
-?>

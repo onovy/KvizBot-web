@@ -141,5 +141,3 @@ if ($w=='add') {
 }
 
 $smarty->assign('main','chyby');
-
-?>

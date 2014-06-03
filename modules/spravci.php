@@ -5,4 +5,3 @@ $smarty->assign('spravci',sql2smarty($q,array('nick')));
 $smarty->assign('menu','spravci');
 $smarty->assign('title','Správci');
 $smarty->assign('main','spravci');
-?>

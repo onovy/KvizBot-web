@@ -34,5 +34,3 @@ $local_config['compile_check']=true;
 
 // Nastaveni cache
 $local_config['use_cache']=true;
-
-?>

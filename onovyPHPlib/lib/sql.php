@@ -80,5 +80,3 @@ function db_affected_rows() {
 function db_table_exists($table_name) {
     return db_query_noe('DESCRIBE '.db_escape_string($table_name));
 }
-
-?>

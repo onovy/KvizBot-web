@@ -67,4 +67,3 @@ function typo($s,$cache=true) {
     }
     return $s;
 }
-?>

@@ -96,4 +96,3 @@ if ($local_config['verbose']>=1) {
     $fa=db_query_noe('DESCRIBE '.$lib_config['mlib_texty_table_name'])
 	or print 'Tabulka pro modul TEXTY ('.$lib_config['mlib_texty_table_name'].') neexistuje<br />';
 }
-?>

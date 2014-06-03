@@ -77,5 +77,3 @@ function get_img_by_filename($filename)
     }
     return $mimetypes['']['img'];
 }
-
-?>

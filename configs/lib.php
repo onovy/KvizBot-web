@@ -36,5 +36,3 @@ $lib_config['mlib_auth_table_name']='auth_table_not_use';
 $lib_config['mlib_cache_cache_time']=60 * 60 * 24 * 7; // 7 dni
 // C_year
 $lib_config['mlib_c_year_from_year']=2005;
-
-?>

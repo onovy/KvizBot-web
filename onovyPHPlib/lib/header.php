@@ -14,4 +14,3 @@ header('Expires: ' . date('r',time()-3600));
 header('Cache-Control: private');
 header('Cache-Control: max-age=0');
 header('Content-Type: text/html;charset=' . $lib_config['charset']);
-?>

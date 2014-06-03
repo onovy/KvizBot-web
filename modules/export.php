@@ -18,4 +18,3 @@ while ($l=db_fetch_array($q)) {
     print $l['odpoved']."|".$l['otazka']."\n";
 }
 exit;
-?>

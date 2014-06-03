@@ -31,4 +31,3 @@ function smarty_ondisplay($tpl_source, &$smarty) {
 
 // Zaregistrovani vystupniho filteru v tride Smarty		   
 $smarty->register_outputfilter("smarty_ondisplay");
-?>

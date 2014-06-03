@@ -257,5 +257,3 @@ function ot2html_simple_tags($l) {
     
     return $out;
 }
-
-?>

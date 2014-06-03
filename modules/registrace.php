@@ -182,4 +182,3 @@ if ($w == '') {
 
 $smarty->assign('menu', 'registrace');
 $smarty->assign('title', 'Registrace');
-?>

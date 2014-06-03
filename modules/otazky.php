@@ -441,4 +441,3 @@ if ($w=='stats') {
 
 
 $smarty->assign('main','otazky');
-?>

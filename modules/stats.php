@@ -23,4 +23,3 @@ $smarty->assign('max', $fa[0]);
 $smarty->assign('main', 'stats');
 $smarty->assign('menu','otazky');
 $smarty->assign('title','Stats');
-?>

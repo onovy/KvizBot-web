@@ -127,4 +127,3 @@ function i2html($input,$typo=true) {
  
  return $s;
 }
-?>

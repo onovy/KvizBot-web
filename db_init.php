@@ -185,4 +185,3 @@ $smarty->assign('main','db_init');
 $smarty->assign('main_onovyPHPlib',1);
 
 $smarty->display('main.tpl');
-?>

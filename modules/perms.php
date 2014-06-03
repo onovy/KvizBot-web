@@ -175,5 +175,3 @@ $q=db_query(
 $smarty->assign('perms_types',sql2smarty($q,array('level','name')));
 $smarty->assign('main','perms');
 $smarty->assign('title','Práva');
-
-?>

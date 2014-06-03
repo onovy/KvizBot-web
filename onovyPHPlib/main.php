@@ -64,5 +64,3 @@ foreach ($lib_config['web_libs'] as $lib) {
     if ($local_config['verbose']>=2) print 'Naèítám knihovnu webu: ' . WEB_DIR . '/libs/'.$lib.'.php<br />';
     require_once WEB_DIR . '/libs/'.$lib.'.php';
 }
-
-?>

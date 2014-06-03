@@ -52,4 +52,3 @@ if (!file_exists($file_name) || time()-filemtime($file_name)>=$cache_time || !$l
 }
 
 $smarty->assign('rpanel',$out);
-?>

@@ -160,5 +160,3 @@ function cache_RecursiveMkdir($path) {
            mkdir($path, 0777);
     }
 }
-
-?>

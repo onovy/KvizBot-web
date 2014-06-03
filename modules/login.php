@@ -8,4 +8,3 @@ if(!isset($_SERVER['PHP_AUTH_USER'])) {
     $smarty->assign('title','Pøihlá¹ení');
     $smarty->assign('main','login');
 }
-?>

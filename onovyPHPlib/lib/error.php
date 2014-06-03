@@ -36,5 +36,3 @@ function error_notarray($var,$array) {
 function error_notperm() {
     show_error('Nemáte dostateèná práva!');
 }
-
-?>

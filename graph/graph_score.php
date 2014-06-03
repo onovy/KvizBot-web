@@ -67,5 +67,3 @@ while ($line = db_fetch_array($q)) {
 	escapeshellarg($time . ':' . $score . ':' . $scoreMonth)
     );
 }
-
-?>
