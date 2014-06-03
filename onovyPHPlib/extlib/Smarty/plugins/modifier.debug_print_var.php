@@ -45,7 +45,7 @@ function smarty_modifier_debug_print_var($var, $depth = 0, $length = 40)
         } else {
             $results = $var;
         }
-        $results = htmlspecialchars($results);
+        $results = htmlspecialchars($results, null, 'ISO8859-1');
         $results = strtr($results, $_replace);
     }
     return $results;

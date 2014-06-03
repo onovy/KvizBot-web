@@ -60,9 +60,9 @@ function ot2html($in,$use_cache=true) {
     
     // Typografie a escape
     if (defined('MODULE_TYPO')) {
-	$in = typo(htmlspecialchars($in),false);
+	$in = typo(htmlspecialchars($in, null, 'ISO8859-1'),false);
     } else {
-	$in = htmlspecialchars($in);
+	$in = htmlspecialchars($in, null, 'ISO8859-1');
     }
     
     $lines = explode("\r\n", $in);

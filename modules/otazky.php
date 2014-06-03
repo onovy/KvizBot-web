@@ -1,7 +1,7 @@
 <?
 
 function space_seen($text) {
-    return str_replace(' ', '<font color="red">+</font><wbr/>', htmlspecialchars($text));
+    return str_replace(' ', '<font color="red">+</font><wbr/>', htmlspecialchars($text, null, 'ISO8859-1'));
 }
 
 function check_otazka($otazka,$odpoved,$tema) {

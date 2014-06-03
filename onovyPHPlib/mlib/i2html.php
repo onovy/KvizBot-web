@@ -20,7 +20,7 @@ define('MODULE_I2HTML',1);
  * @return zkonvertovany text
  */
 function i2html($input,$typo=true) {
- $s=htmlspecialchars($input);
+ $s=htmlspecialchars($input, null, 'ISO8859-1');
 
  if ($typo && defined('MODULE_TYPO')) {
     $s=typo($s);
