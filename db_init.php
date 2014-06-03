@@ -24,6 +24,8 @@ $errors.=check_table('nicks',array(
 	'Type'  => 'datetime'),
  array( 'Field' => 'last',
 	'Type'  => 'timestamp'),
+ array( 'Field' => 'blocked',
+	'Type'  => 'tinyint(1)'),
  ),$really);
 
 // PERM
@@ -123,6 +125,8 @@ $errors.=check_table('hlasovani',array(
 	'Type'  => 'timestamp'),
  array( 'Field' => 'active',
 	'Type'  => 'tinyint(1)'),
+ array( 'Field' => 'min_score',
+	'Type'  => 'int(11)'),
  ),$really);
 
 // HLASOVANI_ODPOVEDI
@@ -149,6 +153,8 @@ $errors.=check_table('hlasovani_hlasy',array(
 	'Type'  => 'varchar(128)'),
  array( 'Field' => 'otazka',
 	'Type'  => 'int(11)'),
+ array( 'Field' => 'nick',
+	'Type'  => 'int(11)'),
  ),$really);
 
 // OTAZKY_CHYBY
@@ -169,11 +175,13 @@ $errors.=check_table('otazky_chyby',array(
  array( 'Field' => 'uzavreno',
 	'Type'  => 'datetime'),
  array( 'Field' => 'nick',
-	'Type'  => 'varchar(100)'),
- array( 'Field' => 'email',
-	'Type'  => 'varchar(100)'),
+	'Type'  => 'int(11)'),
  array( 'Field' => 'ip',
 	'Type'  => 'varchar(15)'),
+ array( 'Field' => 'nick_old',
+	'Type'  => 'varchar(100)'),
+ array( 'Field' => 'comment',
+	'Type'  => 'text'),
  ),$really);
 
 $errors.="\nCelkem tabulek: ".$count;
