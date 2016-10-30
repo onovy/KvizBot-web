@@ -171,7 +171,7 @@ function ot2html_repaintHistory() {
 
 
 function ot2html_addbutton(img,class_,id,onClick) {
-    document.write("<input type=\"image\" src=\"onovyPHPlib/img/ot2html/" + img + ".png\" class=\"" + class_ + "\" id=\"" + id + "\" onClick=\"" + onClick + "; return false;\">");
+    document.write("<input type=\"image\" src=\"img/onovyPHPlib/ot2html/" + img + ".png\" class=\"" + class_ + "\" id=\"" + id + "\" onClick=\"" + onClick + "; return false;\">");
 }
 
 function ot2html(name,value,cols,rows) {
