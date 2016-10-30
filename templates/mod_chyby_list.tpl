@@ -26,7 +26,7 @@
 	    <option value='unconfirmed'{if $filter=='unconfirmed'} selected="selected"{/if}>Zamítnuté</option>
 	</select>
     </td>
-</tr><tr
+</tr><tr>
     <td>Autor:</td>
     <td>
 	<select name='owner' onChange='document.f.submit();'>
@@ -34,7 +34,7 @@
 	    <option value='me'{if $owner=='me'} selected="selected"{/if}>Pouze já</option>
 	</select>
     </td>
-</tr><tr
+</tr><tr>
     <td></td>
     <td><input type='submit' value='Zobrazit' /></td>
 </tr>
