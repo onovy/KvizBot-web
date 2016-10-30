@@ -6,7 +6,6 @@
     <a href='?w=add_otazka'>Pøidat otázku</a><br />
 {/if}
 
-Ve¹keré pøipomínky a nápady k XKvízu smìøujte do <a href="/forum/">fóra</a><br />
 <br />
 <strong>U ka¾dého hlasování je nutné hlasovat zvlá¹»!</strong><br />
 <strong>Urèité hlasování je podmínìno pøihlá¹ením a získáním urèitého poètu bodù</strong><br />
