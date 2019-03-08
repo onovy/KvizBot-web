@@ -132,12 +132,6 @@ if ($w=='move' && $auth->perm_a) {
 		'UPDATE nicks SET nick = "%s" WHERE id = %d',
 		$nick_to, $id
 	    ));
-	    $db_link2 = mysql_connect($local_config['phpbb_sql_host'],$local_config['phpbb_sql_user'],$local_config['phpbb_sql_pass']) or show_error('Doslo k chybe pri pripojovani k databazi, omlouvame se');
-	    mysql_select_db($local_config['phpbb_sql_name'], $db_link2) or show_error('Doslo k chybe pri vybirani databaze, omlouvame se');
-	    mysql_query(sprintf(
-		'UPDATE phpbb_users SET username="%s" where username="%s"',
-		$nick_to, $nick
-	    ), $db_link2);
 	    
 	    $done = true;
 	}

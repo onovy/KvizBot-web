@@ -131,42 +131,6 @@ if ($w == 'password' || $w == 'password2') {
 		$fa['id']
 	    ));
 
-	    // PhpBB
-	    if (!empty($local_config['phpbb_sql_user']) && !empty($local_config['phpbb_sql_pass']) && !empty($local_config['phpbb_sql_host'])) {
-		$uname = db_fquery(sprintf(
-		    'SELECT nick FROM nicks WHERE id = %d',
-		    $fa['nick']
-		));
-		$uname = mysql_escape_string($uname[0]);
-
-		$db_link2 = mysql_connect($local_config['phpbb_sql_host'],$local_config['phpbb_sql_user'],$local_config['phpbb_sql_pass']) or show_error('Doslo k chybe pri pripojovani k databazi, omlouvame se');
-		mysql_select_db($local_config['phpbb_sql_name'], $db_link2) or show_error('Doslo k chybe pri vybirani databaze, omlouvame se');
-		// Exists?
-		$q = mysql_query(sprintf(
-		    'SELECT user_id FROM phpbb_users WHERE username = "%s"',
-		    $uname
-    		), $db_link2);
-		$fa = mysql_fetch_array($q);
-		if ($fa) {
-		    // Update
-		    mysql_query(sprintf(
-			'UPDATE phpbb_users SET user_password = "%s" WHERE user_id = "%s"',
-			mysql_real_escape_string($password, $db_link), $fa['user_id']
-    		    ), $db_link2) or show_error("Chyba SQL: ".mysql_error());
-		} else {
-		    // ID
-		    $fa = mysql_fetch_array(mysql_query(
-			'SELECT MAX(user_id) FROM phpbb_users',
-    			$db_link2)) or show_error("Chyba SQL: ".mysql_error());
-		    // Create
-		    mysql_query(sprintf(
-			'INSERT INTO phpbb_users (user_id, username, user_email, user_password, user_regdate) VALUES (%d, "%s", "", "%s", unix_timestamp())',
-			$fa[0]+1, $uname, mysql_real_escape_string($password, $db_link)
-    		    ), $db_link2) or show_error("Chyba SQL: ".mysql_error());
-		}
-		mysql_close($db_link2);
-	    }
-	    	
 	    $smarty->assign('message', 'Heslo nastaveno');
 	    $smarty->assign('message_c', 'message');
 	    $smarty->assign('main', 'registrace_password2');
