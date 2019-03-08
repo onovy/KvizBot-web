@@ -31,7 +31,7 @@ if ($w=='info') {
 	));
 	$id=$fa[0];
 	if (empty($id)) {
-	    show_error('Nick nenalezen');
+	    show_error('Nick nenalezen: ' . $nick);
 	}
     }
 
