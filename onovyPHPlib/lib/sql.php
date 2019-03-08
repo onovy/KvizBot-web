@@ -5,11 +5,12 @@ function db_connect() {
     
     if (isset($db_link)) { return 0; }
     if (!empty($local_config['sql_user']) && !empty($local_config['sql_pass']) && !empty($local_config['sql_host'])) {
-	$db_link = mysql_connect($local_config['sql_host'],$local_config['sql_user'],$local_config['sql_pass']) or show_error('Doslo k chybe pri pripojovani k databazi, omlouvame se');
+	$db_link = mysqli_connect($local_config['sql_host'],$local_config['sql_user'],$local_config['sql_pass']) or show_error('Doslo k chybe pri pripojovani k databazi, omlouvame se');
     } else {
+	show_error('Sem tu');
 	return false;
     }
-    mysql_select_db($local_config['sql_name'], $db_link) or show_error('Doslo k chybe pri vybirani databaze, omlouvame se');
+    $db_link->select_db($local_config['sql_name']) or show_error('Doslo k chybe pri vybirani databaze, omlouvame se');
     return true;
 }
 
@@ -17,7 +18,7 @@ function db_query($question) {
     global $db_link;
     
     db_connect();
-    $r=mysql_query($question, $db_link) or show_error("Chyba SQL: ".mysql_error());
+    $r = $db_link->query($question) or show_error("Chyba SQL: " . $db_link->error);
     return $r;
 }
 
@@ -25,12 +26,12 @@ function db_query_noe($question) {
     global $db_link;
     
     db_connect();
-    $r=mysql_query($question, $db_link);
+    $r=$db_link->query($question);
     return $r;
 }
 			  
 function db_fetch_array($query) {
- return mysql_fetch_array($query);
+ return $query->fetch_array();
 }
 
 function db_fquery($q) {
@@ -39,24 +40,21 @@ function db_fquery($q) {
 
 function db_fquery_noe($q) {
     $r=db_query_noe($q);
-    if ($r === false) return false;
+    if ($r === NULL) return false;
     return db_fetch_array($r);
 }
 
 function db_insert_id() {
     global $db_link;
     
-    return mysql_insert_id($db_link);
+    return $db_link->$insert_id;
 }
 
 function db_escape_string($s) {
     global $db_link;
     
-    if (db_connect()) {
-	return mysql_real_escape_string($s, $db_link);
-    } else {
-	return mysql_escape_string($s);
-    }
+    db_connect();
+    return $db_link->real_escape_string($s);
 }
 
 function sql_time_format($s) {
@@ -68,13 +66,13 @@ function sql_date_format($s) {
 }
 
 function db_num_rows($q) {
-    return mysql_num_rows($q);
+    return $q->num_rows;
 }
 
 function db_affected_rows() {
     global $db_link;
     
-    return mysql_affected_rows($db_link);
+    return $db_link->affected_rows;
 }
 
 function db_table_exists($table_name) {
