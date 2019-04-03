@@ -255,12 +255,12 @@ if ($auth->perm_o) {
 	    if ($auth->perm_v) {
 		// listovani vsech temat
 		$q=db_query(
-		    'SELECT temata.id,nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id GROUP BY otazky.tema ORDER BY temata.nazev'
+		    'SELECT temata.id,temata.nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id GROUP BY temata.id, temata.nazev ORDER BY temata.nazev'
 		);
 	    } else {
 		// listovani temat uzivatele
 		$q=db_query(sprintf(
-		    'SELECT temata.id,nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id WHERE otazky.owner=%d GROUP BY otazky.tema ORDER BY temata.nazev',
+		    'SELECT temata.id,temata.nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id WHERE otazky.owner=%d GROUP BY temata.id, temata.nazev ORDER BY temata.nazev',
 		    $auth->id
 		));
 	    }
