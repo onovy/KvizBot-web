@@ -1,4 +1,4 @@
-<?
+<?php
 if (!$auth->perm_p) {
     error_notperm();
 }

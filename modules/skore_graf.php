@@ -1,4 +1,4 @@
-<?
+<?php
 header('Content-type: image/png');
 
 $rrdIncome = 'rrd/score/'.((int)$_GET['nick']).'_income.rrd';

@@ -1,4 +1,4 @@
-<?
+<?php
 
 $w = input_array('w', array('', 'hash', 'password','password2'));
 

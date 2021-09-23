@@ -1,4 +1,4 @@
-<?
+<?php
 $w=input_array('w',array('','hlas',
     'add_otazka','add_otazka2','add_odpoved','add_odpoved2','active','deactive','ips'
 ));

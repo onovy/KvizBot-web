@@ -1,4 +1,4 @@
-<?
+<?php
 
 if(!isset($_SERVER['PHP_AUTH_USER'])) {
     auth_show401();

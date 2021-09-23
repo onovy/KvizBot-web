@@ -1,4 +1,4 @@
-<?
+<?php
 
 $score_count=10;
 $cache_time=240;

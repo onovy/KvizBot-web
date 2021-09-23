@@ -1,4 +1,4 @@
-<?
+<?php
 require_once 'onovyPHPlib/init.php';
 require_once 'onovyPHPlib/main.php';
 

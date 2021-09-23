@@ -1,4 +1,4 @@
-<?
+<?php
 
 $fa=db_fquery(sprintf(
     'SELECT COUNT(*) FROM otazky WHERE last IS NULL'

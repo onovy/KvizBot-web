@@ -1,4 +1,4 @@
-<?
+<?php
 
 $q=db_query(
     'SELECT nick FROM nicks ORDER BY body DESC, last DESC, id DESC LIMIT 3'

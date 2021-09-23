@@ -1,4 +1,4 @@
-<?
+<?php
 require_once 'onovyPHPlib/init.php';
 $header=false;
 require_once 'onovyPHPlib/lib/sql.php';

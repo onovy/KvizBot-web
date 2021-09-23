@@ -1,4 +1,4 @@
-<?
+<?php
 
 $lib_config['charset']='iso-8859-2';
 

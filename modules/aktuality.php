@@ -1,4 +1,4 @@
-<?
+<?php
 
 $w=input_array('w',array('','add','del'));
 if ($auth->perm_t) {

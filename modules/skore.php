@@ -1,4 +1,4 @@
-<?
+<?php
 
 $score_count=50;
 $start_y=2005;

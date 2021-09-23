@@ -1,4 +1,4 @@
-<?
+<?php
 
 // Absolutni cesta k adresari s webem (bez / na konci)
 $local_config['web_dir']='/var/www/html';

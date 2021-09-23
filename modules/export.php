@@ -1,4 +1,4 @@
-<?
+<?php
 
 // c1154cfab7ec68c5681a596bc99b380d
 $hash=md5('sldkfjgkl3456xsb');

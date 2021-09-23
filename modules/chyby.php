@@ -1,4 +1,4 @@
-<?
+<?php
 
 if (!$auth->id) {
     error_notperm();

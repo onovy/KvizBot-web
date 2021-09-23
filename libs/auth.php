@@ -1,4 +1,4 @@
-<?
+<?php
 function my_auth_user() {
     global $auth;
     if ($_REQUEST['page']=='logout') return false;
