@@ -22,6 +22,7 @@ $local_config['sql_name']='xkviz';
 $local_config['sql_user']='xkviz';
 $local_config['sql_pass']='';
 $local_config['sql_host']='localhost';
+$local_config['sql_charset']='latin2';
 
 // Nastaveni databaze - phpbb
 $local_config['phpbb_sql_name']='xkviz_phpbb';

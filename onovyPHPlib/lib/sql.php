@@ -7,9 +7,9 @@ function db_connect() {
     if (!empty($local_config['sql_user']) && !empty($local_config['sql_pass']) && !empty($local_config['sql_host'])) {
 	$db_link = mysqli_connect($local_config['sql_host'],$local_config['sql_user'],$local_config['sql_pass']) or show_error('Doslo k chybe pri pripojovani k databazi, omlouvame se');
     } else {
-	show_error('Sem tu');
 	return false;
     }
+    $db_link->set_charset($local_config['sql_charset']);
     $db_link->select_db($local_config['sql_name']) or show_error('Doslo k chybe pri vybirani databaze, omlouvame se');
     return true;
 }
