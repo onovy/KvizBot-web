@@ -4,7 +4,7 @@ require_once 'onovyPHPlib/main.php';
 
 $page=input_array_noe('page',array(
     '','uvod','pravidla','login','logout','spravci','aktuality','hlasovani',
-    'skore','online','perms','otazky','export','chyby','pravidla_otazky',
+    'skore','online','perms','otazky','chyby','pravidla_otazky',
     'licence-otazek','stats', 'registrace', 'skore_graf'
 ));
 if ($page === false) {
