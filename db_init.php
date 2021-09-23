@@ -12,14 +12,14 @@ modules_sql_init($errors);
 // NICKS
 $errors.=check_table('nicks',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'nick',
 	'Type'  => 'varchar(50)'),
  array( 'Field' => 'pass',
 	'Type'  => 'varchar(32)'),
  array( 'Field' => 'body',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'added',
 	'Type'  => 'datetime'),
  array( 'Field' => 'last',
@@ -31,10 +31,10 @@ $errors.=check_table('nicks',array(
 // PERM
 $errors.=check_table('perm',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'nick',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'perm',
 	'Type'  => 'char(1)'),
  ),$really);
@@ -42,7 +42,7 @@ $errors.=check_table('perm',array(
 // PERM_NAMES
 $errors.=check_table('perm_names',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'perm',
 	'Type'  => 'char(1)'),
@@ -53,7 +53,7 @@ $errors.=check_table('perm_names',array(
 // ONLINE
 $errors.=check_table('online',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'nick',
 	'Type'  => 'varchar(50)'),
@@ -62,22 +62,22 @@ $errors.=check_table('online',array(
 // OTAZKY
 $errors.=check_table('otazky',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'otazka',
 	'Type'  => 'varchar(100)'),
  array( 'Field' => 'odpoved',
 	'Type'  => 'varchar(100)'),
  array( 'Field' => 'owner',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'tema',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'schvaleni',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'last',
 	'Type'  => 'datetime'),
  array( 'Field' => 'change_tema',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'change_otazka',
 	'Type'  => 'varchar(100)'),
  array( 'Field' => 'change_odpoved',
@@ -85,31 +85,31 @@ $errors.=check_table('otazky',array(
  array( 'Field' => 'change_comment',
 	'Type'  => 'varchar(100)'),
  array( 'Field' => 'game',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  ),$really);
 
 // TEMATA
 $errors.=check_table('temata',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'nazev',
 	'Type'  => 'varchar(100)'),
  array( 'Field' => 'hidden',
-	'Type'  => 'tinyint(4)'),
+	'Type'  => 'tinyint'),
  ),$really);
 
 // AKTUALITY
 $errors.=check_table('aktuality',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'nazev',
 	'Type'  => 'varchar(100)'),
  array( 'Field' => 'text',
-	'Type'  => 'blob'),
+	'Type'  => 'text'),
  array( 'Field' => 'autor',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'timestmp',
 	'Type'  => 'timestamp'),
  ),$really);
@@ -117,7 +117,7 @@ $errors.=check_table('aktuality',array(
 // HLASOVANI
 $errors.=check_table('hlasovani',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'otazka',
 	'Type'  => 'varchar(100)'),
@@ -126,16 +126,16 @@ $errors.=check_table('hlasovani',array(
  array( 'Field' => 'active',
 	'Type'  => 'tinyint(1)'),
  array( 'Field' => 'min_score',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  ),$really);
 
 // HLASOVANI_ODPOVEDI
 $errors.=check_table('hlasovani_odpovedi',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'otazka',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'odpoved',
 	'Type'  => 'varchar(100)'),
  ),$really);
@@ -143,29 +143,29 @@ $errors.=check_table('hlasovani_odpovedi',array(
 // HLASOVANI_HLASY
 $errors.=check_table('hlasovani_hlasy',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'odpoved',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'ip',
 	'Type'  => 'varchar(15)'),
  array( 'Field' => 'ip_rev',
 	'Type'  => 'varchar(128)'),
  array( 'Field' => 'otazka',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'nick',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  ),$really);
 
 // OTAZKY_CHYBY
 $errors.=check_table('otazky_chyby',array(
  array( 'Field' => 'id',
-	'Type'  => 'int(11)',
+	'Type'  => 'int',
 	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
  array( 'Field' => 'cislo',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'text',
-	'Type'  => 'blob'),
+	'Type'  => 'text'),
  array( 'Field' => 'link',
 	'Type'  => 'varchar(200)'),
  array( 'Field' => 'stav',
@@ -175,7 +175,7 @@ $errors.=check_table('otazky_chyby',array(
  array( 'Field' => 'uzavreno',
 	'Type'  => 'datetime'),
  array( 'Field' => 'nick',
-	'Type'  => 'int(11)'),
+	'Type'  => 'int'),
  array( 'Field' => 'ip',
 	'Type'  => 'varchar(15)'),
  array( 'Field' => 'nick_old',

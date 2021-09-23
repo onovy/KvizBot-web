@@ -85,8 +85,8 @@ function modules_sql_init(&$errors) {
     if (defined('MODULE_AUTH')) { // Vytvoreni tabulek pro modul AUTH
 	// USERS
 	$errors.=check_table($lib_config['mlib_auth_table_name'],array(
-    	    array( 'Field' => 'id',
-    	           'Type'  => 'int(11)',
+	    array( 'Field' => 'id',
+	           'Type'  => 'int',
 	           'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
 	    array( 'Field' => 'user',
 	           'Type'  => 'varchar(50)'),
@@ -116,7 +116,7 @@ function modules_sql_init(&$errors) {
 	// TEXTY
 	$errors.=check_table($lib_config['mlib_texty_table_name'],array(
 	    array( 'Field' => 'id',
-	           'Type'  => 'int(11)',
+	           'Type'  => 'int',
 	           'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
 	    array( 'Field' => 'txt',
 	           'Type'  => 'text'),
