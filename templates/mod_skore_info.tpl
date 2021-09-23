@@ -1,8 +1,8 @@
 <h2>Skóre - info o hráèi</h2>
 <h3>
     Nick:
-    <a href='http://xchat.centrum.cz/whoiswho/profile.php?nick={$nick|escape:"url"}'>
-	<img src='http://scripts.xchat.centrum.cz/scripts/online_img.php?nick={$nick|escape:"url"}'></a>
+    <a href='https://xchat.cz/whoiswho/profile.php?nick={$nick|escape:"url"}'>
+	<img src='https://scripts.xchat.cz/scripts/online_img.php?nick={$nick|escape:"url"}'></a>
 
     {if $pozice == 1}
         <img src='/img/gold.png' alt='Gold' />

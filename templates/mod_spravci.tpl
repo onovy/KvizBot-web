@@ -4,8 +4,8 @@
 Pøedseda správcù: <b>Andilek.C</b><br />
 V¹ichni správci Kvízu jsou nyní plnohodnotnými SS na Xchat.cz.
 Seznam:
-<a href='http://xchat.centrum.cz/~guest~/modchat?op=roominfo&rid=4746019'>
-http://xchat.centrum.cz/~guest~/modchat?op=roominfo&rid=4746019
+<a href='https://www.xchat.cz/~guest~/modchat?op=roominfo&rid=4746019'>
+https://www.xchat.cz/~guest~/modchat?op=roominfo&rid=4746019
 </a>
 <h3>Oprava otázek</h3>
 O opravy chyb v otázkách se stará <b>Andilek.C</b>
