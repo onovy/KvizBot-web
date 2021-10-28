@@ -52,6 +52,7 @@ if ($w=='info') {
     // Kviz 1
     list($pozice,$body,$nick,$added)=infouser($id,'month','score_kviz1');
     if ($body!=0) {
+	$history[$pos] = new \stdClass();
 	$history[$pos]->name='Kvíz 1.0';
 	$history[$pos]->body_orig=$body;
 	$history[$pos]->body=po3cislech($body,'&nbsp;');
@@ -68,6 +69,7 @@ if ($w=='info') {
     while (1) {
 	list($pozice,$body,$nick,$added)=infouser($id,'month','score_'.$y.'_'.$m);
 	if ($body!=0) {
+	    $history[$pos] = new \stdClass();
     	    $history[$pos]->name=$consts['months_name'][$m+1].' '.$y;
 	    $history[$pos]->body_orig=$body;
 	    $history[$pos]->body=po3cislech($body,'&nbsp;');

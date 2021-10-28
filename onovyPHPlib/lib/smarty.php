@@ -10,6 +10,9 @@ function sql2smarty($s,$array) {
  $out=array();
  while ($line=db_fetch_array($s)) {
   foreach ($array as $name=>$val) {
+   if (!isset($out[$a])) {
+    $out[$a] = new \stdClass();
+   }
    $out[$a]->$val=$line[$val];
   }
   $a++;

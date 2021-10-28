@@ -30,6 +30,7 @@ function auth_user() {
 	
 	if ($chyba) {
 	    print('Tabulka pro modul AUTH ('.$lib_config['mlib_auth_table_name'].') neexistuje<br />');
+	    $auth = new \stdClass();
 	    $auth->id=0;
 	    $auth->uname="";
 	    return false;
@@ -43,6 +44,7 @@ function auth_user() {
 	$user,md5($pass)
 	));
     if (empty($f[0]) || $_COOKIE['logout']==1) {
+	$auth = new \stdClass();
 	$auth->id=0;
 	$auth->uname="";
 	return false;
@@ -51,6 +53,7 @@ function auth_user() {
 	    'UPDATE '.$lib_config['mlib_auth_table_name'].' SET last_action=now() WHERE id=%d',
 	    $f[0]
 	));
+	$auth = new \stdClass();
 	$auth->id=$f[0];
 	$auth->uname=$user;
 	return true;
