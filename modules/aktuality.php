@@ -1,7 +1,7 @@
 <?php
 
 $w=input_array('w',array('','add','del'));
-if ($auth->perm_t) {
+if ($auth->perm_w) {
     if ($w=='add') {
         $nazev=input_string('nazev');
         $text=input_string('text');

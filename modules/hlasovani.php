@@ -6,7 +6,7 @@ $w=input_array('w',array('','hlas',
 $smarty->assign('menu','hlasovani');
 $smarty->assign('title','Hlasování');
 
-if ($auth->perm_t) {
+if ($auth->perm_w) {
     $otazka='';
 
     if ($w=='add_otazka') {

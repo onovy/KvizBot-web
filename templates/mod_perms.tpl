@@ -37,7 +37,7 @@
 <table class='table'>
 <tr>
     <th>Nick</th>
-    <th colspan='{$perms_count-1}'>Práva</th>
+    <th colspan='{$perms_count}'>Práva</th>
 </tr>
 {section name=sec1 loop=$perms}
 <tr>
