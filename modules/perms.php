@@ -113,10 +113,10 @@ if ($w=='perm') {
 // --- NASTAVENI HESLA PRO WEB ---
 if ($w=='pass') {
     $nick=input_string('nick');
-    $pass=md5($_REQUEST['pass']);
+    $passH = password_hash($_REQUEST['pass'], PASSWORD_ARGON2ID);
     db_query(sprintf(
-	'UPDATE nicks SET pass="%s" WHERE LOWER(nick)=LOWER("%s")',
-	$pass,$nick
+	'UPDATE nicks SET pass2="%s" WHERE LOWER(nick)=LOWER("%s")',
+	db_escape_string($passH), $nick
     ));
     
     $smarty->assign('message','Heslo nastaveno');

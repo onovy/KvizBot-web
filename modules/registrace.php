@@ -119,11 +119,11 @@ if ($w == 'password' || $w == 'password2') {
 	    $smarty->assign('hash', $hash);
 	    $smarty->assign('main', 'registrace_password');
 	} else {
-	    $password = md5($_REQUEST['pass']);
+	    $passH = password_hash($_REQUEST['pass'], PASSWORD_ARGON2ID);
 
 	    db_query(sprintf(
-		'UPDATE nicks SET pass="%s" WHERE id = %d',
-		db_escape_string($password), $fa['nick']
+		'UPDATE nicks SET pass2="%s" WHERE id = %d',
+		db_escape_string($passH), $fa['nick']
 	    ));
 	    	
 	    db_query(sprintf(
