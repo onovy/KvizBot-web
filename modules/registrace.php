@@ -37,7 +37,7 @@ if ($w == 'hash') {
     
     if ($ok) {
 	$q = db_query(sprintf(
-	    'SELECT id FROM pass_req WHERE (nick="%s" OR ip="%s") AND sent=false',
+	    'SELECT id FROM pass_req WHERE (nick="%s" OR ip="%s") AND UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(added) < 3600',
 	    $nick, db_escape_string($_SERVER['REMOTE_ADDR'])
 	));
 	$fa = db_fetch_array($q);
