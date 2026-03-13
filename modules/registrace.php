@@ -49,7 +49,7 @@ if ($w == 'hash') {
     }
     
     if ($ok) {
-	$hash = substr(md5(getmypid() . '-' . time() . '-' . rand() . '-' . $nick), 0, 8);
+	$hash = bin2hex(random_bytes(16));
 	db_query(sprintf(
 	    'INSERT INTO pass_req (nick, hash, ip) VALUES (%d, "%s", "%s")',
 	    $id, db_escape_string($hash), db_escape_string($_SERVER['REMOTE_ADDR'])
