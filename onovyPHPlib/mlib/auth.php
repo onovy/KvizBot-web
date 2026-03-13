@@ -67,7 +67,7 @@ function auth_show401() {
 
     header('WWW-Authenticate: Basic realm="Autorizace"');
     header('HTTP/1.0 401 Unauthorized');
-    setcookie('logout',0);
+    setcookie("logout", 0, ["path" => "/", "secure" => true, "httponly" => true, "samesite" => "Strict"]);
 
     $smarty->assign('title','Autorizace selhala');
     $smarty->assign('main','no_access');
