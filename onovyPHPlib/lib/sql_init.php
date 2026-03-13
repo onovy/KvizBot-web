@@ -100,10 +100,10 @@ function modules_sql_init(&$errors) {
 	if ($count !== false && $count[0] == 0) {
 	    if ($really) {
 	        $errors.="<font style='color: blue'>Generuji u¾ivatele pro modul AUTH:\n";
-		$pass = substr(md5(rand()%1000 . '_onovyPHPlib_' . time()),0,6);
+		$pass = bin2hex(random_bytes(12));
 	        db_query(sprintf(
 	    	    'INSERT INTO '.$lib_config['mlib_auth_table_name'].' (user,pass) VALUES ("admin","%s")',
-		    md5($pass)
+		    db_escape_string(password_hash($pass, PASSWORD_ARGON2ID))
 		));
 		$errors.=" U¾. jméno: <strong>admin</strong>\n Heslo: <strong>".$pass."</strong></font>\n";
 	    } else {
