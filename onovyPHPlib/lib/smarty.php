@@ -20,15 +20,6 @@ function sql2smarty($s,$array) {
  return $out;
 }
 
-function var2smarty($array) {
-    global $smarty;
-    foreach ($array as $name=>$val) {
-	$ttt = 'global $'.$val.';'.'$a=$'.$val.';';
-	eval($ttt);
-	$smarty->assign($val,$a);
-    }
-}
-
 function fa2smarty($line,$array) {
  $out = new \stdClass();
  foreach ($array as $name=>$val) {
