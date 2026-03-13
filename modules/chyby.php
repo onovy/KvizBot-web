@@ -99,8 +99,10 @@ if ($auth->perm_c ?? null) {
 	      WHERE otazky_chyby.id=%d',
 	    $id
 	));
-	if (!str_startsWith($fa['link'],'http://')) {
-	    $fa['link']='http://' . $fa['link'];
+	if (preg_match('/^[a-z][a-z0-9+\-.]*:/i', $fa['link']) && !preg_match('/^https?:/i', $fa['link'])) {
+	    $fa['link'] = '';
+	} elseif (!preg_match('/^https?:/i', $fa['link'])) {
+	    $fa['link'] = 'http://' . $fa['link'];
 	}
 	$fa['o_stav']=$fa['stav'];
 	$fa['stav']=$stavy[$fa['stav']];
