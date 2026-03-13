@@ -7,9 +7,8 @@
     <a href='?w=list&amp;filter=open&owner=me'>Seznam mnou nahlá¹ených chyb</a>
 </p>
 
-<p class='message'>
-{$message}
-</p>
+{include file="../onovyPHPlib/templates/message.tpl"}
+
 <p>
 Následujícím formuláøem mu¾ete oznámit chybu v otázce. Pøeètìte si prosím
 nejdøív informace napsané ní¾e.

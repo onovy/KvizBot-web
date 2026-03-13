@@ -131,7 +131,7 @@
 <a href='/rrd/score/{$id}_income.rrd'>RRD zisk</a>
 </small>
 
-{if $auth->perm_a}
+{if $auth->perm_a|default:false}
 <h3>Pøevést skóre</h3>
 <form method='post' action='skore.htm'>
 <input type='hidden' name='w' value='move' />

@@ -11,8 +11,10 @@ if ($page === false) {
     show_error('Stránka nenalezena!');
 }
 if (empty($page)) $page='uvod';
-if (!empty($_GET['topmenu'])) {
+if (!empty($_GET['topmenu'] ?? null)) {
     $smarty->assign('topmenu', 1);
+} else {
+    $smarty->assign('topmenu', 0);
 }
 
 include 'modules/'.$page.'.php';

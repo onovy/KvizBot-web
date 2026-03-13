@@ -18,16 +18,25 @@ function db_query($question) {
     global $db_link;
     
     db_connect();
-    $r = $db_link->query($question) or show_error("Chyba SQL: " . $db_link->error);
-    return $r;
+    try {
+	$r = $db_link->query($question);
+	return $r;
+    } catch (mysqli_sql_exception $e) {
+	show_error("Chyba SQL: " . $db_link->error);
+    }
 }
 
 function db_query_noe($question) {
     global $db_link;
-    
+
     db_connect();
-    $r=$db_link->query($question);
-    return $r;
+
+    try {
+	$r=$db_link->query($question);
+	return $r;
+    } catch (mysqli_sql_exception $e) {
+	return null;
+    }
 }
 			  
 function db_fetch_array($query) {

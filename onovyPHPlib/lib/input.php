@@ -8,7 +8,7 @@ function input_num($var) {
 }
 
 function input_num_0($var) {
- if ($_REQUEST[$var]=='') return 0;
+ if (($_REQUEST[$var] ?? '') =='') return 0;
  if (!is_numeric($_REQUEST[$var])) {
    error_notnumeric($var);
  }
@@ -16,7 +16,7 @@ function input_num_0($var) {
 }
 
 function input_num_1($var) {
- if ($_REQUEST[$var]=='') return -1;
+ if (($_REQUEST[$var] ?? null) == '') return -1;
  if (!is_numeric($_REQUEST[$var])) {
    error_notnumeric($var);
  }
@@ -25,15 +25,19 @@ function input_num_1($var) {
 
 function input_string($var) {
  $a=array_merge($_GET,$_POST);
- return db_escape_string($a[$var]);
+ if (isset($a[$var])) {
+  return db_escape_string($a[$var]);
+ } else {
+  return null;
+ }
 }
 
 function input_char($var) {
  $a=array_merge($_GET,$_POST);
- if (strlen($a[$var])!=1) {
+ if (strlen($a[$var] ?? null) != 1) {
     error_notchar($var);
  }
- return db_escape_string($a[$var]);
+ return db_escape_string($a[$var] ?? null);
 }
 
 function input_array($var,$array) {
@@ -47,7 +51,7 @@ function input_array($var,$array) {
 function input_array_noe($var,$array) {
     $a=array_merge($_GET,$_POST);
     foreach ($array as $name=>$val) {
-	if ($a[$var]==$val) return $a[$var];
+	if (($a[$var] ?? null) == $val) return $a[$var] ?? null;
     }
     return false;
 }
@@ -58,5 +62,5 @@ function input_checkbox($var) {
 }
 
 function HE($s) {
- return htmlspecialchars($s, null, 'ISO8859-1');
+ return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'ISO8859-1');
 }

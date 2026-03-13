@@ -1,6 +1,7 @@
 <h2>Úprava otázky</h2>
 
-{$message}
+{include file="../onovyPHPlib/templates/message.tpl"}
+
 <form method='POST'>
 <input type='hidden' name='w' value='edit'>
 <input type='hidden' name='id' value='{$id}'>
@@ -46,7 +47,7 @@
 </tr><tr>
     <td>Poznámka:</td>
     <td><input type='text' name='comment' value='{$comment|escape}'>
-{if $auth->perm_a}
+{if $auth->perm_a|default:false}
 </tr><tr>
     <td>Schválení:</td>
     <td>

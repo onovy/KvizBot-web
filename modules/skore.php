@@ -62,7 +62,7 @@ if ($w=='info') {
 	$pos++;
     }
 
-    $now_m=date('m')-1;
+    $now_m=date('n')-1;
     $now_y=date('Y');
     $m=$start_m;
     $y=$start_y;
@@ -113,7 +113,7 @@ if ($w=='info') {
     return;
 }
 
-if ($w=='move' && $auth->perm_a) {
+if ($w=='move' && ($auth->perm_a ?? null)) {
     $id = input_num('id');
     $nick_to = input_string('nick');
     $fa = db_fquery(sprintf(
@@ -151,7 +151,7 @@ if ($w=='move' && $auth->perm_a) {
 $show_m=input_num_1('month');
 $show_y=input_num_1('year');
 if ($show_m==-1 || $show_y==-1) {
-    $show_m=date('m')-1;
+    $show_m=date('n')-1;
     $show_y=date('Y');
 }
 $table_month='score_'.$show_y.'_'.$show_m;
@@ -218,13 +218,14 @@ function infouser($id,$typ,$table='') {
 	    'SELECT body FROM '.$table.' WHERE nick=%d',
 	    $id
         ));
-	$bodu=$fa[0];
+	$bodu=$fa[0] ?? 0;
 	$pozice=db_fquery(sprintf(
 	    'SELECT COUNT(*)+1 AS pozice FROM '.$table.' WHERE body>%d',
 	    $bodu
 	));
 	$pozice=$pozice[0];
 	$nick='?';
+	$added='?';
     } else {
 	$fa=db_fquery(sprintf(
 	    'SELECT body,nick,DATE_FORMAT(added,"%%d. %%m. %%Y %%H:%%i") AS added, last FROM nicks WHERE id=%d',

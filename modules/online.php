@@ -11,7 +11,7 @@ while ($fa=db_fetch_array($q)) {
 }
 
 $medm=array();
-$show_m=date('m')-1;
+$show_m=date('n')-1;
 $show_y=date('Y');
 $table_month='score_'.$show_y.'_'.$show_m;
 if (db_table_exists($table_month)) {
@@ -28,6 +28,9 @@ if (db_table_exists($table_month)) {
 $q=db_query('SELECT nicks.id AS id,online.nick FROM online LEFT JOIN nicks ON LOWER(nicks.nick)=LOWER(online.nick) ORDER BY online.nick');
 $online=sql2smarty($q,array('id','nick'));
 foreach ($online as $k=>$v) {
+    if (!array_key_exists($k, $online)) {
+        $online[$k] = new \stdClass();
+    }
     if (array_key_exists($v->nick, $med)) {
 	$online[$k]->med=$med[$v->nick];
     }

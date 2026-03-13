@@ -1,4 +1,7 @@
 <h2>Témata</h2>
+
+{include file="../onovyPHPlib/templates/message.tpl"}
+
 <form method='POST'>
 <input type='hidden' name='w' value='temata'>
 <input type='hidden' name='w2' value='add'>
@@ -23,8 +26,11 @@
 {section name=sec1 loop=$temata_list}
 <tr>
     <td>{$temata_list[sec1]->nazev|escape}</td>
-    <td{if $temata_list[sec1]->hidden!=0} bgcolor='red'{/if}>
-    {$temata_list[sec1]->hidden}</td>
+    {if $temata_list[sec1]->hidden!=0}
+         <td bgcolor='red'>ANO</td>
+    {else}
+        <td>ne</td>
+    {/if}
 </tr>
 {/section}
 </table>

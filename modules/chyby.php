@@ -52,7 +52,7 @@ $w=input_array('w',array('','add','list','info','set_stav'));
         return;
     }
 
-if ($auth->perm_c) {
+if ($auth->perm_c ?? null) {
     if ($w=='set_stav') {
 	$id=input_num('chyba');
 	$stav=input_array('stav',array('open','close','unconfirmed'));
@@ -138,6 +138,7 @@ if ($w=='add') {
     ));
     
     $smarty->assign('message','Chyba odeslána, dìkujeme');
+    $smarty->assign('message_c','message');
 }
 
 $smarty->assign('main','chyby');

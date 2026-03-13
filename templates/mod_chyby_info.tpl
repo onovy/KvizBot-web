@@ -4,26 +4,22 @@
 <a href='?w=list&amp;filter=open'>Zpìt na seznam chyb</a>
 </p>
 
-{if $message}
-<p class='{$message_c}'>
-    {$message}
-</p>
-{/if}
+{include file="../onovyPHPlib/templates/message.tpl"}
 
 <table class='table'>
 <tr>
     <th>ID</th>
     <td>
-    {if $auth->perm_o}
+    {if $auth->perm_o|default:false}
 	<a href='otazky.htm?w=id&amp;id={$info->cislo|escape}&amp;comment=Oprava%20podle%20chyby%20ID:%20{$info->id}'>
     {/if}
 	    {$info->cislo|escape}
-    {if $auth->perm_o}
+    {if $auth->perm_o|default:false}
 	</a>
     {/if}
     </td>
 </tr>
-{if $auth->perm_o}
+{if $auth->perm_o|default:false}
 <tr>
     <th>Otázka</th>
     <td>{$info->otazka|escape}</td>
@@ -59,7 +55,7 @@
 	{/if}
     </td>    
 </tr>
-{if $auth->perm_c}
+{if $auth->perm_c|default:false}
 <tr>
     <th>IP</th>
     <td>
@@ -99,7 +95,7 @@
         <th>Pøidáno</th>
         <th>Uzavøeno</th>
         <th>Nick</th>
-{if $auth->perm_c}
+{if $auth->perm_c|default:false}
         <th>IP</th>
 {/if}
         <th>zobrazit</th>
@@ -120,7 +116,7 @@
 	    </a>
 	{/if}
     </td>
-{if $auth->perm_c}
+{if $auth->perm_c|default:false}
     <td>{$refer[sec1]->ip|escape}</td>
 {/if}
     <td><a href='?w=info&amp;chyba={$refer[sec1]->id}'>zobrazit</a></td>
@@ -132,7 +128,7 @@
 {/section}
 
 
-{if $info->o_stav=='open' && $auth->perm_c}
+{if $info->o_stav=='open' && $auth->perm_c|default:false}
 <h3>Zmìnit stav na</h3>
 <form method='post'>
 <input type='hidden' name='w' value='set_stav' />

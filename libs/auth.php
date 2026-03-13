@@ -1,9 +1,9 @@
 <?php
 function my_auth_user() {
     global $auth;
-    if ($_REQUEST['page']=='logout') return false;
-    $user=$_SERVER['PHP_AUTH_USER'];
-    $pass=$_SERVER['PHP_AUTH_PW'];
+    if (($_REQUEST['page'] ?? null) =='logout') return false;
+    $user=$_SERVER['PHP_AUTH_USER'] ?? null;
+    $pass=$_SERVER['PHP_AUTH_PW'] ?? null;
     if ($user=='' || $_COOKIE['logout']==1) {
 	$auth = new \stdClass();
 	$auth->id=0;

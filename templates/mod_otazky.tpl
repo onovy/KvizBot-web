@@ -4,7 +4,7 @@
 <a href='pravidla_otazky.htm'>Pravidla</a>, které musí splòovat v¹echny otázky.<br />
 <a href='licence-otazek.htm'>Licence</a>, pod kterou jsou v¹echny otázky pøidávány.
 
-{if $auth->perm_o}
+{if $auth->perm_o|default:false}
 <h3>Editace</h3>
 <a href='?w=add'>Pøidat otázku</a>
 <table border=0>
@@ -29,10 +29,10 @@
 
 </table>
 
-{if $auth->perm_a}
+{if $auth->perm_a|default:false}
 <br />
 <strong>Deaktivovat otázku:</strong><br />
-{$mazani_message}
+{$mazani_message|default:''}
 <table>
 <form method='post'>
 <input type='hidden' name='w' value='del' />
@@ -52,7 +52,7 @@
 
 {if $auth->id!=0}
 <h3>Schválení</h3>
-{$schvaleni_message}
+{$schvaleni_message|default:''}
 <form method='get'>
 <input type='hidden' name='w' value='schvaleni' />
 <table class='table'>
@@ -87,7 +87,7 @@
 {if $auth->id!=0}
 <h3>Témata</h3>
 <a href='?w=list'>Procházet otázky podle témat</a><br>
-{if $auth->perm_a}
+{if $auth->perm_a|default:false}
 <a href='?w=temata'>Editovat témata</a><br>
 {/if}
 {/if}

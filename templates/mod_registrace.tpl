@@ -1,8 +1,6 @@
 <h2>{$title|escape}</h2>
 
-<p class='{$message_c}'>
-{$message}
-</p>
+{include file="../onovyPHPlib/templates/message.tpl"}
 
 <form method='post' action='/registrace.htm'>
 <fieldset>

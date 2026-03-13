@@ -10,22 +10,22 @@
 {section name=sec1 loop=$online}
 {if $smarty.section.sec1.index%4 == 0}</tr><tr>{/if}
     <td>
-	{if $online[sec1]->med == 1}
+	{if $online[sec1]->med|default:0 == 1}
 	    <img src='img/gold-small.png' alt='Gold' />
 	{/if}
-	{if $online[sec1]->med == 2}
+	{if $online[sec1]->med|default:0 == 2}
 	    <img src='img/silver-small.png' alt='Silver' />
 	{/if}
-	{if $online[sec1]->med == 3}
+	{if $online[sec1]->med|default:0 == 3}
 	    <img src='img/bronze-small.png' alt='Bronze' />
 	{/if}
-	{if $online[sec1]->medm == 1}
+	{if $online[sec1]->medm|default:0 == 1}
 	    <img src='img/gold-small.png' alt='Gold' />
 	{/if}
-	{if $online[sec1]->medm == 2}
+	{if $online[sec1]->medm|default:0 == 2}
 	    <img src='img/silver-small.png' alt='Silver' />
 	{/if}
-	{if $online[sec1]->medm == 3}
+	{if $online[sec1]->medm|default:0 == 3}
 	    <img src='img/bronze-small.png' alt='Bronze' />
 	{/if}
 	{if $online[sec1]->id!=''}

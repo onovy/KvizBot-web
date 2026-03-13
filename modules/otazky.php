@@ -25,7 +25,7 @@ $smarty->assign('menu','otazky');
 $smarty->assign('title','Otázky');
 
 $w=input_array('w',array('','add','add2','schvaleni','id','search','edit','add_tema','stats','temata','list','del'));
-if ($auth->perm_o) {
+if ($auth->perm_o ?? null) {
     if ($w=='add' || $w=='add2' || $w=='id') {
 	$smarty->assign('pravidla',get_text(3)); // Pravidla pro psani otazek
     }
@@ -38,7 +38,7 @@ if ($auth->perm_o) {
 	// overeni otazky a odpovedi
 	$msg=check_otazka($otazka,$odpoved,$tema);
 	if ($msg=='') {
-	    if ($auth->perm_a) {
+	    if ($auth->perm_a ?? null) {
 		$schvaleni=input_num('schvaleni');
 	    } else {
 		$schvaleni=-1;
@@ -48,16 +48,17 @@ if ($auth->perm_o) {
 		$otazka,$odpoved,$schvaleni == 0 ? -1 : $schvaleni,$tema,$auth->id
 	    ));
     	    if ($q) {
-	        $message='<font color="green">Otázka pøidána</font>';
+		$smarty->assign('message', 'Otázka pøidána');
+		$smarty->assign('message_c', 'message');
 	    } else {
-		$message='<font color="red">Otázka nebyla pøidána</font>';
+		$smarty->assign('message', 'Otázka nebyla pøidána');
+		$smarty->assign('message_c', 'error');
 	    }
-	    $smarty->assign('message',$message);
     	    if ($schvaleni==0)
 	        schval_otazku(db_insert_id());
-	    $smarty->assign('message','<font color="green">Otázka pøidána</font>');
 	} else {
-	    $smarty->assign('message','<font color="red">'.$msg.'</font>');
+	    $smarty->assign('message', $msg);
+	    $smarty->assign('message_c', 'error');
 	    $smarty->assign('otazka',$otazka);
 	    $smarty->assign('odpoved',$odpoved);
 	    $smarty->assign('tema',$tema);
@@ -76,8 +77,8 @@ if ($auth->perm_o) {
 	// overeni otazky a odpovedi
 	$msg=check_otazka($otazka,$odpoved,$tema);
 	if ($msg=='') {
-	    if (!$auth->perm_a) {
-		if (!$auth->perm_v) {
+	    if (!$auth->perm_a ?? null) {
+		if (!$auth->perm_v ?? null) {
 		    $fa=db_fquery(sprintf(
 			'SELECT owner FROM otazky WHERE id=%d',
 			$id
@@ -101,10 +102,12 @@ if ($auth->perm_o) {
 	    if ($schvaleni==0) {
 		schval_otazku($id);
 	    }
-	    $smarty->assign('message','<font color="green">Otázka upravena</font>');
+	    $smarty->assign('message','Otázka upravena');
+	    $smarty->assign('message_c', 'message');
 	} else {
 	    $w='id';
-	    $smarty->assign('message','<font color="red">'.$msg.'</font>');
+	    $smarty->assign('message', $msg);
+	    $smarty->assign('message_c', 'error');
 	}
     }
 
@@ -114,7 +117,7 @@ if ($auth->perm_o) {
 	$smarty->assign('temata',sql2smarty($q,array('id','nazev')));
 
 	// listovani schvalovacu
-	if ($auth->perm_a) {
+	if ($auth->perm_a ?? null) {
 	    $q=db_query('SELECT n.id,n.nick FROM perm p LEFT JOIN nicks n ON p.nick=n.id WHERE perm="v" ORDER BY n.nick');
 	    $smarty->assign('schvaleni',sql2smarty($q,array('id','nick')));
 	}
@@ -127,7 +130,7 @@ if ($auth->perm_o) {
     if ($w=='search') {
 	$text=input_string('text');
 	if ($text!='' && $text!=' ') {
-	    if ($auth->perm_v) {
+	    if ($auth->perm_v ?? null) {
 		$where='';
 	    } else {
 		$where=' AND owner='.$auth->id;
@@ -175,7 +178,7 @@ if ($auth->perm_o) {
 	$comment=input_string('comment');
 	$smarty->assign('comment',$comment);
 	
-	if ($auth->perm_v) {
+	if ($auth->perm_v ?? null) {
 	    $where='';
 	} else {
 	    $where=' AND owner='.$auth->id;
@@ -196,7 +199,7 @@ if ($auth->perm_o) {
 	}
 
 	// listovani schvalovacu
-	if ($auth->perm_a) {
+	if ($auth->perm_a ?? null) {
 	    $q=db_query('SELECT n.id,n.nick FROM perm p LEFT JOIN nicks n ON p.nick=n.id WHERE perm="v" ORDER BY n.nick');
 	    $schvaleni=sql2smarty($q,array('id','nick'));
 	    $pos=count($schvaleni);
@@ -205,8 +208,10 @@ if ($auth->perm_o) {
 		'SELECT nick FROM nicks WHERE id=%d',
 		$fa['owner']
 	    ));
+	    $schvaleni[$pos] = new \stdClass();
 	    $schvaleni[$pos]->id = $fa['owner'];
 	    $schvaleni[$pos]->nick = '- autor -';
+	    $schvaleni[$pos+1] = new \stdClass();
 	    $schvaleni[$pos+1]->id = $fa['owner'];
 	    $schvaleni[$pos+1]->nick = $fa2['nick'];
 	    $smarty->assign('schvaleni',$schvaleni);
@@ -235,7 +240,7 @@ if ($auth->perm_o) {
     if ($w=='list') {
     	if ($_REQUEST['tema']!='') {
 	    $tema=input_num('tema');
-	    if ($auth->perm_v) {
+	    if ($auth->perm_v ?? null) {
 		// listovani vsech otazek
 		$q=db_query(sprintf(
 		    'SELECT id,otazka,odpoved,game FROM otazky WHERE tema=%d ORDER BY id',
@@ -252,7 +257,7 @@ if ($auth->perm_o) {
 
 	    $smarty->assign('main','otazky_list2');
 	} else {
-	    if ($auth->perm_v) {
+	    if ($auth->perm_v ?? null) {
 		// listovani vsech temat
 		$q=db_query(
 		    'SELECT temata.id,temata.nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id GROUP BY temata.id, temata.nazev ORDER BY temata.nazev'
@@ -272,7 +277,7 @@ if ($auth->perm_o) {
     }
 }
 
-if ($auth->perm_a) {
+if ($auth->perm_a ?? null) {
     if ($w=='del') {
 	$param = input_string('id');
 	$where = '';
@@ -322,7 +327,7 @@ if ($auth->perm_a) {
 
 // realne schvaleni
 if ($w=='schvaleni') {
-    if ($auth->perm_a) {
+    if ($auth->perm_a ?? null) {
 	$schvaleni_admin = ' OR schvaleni=-1';
     } else {
         $schvaleni_admin='';
@@ -344,7 +349,7 @@ if ($w=='schvaleni') {
 
 // schvaleni
 if ($auth->id!=0) {
-    if ($auth->perm_a) {
+    if ($auth->perm_a ?? null) {
 	$schvaleni_admin = 'OR schvaleni=-1';
     } else {
         $schvaleni_admin='';
@@ -356,6 +361,7 @@ if ($auth->id!=0) {
     $schvaleni=array();
     $pos=0;
     while ($l=db_fetch_array($q)) {
+	$schvaleni[$pos] = new \stdClass();
 	$schvaleni[$pos]->id=$l['id'];
 	$schvaleni[$pos]->user=$l['user'];
 	$schvaleni[$pos]->comment=$l['comment'];
@@ -394,15 +400,21 @@ if ($auth->id!=0) {
 
 // temata
 if ($w=='temata') {
-    if ($auth->perm_a) {
+    if ($auth->perm_a ?? null) {
 	$w2=input_array('w2',array('','add'));
         if ($w2=='add') {
     	    $nazev=input_string('nazev');
 	    $hidden=input_checkbox('hide');
-	    db_query(sprintf(
-		'INSERT INTO temata (nazev,hidden) VALUES ("%s",%d)',
-		$nazev,$hidden
-	    ));
+
+	    if (empty($nazev)) {
+		$smarty->assign('message','Nazev nesmi byt prazdny!');
+		$smarty->assign('message_c', 'error');
+            } else {
+		db_query(sprintf(
+		    'INSERT INTO temata (nazev,hidden) VALUES ("%s",%d)',
+		    $nazev,$hidden
+		));
+	    }
 	}
 
 	$q=db_query('SELECT id,nazev,hidden FROM temata ORDER BY nazev');

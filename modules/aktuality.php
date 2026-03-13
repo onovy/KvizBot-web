@@ -1,7 +1,7 @@
 <?php
 
 $w=input_array('w',array('','add','del'));
-if ($auth->perm_w) {
+if ($auth->perm_w ?? null) {
     if ($w=='add') {
         $nazev=input_string('nazev');
         $text=input_string('text');
@@ -10,6 +10,8 @@ if ($auth->perm_w) {
             'INSERT INTO aktuality (nazev,text,autor) VALUES ("%s","%s",%d)',
             $nazev,$text,$auth->id
         ));
+        $smarty->assign('message','Pøidána');
+        $smarty->assign('message_c','message');
     }
 
     if ($w=='del') {
@@ -18,7 +20,8 @@ if ($auth->perm_w) {
             'DELETE FROM aktuality WHERE id=%d',
             $id
         ));
-        $smarty->assign('message','Smazáno');
+        $smarty->assign('message','Smazána');
+        $smarty->assign('message_c','message');
     }
 }
 

@@ -21,7 +21,9 @@ function auth_user() {
     global $lib_config;
     global $local_config;
 
-    if ($_REQUEST['page']=='logout') return false;
+    if (isset($_REQUEST['page']) && $_REQUEST['page']=='logout') return false;
+
+    if (!isset($_SERVER['PHP_AUTH_USER'])) return false;
 
     // overeni existence tabulky    
     if ($local_config['verbose']>=1) {

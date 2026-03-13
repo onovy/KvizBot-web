@@ -2,7 +2,7 @@
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
-{if $auth->perm_w}
+{if $auth->perm_w|default:false}
     <a href='?w=add_otazka'>Pøidat otázku</a><br />
 {/if}
 
@@ -20,7 +20,7 @@
 {if $otazky[sec1]->min_score!=0}
 Minimální poèet bodù: {$otazky[sec1]->min_score|escape}
 {/if}
-{if $auth->perm_w}
+{if $auth->perm_w|default:false}
     {if $otazky[sec1]->active}
 	<a href='?w=deactive&amp;hlasovani={$otazky[sec1]->id}'>Deaktivovat</a>
     {else}

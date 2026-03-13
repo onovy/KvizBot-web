@@ -1,24 +1,25 @@
 <h2>Pøidání otázky</h2>
 
-{$message}
+{include file="../onovyPHPlib/templates/message.tpl"}
+
 <form method='POST'>
 <input type='hidden' name='w' value='add2'>
 <table border='0'>
 <tr>
-    <td>Otázka:</td><td><input type='text' name='otazka' maxlength='100' size='70' value='{$otazka}'></td>
+    <td>Otázka:</td><td><input type='text' name='otazka' maxlength='100' size='70' value='{$otazka|default:''}'></td>
 </tr><tr>
-    <td>Odpoveï:</td><td><input type='text' name='odpoved' maxlength='100' size='70' value='{$odpoved}'></td>
+    <td>Odpoveï:</td><td><input type='text' name='odpoved' maxlength='100' size='70' value='{$odpoved|default:''}'></td>
 </tr><tr>
     <td>Téma:</td>
     <td>
 	<select name='tema'>
 	    <option value='0'>- vyberte -</option>
 	{section name=sec1 loop=$temata}
-	    <option value='{$temata[sec1]->id}'{if $tema==$temata[sec1]->id} selected{/if}>{$temata[sec1]->nazev|escape}</option>
+	    <option value='{$temata[sec1]->id}'{if $tema|default:0 == $temata[sec1]->id} selected{/if}>{$temata[sec1]->nazev|escape}</option>
 	{/section}
 	</select>
     </td>
-{if $auth->perm_a}
+{if $auth->perm_a|default:false}
 </tr><tr>
     <td>Schválení:</td>
     <td>

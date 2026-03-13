@@ -6,7 +6,7 @@ $w=input_array('w',array('','hlas',
 $smarty->assign('menu','hlasovani');
 $smarty->assign('title','Hlasování');
 
-if ($auth->perm_w) {
+if ($auth->perm_w ?? null) {
     $otazka='';
 
     if ($w=='add_otazka') {
@@ -86,7 +86,7 @@ if ($auth->perm_w) {
     }
 }
 
-if ($auth->perm_a) {
+if ($auth->perm_a ?? null) {
     if ($w == 'ips') {
 	$otazka=input_num('otazka');
 	$q=db_query(sprintf(
@@ -201,6 +201,7 @@ while ($fa=db_fetch_array($q_otazky)) {
 	}
     }
 
+    $otazky[$pos] = new \stdClass();
     $otazky[$pos]->id=$fa['id'];
     $otazky[$pos]->otazka=$fa['otazka'];
     $otazky[$pos]->active=$fa['active'];

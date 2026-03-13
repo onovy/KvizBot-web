@@ -30,6 +30,7 @@ function var2smarty($array) {
 }
 
 function fa2smarty($line,$array) {
+ $out = new \stdClass();
  foreach ($array as $name=>$val) {
   $out->$val=$line[$val];
  }
