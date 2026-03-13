@@ -237,8 +237,11 @@ function ot2html_simple_tags($l) {
 		    $link = 'mailto:' . rawurlencode($params[0]);
 		} else {
 		    $link = $params[0];
+		    if (!preg_match('/^https?:\/\//i', $link)) {
+			$link = '';
+		    }
 		}
-		$out .= '<a href="' . $link . '">' . HE($title) . '</a>';
+		$out .= '<a href="' . HE($link) . '">' . HE($title) . '</a>';
 		continue;
 	    }
 	    foreach ($simple_tags as $key => $htag) {
