@@ -4,7 +4,7 @@ function input_num($var) {
  if (!is_numeric($a[$var])) {
    error_notnumeric($var);
  }
- return $a[$var];
+  return (int) $a[$var];
 }
 
 function input_num_0($var) {
@@ -12,7 +12,7 @@ function input_num_0($var) {
  if (!is_numeric($_REQUEST[$var])) {
    error_notnumeric($var);
  }
- return $_REQUEST[$var];
+ return (int) $_REQUEST[$var];
 }
 
 function input_num_1($var) {
@@ -20,7 +20,7 @@ function input_num_1($var) {
  if (!is_numeric($_REQUEST[$var])) {
    error_notnumeric($var);
  }
- return $_REQUEST[$var];
+ return (int) $_REQUEST[$var];
 }
 
 function input_string($var) {
