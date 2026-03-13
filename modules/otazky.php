@@ -159,8 +159,9 @@ if ($auth->perm_o ?? null) {
 		    $l->odpoved.='<font color="green">'.HE($l->change_odpoved).'</font><br>';
 		}
 
-		$result[$c]->otazka = preg_replace('/(' . $text . ')/i', '<b>\\1</b>', $l->otazka);
-		$result[$c]->odpoved = preg_replace('/(' . $text . ')/i', '<b>\\1</b>', $l->odpoved);
+		$text_re = preg_quote($text, '/');
+		$result[$c]->otazka = preg_replace('/(' . $text_re . ')/i', '<b>\\1</b>', $l->otazka);
+		$result[$c]->odpoved = preg_replace('/(' . $text_re . ')/i', '<b>\\1</b>', $l->odpoved);
 	    }
 	
 	    $smarty->assign('result',$result);
