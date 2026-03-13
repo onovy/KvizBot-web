@@ -43,7 +43,10 @@ function my_auth_user() {
 	));
 	$auth->perm=array();
 	while ($l=db_fetch_array($q)) {
-	    eval('$auth->perm_'.$l[0].'=true;');
+	    $perm = $l[0];
+	    if (preg_match('/^[a-z]$/', $perm)) {
+		$auth->{'perm_' . $perm} = true;
+	    }
 	}
 	$auth->id=$f['id'];
 	$auth->uname=$user;
