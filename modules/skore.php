@@ -114,6 +114,7 @@ if ($w=='info') {
 }
 
 if ($w=='move' && ($auth->perm_a ?? null)) {
+    csrf_verify();
     $id = input_num('id');
     $nick_to = input_string('nick');
     $fa = db_fquery(sprintf(

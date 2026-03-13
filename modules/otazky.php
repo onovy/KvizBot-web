@@ -31,6 +31,7 @@ if ($auth->perm_o ?? null) {
     }
     
     if ($w=='add2') {
+	csrf_verify();
 	$otazka=input_string('otazka');
 	$odpoved=input_string('odpoved');
 	$tema=input_num('tema');
@@ -68,6 +69,7 @@ if ($auth->perm_o ?? null) {
 
     // realna editace otazky
     if ($w=='edit') {
+	csrf_verify();
 	$id=input_num('id');
 	$otazka=input_string('otazka');
 	$odpoved=input_string('odpoved');
@@ -280,6 +282,7 @@ if ($auth->perm_o ?? null) {
 
 if ($auth->perm_a ?? null) {
     if ($w=='del') {
+	csrf_verify();
 	$param = input_string('id');
 	$where = '';
 	$ids = explode(',', $param);
@@ -328,6 +331,7 @@ if ($auth->perm_a ?? null) {
 
 // realne schvaleni
 if ($w=='schvaleni') {
+    csrf_verify();
     if ($auth->perm_a ?? null) {
 	$schvaleni_admin = ' OR schvaleni=-1';
     } else {
@@ -404,6 +408,7 @@ if ($w=='temata') {
     if ($auth->perm_a ?? null) {
 	$w2=input_array('w2',array('','add'));
         if ($w2=='add') {
+    	    csrf_verify();
     	    $nazev=input_string('nazev');
 	    $hidden=input_checkbox('hide');
 

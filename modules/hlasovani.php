@@ -16,6 +16,7 @@ if ($auth->perm_w ?? null) {
     }
 
     if ($w=='add_otazka2') {
+	csrf_verify();
 	$otazka=input_string('otazka');
 	$min_score=input_num('min_score');
 	db_query(sprintf(
@@ -29,6 +30,7 @@ if ($auth->perm_w ?? null) {
     }
 
     if ($w=='add_odpoved2') {
+	csrf_verify();
 	$otazka=input_num('otazka');
 	$odpoved=input_string('odpoved');
 	
@@ -64,6 +66,7 @@ if ($auth->perm_w ?? null) {
     }
 
     if ($w=='active') {
+	csrf_verify();
 	$id=input_num('hlasovani');
 	
 	db_query(sprintf(
@@ -75,6 +78,7 @@ if ($auth->perm_w ?? null) {
     }
 
     if ($w=='deactive') {
+	csrf_verify();
 	$id=input_num('hlasovani');
 	
 	db_query(sprintf(
@@ -116,6 +120,7 @@ if ($auth->perm_a ?? null) {
 }
 
 if ($w=='hlas') {
+    csrf_verify();
     $odpoved=input_num('odpoved');
     $otazka=input_num('otazka');
     $hlasuj=true;

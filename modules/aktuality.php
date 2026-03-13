@@ -3,6 +3,7 @@
 $w=input_array('w',array('','add','del'));
 if ($auth->perm_w ?? null) {
     if ($w=='add') {
+        csrf_verify();
         $nazev=input_string('nazev');
         $text=input_string('text');
 
@@ -15,6 +16,7 @@ if ($auth->perm_w ?? null) {
     }
 
     if ($w=='del') {
+        csrf_verify();
         $id=input_num('id');
         db_query(sprintf(
             'DELETE FROM aktuality WHERE id=%d',

@@ -22,9 +22,9 @@ Minimální poèet bodù: {$otazky[sec1]->min_score|escape}
 {/if}
 {if $auth->perm_w|default:false}
     {if $otazky[sec1]->active}
-	<a href='?w=deactive&amp;hlasovani={$otazky[sec1]->id}'>Deaktivovat</a>
+	<form method='post' style='display:inline'><input type='hidden' name='w' value='deactive' /><input type='hidden' name='hlasovani' value='{$otazky[sec1]->id}' /><button type='submit'>Deaktivovat</button></form>
     {else}
-	<a href='?w=active&amp;hlasovani={$otazky[sec1]->id}'>Aktivovat</a>
+	<form method='post' style='display:inline'><input type='hidden' name='w' value='active' /><input type='hidden' name='hlasovani' value='{$otazky[sec1]->id}' /><button type='submit'>Aktivovat</button></form>
     {/if}
     | <a href='?w=add_odpoved&amp;otazka={$otazky[sec1]->id}'>Pøidat odpovìï</a>
     | <a href='?w=ips&amp;otazka={$otazky[sec1]->id}'>Hlasy</a>

@@ -47,6 +47,7 @@ require_once OLIB_DIR . '/lib/sql.php';
 require_once OLIB_DIR . '/lib/error.php';
 require_once OLIB_DIR . '/lib/smarty.php';
 require_once OLIB_DIR . '/lib/input.php';
+require_once OLIB_DIR . '/lib/csrf.php';
 
 $smarty->assign('WEB_DIR',$local_config['web_dir']);
 $smarty->assign('WEB_WWW',$local_config['web_www']);

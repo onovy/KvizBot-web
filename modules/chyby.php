@@ -54,6 +54,7 @@ $w=input_array('w',array('','add','list','info','set_stav'));
 
 if ($auth->perm_c ?? null) {
     if ($w=='set_stav') {
+	csrf_verify();
 	$id=input_num('chyba');
 	$stav=input_array('stav',array('open','close','unconfirmed'));
 	$comment=input_string('comment');
@@ -127,6 +128,7 @@ if ($auth->perm_c ?? null) {
 
 
 if ($w=='add') {
+    csrf_verify();
     $cislo=input_num('cislo');
     $text=input_string('text');
     $link=input_string('link');

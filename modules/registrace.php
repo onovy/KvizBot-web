@@ -3,6 +3,7 @@
 $w = input_array('w', array('', 'hash', 'password','password2'));
 
 if ($w == 'hash') {
+    csrf_verify();
     $ok = true;
 
     $nick = input_string('nick');
@@ -119,6 +120,7 @@ if ($w == 'password' || $w == 'password2') {
 	    $smarty->assign('hash', $hash);
 	    $smarty->assign('main', 'registrace_password');
 	} else {
+	    csrf_verify();
 	    $passH = password_hash($_REQUEST['pass'], PASSWORD_ARGON2ID);
 
 	    db_query(sprintf(

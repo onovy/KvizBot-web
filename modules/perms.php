@@ -37,6 +37,7 @@ if ($w=='perm') {
     }
 
     if ($w2=='add_perm') {
+	csrf_verify();
 	$perm=input_char('perm');
 
 	// overeni jestli mam pravo pridat toto pravo
@@ -67,6 +68,7 @@ if ($w=='perm') {
 	}
     }
     if ($w2=='del_perm') {
+	csrf_verify();
 	$perm_id=input_num('perm_id');
 	
 	$fa=db_fquery(sprintf(	
@@ -112,6 +114,7 @@ if ($w=='perm') {
 
 // --- NASTAVENI HESLA PRO WEB ---
 if ($w=='pass') {
+    csrf_verify();
     $nick=input_string('nick');
     $passH = password_hash($_REQUEST['pass'], PASSWORD_ARGON2ID);
     db_query(sprintf(

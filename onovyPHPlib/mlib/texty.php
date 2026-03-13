@@ -69,6 +69,7 @@ function edit_text($id) {
     if ($_REQUEST['txt']!='') {
 	$txt=input_string('txt');
 	if ($_REQUEST['upravit']!='') {
+	    csrf_verify();
 	    $q=db_query(sprintf(
 		'UPDATE '.$lib_config['mlib_texty_table_name'].' SET txt="%s" WHERE id=%d LIMIT 1',
 		$txt,$id

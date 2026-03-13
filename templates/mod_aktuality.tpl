@@ -33,7 +33,7 @@
 
 {section name=sec1 loop=$aktuality}
 <div class='aktuality'>
-<h3>{$aktuality[sec1]->nazev|escape} {if $auth->perm_w|default:false}<a href='?w=del&amp;id={$aktuality[sec1]->id}' onClick="return confirm('Opravdu smazat?');">smazat</a>{/if}</h3>
+<h3>{$aktuality[sec1]->nazev|escape} {if $auth->perm_w|default:false}<form method='post' style='display:inline' onsubmit="return confirm('Opravdu smazat?');"><input type='hidden' name='w' value='del' /><input type='hidden' name='id' value='{$aktuality[sec1]->id}' /><button type='submit'>smazat</button></form>{/if}</h3>
 <ul>
     <li><span>Autor:</span> {$aktuality[sec1]->autor|escape}</li>
     <li><span>Èas:</span> {$aktuality[sec1]->kdy|escape}</li>

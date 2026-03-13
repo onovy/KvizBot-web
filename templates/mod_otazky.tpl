@@ -53,7 +53,7 @@
 {if $auth->id!=0}
 <h3>Schválení</h3>
 {$schvaleni_message|default:''}
-<form method='get'>
+<form method='post'>
 <input type='hidden' name='w' value='schvaleni' />
 <table class='table'>
 <tr>
