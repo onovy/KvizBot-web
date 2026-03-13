@@ -14,13 +14,4 @@ define('WEB_DIR' , $local_config['web_dir']);
 define('OLIB_DIR', $local_config['web_dir'] . '/onovyPHPlib');
 define('WEB_WWW' , $local_config['web_www']);
 
-if (($_REQUEST['cache'] ?? null) =='on') {
-    $local_config['compile_check'] = false;
-    $local_config['use_cache'] = true;
-}
-if (($_REQUEST['cache'] ?? null) =='off') {
-    $local_config['compile_check'] = true;
-    $local_config['use_cache'] = false;
-}
-
 $header=true;
