@@ -150,13 +150,11 @@ if ($auth->perm_o ?? null) {
 	    foreach ($result as $c=>$l) {
 
 		if ($l->change_otazka!='') {
-		    $odpoved=$l->otazka;
 		    $l->otazka ='<font color="red">'.HE($l->otazka).'</font><br>';
 		    $l->otazka.='<font color="green">'.HE($l->change_otazka).'</font><br>';
 		}
 
 		if ($l->change_odpoved!='') {
-		    $odpoved=$l->odpoved;
 		    $l->odpoved ='<font color="red">'.HE($l->odpoved).'</font><br>';
 		    $l->odpoved.='<font color="green">'.HE($l->change_odpoved).'</font><br>';
 		}
