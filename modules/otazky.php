@@ -239,8 +239,8 @@ if ($auth->perm_o ?? null) {
     }
     
     if ($w=='list') {
-    	if ($_REQUEST['tema']!='') {
-	    $tema=input_num('tema');
+	$tema=input_num_0('tema');
+	if ($tema!=0) {
 	    if ($auth->perm_v ?? null) {
 		// listovani vsech otazek
 		$q=db_query(sprintf(
