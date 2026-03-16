@@ -60,11 +60,11 @@ function cache_getcache($context,$file) {
 }
 
 /**
- * Zapsaní dat do disk cache
+ * Write data to disk cache
  *
  * @param $context - context
- * @param $file - nazev souboru
- * @param $data - data pro ulození
+ * @param $file - file name
+ * @param $data - data to store
  */
 function cache_putcache($context,$file,$data) {
     $s1   = substr($file,0,1);
@@ -83,7 +83,7 @@ function cache_putcache($context,$file,$data) {
 }
 
 /**
- * Vycistení cache (maze pouze nepouzivane soubory)
+ * Clean cache (removes only unused files)
  */
 function cache_cleancache() {
     global $cache_time;
@@ -96,10 +96,10 @@ function cache_cleancache() {
 }
 
 /**
- * Rekurzivni projiti adresaru a smazaní nepouzivanych souboru
+ * Recursively traverse directory and delete unused files
  *
  * @internal
- * @param $file - adresar, ktery projit
+ * @param $file - directory to traverse
  */
 function  cache_recursecleancache($file) {
     global $lib_config;
@@ -126,11 +126,11 @@ function cache_purgecache() {
 }
 
 /**
- * Rekurzivni projiti adresaru a smazaní vsech souboru
+ * Recursively traverse directory and delete all files
  *
  * @internal
- * @param $file - adresar, ktery projit
- * @param $l - level - uroven jak je rekurze hluboko
+ * @param $file - directory to traverse
+ * @param $l - level - recursion depth
  */
 function  cache_purgecache_($file,$l) {
     if (is_dir($file)) {
@@ -152,7 +152,7 @@ function  cache_purgecache_($file,$l) {
  * Rekurzivni vytvoreni adresaru
  *
  * @internal
- * @param $path - adresář
+ * @param $path - directory
  */
 function cache_RecursiveMkdir($path) {
     if (!file_exists($path)) {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul s funkcemi s čísli
+ * Module with numeric helper functions
  *
  * @category    Module
  * @package     Module

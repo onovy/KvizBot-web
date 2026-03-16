@@ -1,8 +1,8 @@
 <?php
 /**
- * Modul pro zobrazovani roku pro (C) napr. v paticce stranky.
- * Pocatecni rok se nastavuje ve web.php promenna mlib_c_year_from_year.
- * Vystup se ulozí do SMARTY promenne c_rok.
+ * Module for displaying the copyright year (e.g. in the page footer).
+ * The starting year is set in web.php via the mlib_c_year_from_year variable.
+ * Output is stored in Smarty variable c_rok.
  *
  * @category    Module
  * @package     Module

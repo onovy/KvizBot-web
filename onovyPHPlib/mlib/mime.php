@@ -8,9 +8,9 @@
  */
 
 /*
- * V tomto souboru jsou použity části kódu a grafické obrázky z projektu
- * PHP Advanced Transfer Manager (http://phpatm.free.fr/) licencovaný
- * podle licence GNU GPL 2
+ * This file contains portions of code and graphic images from the project
+ * PHP Advanced Transfer Manager (http://phpatm.free.fr/) licensed
+ * under the GNU GPL 2 license
  */
 
 // Security
