@@ -19,7 +19,7 @@ if (!file_exists($file_name) || time()-filemtime($file_name)>=$cache_time || !$l
     foreach ($top_month as $k=>$l) {
         $top_month[$k]->rnick=$l->nick;
 	if (strlen($l->nick)>$max_nick_len) {
-	    $top_month[$k]->nick=substr($l->nick,0,$max_nick_len);
+	    $top_month[$k]->nick=mb_substr($l->nick,0,$max_nick_len);
 	}
 	$top_month[$k]->body=po3cislech($l->body,'&nbsp;');
     }
@@ -33,7 +33,7 @@ if (!file_exists($file_name) || time()-filemtime($file_name)>=$cache_time || !$l
     foreach ($top_all as $k=>$l) {
         $top_all[$k]->rnick=$l->nick;
 	if (strlen($l->nick)>$max_nick_len) {
-	    $top_all[$k]->nick=substr($l->nick,0,$max_nick_len);
+	    $top_all[$k]->nick=mb_substr($l->nick,0,$max_nick_len);
 	}
 	$top_all[$k]->body=po3cislech($l->body,'&nbsp;');
     }

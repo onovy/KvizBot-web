@@ -2,7 +2,7 @@
 
 $lib_config['charset']='utf-8';
 
-$lib_config['locale']='CZ_cs.UTF-8';
+$lib_config['locale']='cs_CZ.UTF-8';
 
 // Knihovny webu (include z libs/$.php)
 $lib_config['web_libs']=array(

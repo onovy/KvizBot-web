@@ -162,8 +162,8 @@ if ($auth->perm_o ?? null) {
 		}
 
 		$text_re = preg_quote($text, '/');
-		$result[$c]->otazka = preg_replace('/(' . $text_re . ')/i', '<b>\\1</b>', $l->otazka);
-		$result[$c]->odpoved = preg_replace('/(' . $text_re . ')/i', '<b>\\1</b>', $l->odpoved);
+		$result[$c]->otazka = preg_replace('/(' . $text_re . ')/iu', '<b>\\1</b>', $l->otazka);
+		$result[$c]->odpoved = preg_replace('/(' . $text_re . ')/iu', '<b>\\1</b>', $l->odpoved);
 	    }
 	
 	    $smarty->assign('result',$result);
