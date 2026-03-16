@@ -3,7 +3,7 @@ require_once 'onovyPHPlib/init.php';
 $header=false;
 require_once 'onovyPHPlib/lib/sql.php';
 
-$m = date('m')-1;
+$m = date('n')-1;
 $y = date('Y');
 $m_l = $m - 1;
 $y_l = $y;

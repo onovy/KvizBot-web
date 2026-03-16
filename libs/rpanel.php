@@ -4,7 +4,7 @@ $score_count=10;
 $cache_time=240;
 $max_nick_len=10;
 
-$show_m=date('m')-1;
+$show_m=date('n')-1;
 $show_y=date('Y');
 $table_month='score_'.$show_y.'_'.$show_m;
 
