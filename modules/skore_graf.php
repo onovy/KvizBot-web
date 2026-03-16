@@ -1,15 +1,16 @@
 <?php
 header('Content-type: image/png');
 
-$rrdIncome = 'rrd/score/'.((int)$_GET['nick']).'_income.rrd';
-$rrdSum = 'rrd/score/'.((int)$_GET['nick']).'_sum.rrd';
+$nick = input_num('nick');
+$rrdIncome = 'rrd/score/'.$nick.'_income.rrd';
+$rrdSum = 'rrd/score/'.$nick.'_sum.rrd';
 if (!file_exists($rrdIncome) || !file_exists($rrdSum)) {
     readfile('img/no_graph.png');
     exit;
 }
 
-$interval = $_GET['interval'];
-if (!in_array($interval, array('d', 'w', 'm', 'y', 'a'))) {
+$interval = input_array_noe('interval', array('d', 'w', 'm', 'y', 'a'));
+if (!$interval) {
     $interval = 'd';
 }
 $mult = null;
@@ -33,8 +34,9 @@ switch ($interval) {
 }
 $out = array();
 $ret = 0;
-$file = tempnam('/var/www/xkviz.net/tmp', 'xkviz');
-if ($_GET['w'] == 'income') {
+$file = tempnam(sys_get_temp_dir(), 'xkviz');
+$w = input_array('w', array('', 'income', 'sum', 'sumMonth'));
+if ($w == 'income') {
     exec('rrdtool graph ' . escapeshellarg($file) . ' -W xkviz.net --title '.escapeshellarg('Zisk - ' . $label) . ' --start ' . escapeshellarg($start) . ' --units-exponent 0 --rigid --imgformat PNG --width 350 --height 200 --base 1000 --lower-limit 0 --vertical-label Body '.
     escapeshellarg('DEF:a=' . $rrdIncome . ':income:AVERAGE') . ' '.
     escapeshellarg('CDEF:b=a,'.$mult.',*') . ' '.
@@ -42,12 +44,12 @@ if ($_GET['w'] == 'income') {
     'GPRINT:b:MIN:"   Min\\: %5.1lf %s" '.
     'GPRINT:b:MAX:"   Max\\: %5.1lf %s" '.
     'GPRINT:b:AVERAGE:"   Avg\\: %5.1lf %S\\n" ', $out, $ret);
-} else if ($_GET['w'] == 'sum') {
+} else if ($w == 'sum') {
     exec('rrdtool graph ' . escapeshellarg($file) . ' -W xkviz.net --title '.escapeshellarg('Celkove skore - ' . $label) . ' --start ' . escapeshellarg($start) . ' --units-exponent 0 --rigid --imgformat PNG --width 350 --height 200 --base 1000 --lower-limit 0 --vertical-label Body '.
     escapeshellarg('DEF:sum=' . $rrdSum . ':sum:LAST') . ' '.
     'AREA:sum#00bf00:Bodu ',
     $out, $ret);
-} else if ($_GET['w'] == 'sumMonth') {
+} else if ($w == 'sumMonth') {
     exec('rrdtool graph ' . escapeshellarg($file) . ' -W xkviz.net --title '.escapeshellarg('Mesicni skore - ' . $label) . ' --start ' . escapeshellarg($start) . ' --units-exponent 0 --rigid --imgformat PNG --width 350 --height 200 --base 1000 --lower-limit 0 --vertical-label Body '.
     escapeshellarg('DEF:sumMonth=' . $rrdSum . ':sumMonth:LAST') . ' '.
     'AREA:sumMonth#00bf00:Bodu ',
