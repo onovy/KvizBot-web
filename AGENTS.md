@@ -73,7 +73,7 @@ There is no build step and no package manager. Setup is manual:
 
 ## Running
 
-Serve the directory with Apache or Nginx + PHP-FPM (or any PHP web server). Apache `.htaccess` URL rewriting is used — clean URLs like `skore.htm` rewrite to `index.php?page=skore`.
+Serve the directory with Nginx + PHP-FPM. Clean URLs like `skore.htm` rewrite to `index.php?page=skore` — this must be configured in the nginx server block.
 
 ## No build step; no test suite
 
@@ -124,7 +124,7 @@ Do not bypass these security mechanisms:
 | Password hashing | `PASSWORD_ARGON2ID` via `password_hash()` / `password_verify()` |
 | Token generation | `random_bytes()` — never `rand()` or `mt_rand()` |
 | Cookie flags | Set `HttpOnly`, `Secure`, `SameSite=Strict` on all cookies |
-| Direct PHP access | `Deny from all` in `libs/.htaccess`; `die` guard in `mlib/` files |
+| Direct PHP access | `die` guard in `mlib/` files; nginx must deny access to `libs/` |
 
 ## Database tables
 
