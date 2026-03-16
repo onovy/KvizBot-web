@@ -14,7 +14,7 @@
 </p>
 <br /><br />
 {/if}
-{include file="message.tpl"}
+{include file="./message.tpl"}
 <form method='post'>
 Text:<br />
 {literal}
