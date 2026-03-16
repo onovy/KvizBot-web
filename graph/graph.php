@@ -5,7 +5,7 @@ require_once 'onovyPHPlib/lib/sql.php';
 
 $count=db_fquery('SELECT COUNT(*) FROM online');
 $count=(int)$count[0];
-system('rrdupdate rrd/online.rrd ' . escapeshellarg(time() . ':"'  . $count . '"'));
+system('rrdupdate rrd/online.rrd ' . escapeshellarg(time() . ':'  . $count));
 
 
 system('rrdtool graph rrd/online.png -W xkviz.net --title "Online" --start now-1d --units-exponent 0 --rigid --imgformat PNG --width 576 --height 200 --base 1000 --lower-limit 0 --vertical-label Count '.
