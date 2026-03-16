@@ -157,6 +157,25 @@ $errors.=check_table('hlasovani_hlasy',array(
 	'Type'  => 'int'),
  ),$really);
 
+// PASS_REQ
+$errors.=check_table('pass_req',array(
+ array( 'Field' => 'id',
+	'Type'  => 'int',
+	'Add' => 'PRIMARY KEY AUTO_INCREMENT'),
+ array( 'Field' => 'nick',
+	'Type'  => 'int'),
+ array( 'Field' => 'hash',
+	'Type'  => 'varchar(64)'),
+ array( 'Field' => 'added',
+	'Type'  => 'timestamp'),
+ array( 'Field' => 'ip',
+	'Type'  => 'varchar(39)'),
+ array( 'Field' => 'sent',
+	'Type'  => 'tinyint(1)'),
+ array( 'Field' => 'used',
+	'Type'  => 'tinyint(1)'),
+ ),$really);
+
 // OTAZKY_CHYBY
 $errors.=check_table('otazky_chyby',array(
  array( 'Field' => 'id',

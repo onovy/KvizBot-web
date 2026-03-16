@@ -144,6 +144,7 @@ Do not bypass these security mechanisms:
 | `pass_req` | Password registration token requests (rate-limited) |
 | `score_YYYY_M` | Per-user monthly score (dynamically named, e.g. `score_2026_3`) |
 | `score_kviz1` | Legacy score table from the Kvíz 1.0 era |
+| `texty` | Editable static text blocks; managed by `modules_sql_init()` via the `texty` mlib module |
 
 ## Cron jobs
 
