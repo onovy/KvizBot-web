@@ -69,7 +69,8 @@ function ot2html($in,$use_cache=true) {
     $out = "<p>\n";
     $seznam_open = false;
     $seznam_typ = '';
-    
+    $table_open = false;
+
     foreach ($lines as $l) {
 	// Seznamy
 	if ($l[0] == '*' || $l[0] == '#') {
@@ -179,7 +180,7 @@ function ot2html($in,$use_cache=true) {
     }
     
     if ($table_open) {
-	ot2html_table_close();
+	ot2html_table_close($out);
     }
 
     $out .= "\n</p>\n";
