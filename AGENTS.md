@@ -7,7 +7,7 @@ Guidance for AI coding agents working on this repository.
 **KvizBot-web** is the web front-end for **XKvíz** — a Czech-language IRC trivia quiz game. It is a classic server-side PHP application backed by MySQL. There is no JavaScript framework, no Node.js, and no build toolchain.
 
 - UI language: Czech (`cs_CZ.UTF-8`)
-- Code comments: Czech
+- Code comments: English
 - License: GPL
 
 ## Tech stack
@@ -89,7 +89,8 @@ Do not attempt to run `composer install`, `npm install`, or similar commands —
 - Procedural PHP throughout — no classes, no namespaces.
 - Indentation: **tabs**.
 - Global variables are used extensively (`global $smarty`, `global $db_link`, `global $auth`).
-- Comments are written in **Czech**.
+- Comments are written in **English**.
+- Use English for all code (identifiers, comments) and git commit messages; keep Czech for user-facing web texts and page names.
 
 **Input handling**
 Always use the `input_*()` helper family for all user input — never access `$_GET`/`$_POST`/`$_COOKIE` directly without sanitization:
