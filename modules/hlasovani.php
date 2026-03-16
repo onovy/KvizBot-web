@@ -24,8 +24,7 @@ if ($auth->perm_w ?? null) {
 	    $otazka, $min_score
 	));
 	$otazka=db_insert_id();
-	$smarty->assign('message','Otázka přidána');
-	$smarty->assign('message_c','message');
+	smarty_message('Otázka přidána');
 	$w='add_odpoved';
     }
 
@@ -43,8 +42,7 @@ if ($auth->perm_w ?? null) {
 	    $w='add_odpoved';
 	}
 
-	$smarty->assign('message','Odpověď přidána');
-	$smarty->assign('message_c','message');
+	smarty_message('Odpověď přidána');
     }
 
     if ($w=='add_odpoved') {
@@ -73,8 +71,7 @@ if ($auth->perm_w ?? null) {
 	    'UPDATE hlasovani SET active=1,timestmp=timestmp WHERE id=%d',
 	    $id
 	));
-	$smarty->assign('message','Hlasování aktivováno');
-	$smarty->assign('message_c','message');
+	smarty_message('Hlasování aktivováno');
     }
 
     if ($w=='deactive') {
@@ -85,8 +82,7 @@ if ($auth->perm_w ?? null) {
 	    'UPDATE hlasovani SET active=0,timestmp=timestmp WHERE id=%d',
 	    $id
 	));
-	$smarty->assign('message','Hlasování deaktivováno');
-	$smarty->assign('message_c','message');
+	smarty_message('Hlasování deaktivováno');
     }
 }
 
@@ -169,11 +165,9 @@ if ($w=='hlas') {
 	    'INSERT INTO hlasovani_hlasy (otazka,odpoved,nick,ip) VALUES (%d,%d,%d,"%s")',
 	$otazka,$odpoved,$auth->id,db_escape_string($_SERVER['REMOTE_ADDR'])
         ));
-	$smarty->assign('message','Díky za hlas');
-	$smarty->assign('message_c','message');
+	smarty_message('Díky za hlas');
     } else {
-	$smarty->assign('message','Nemůžete hlasovat vícekrát nebo nesplňujete podmínky hlasování');
-	$smarty->assign('message_c','error');
+	smarty_message('Nemůžete hlasovat vícekrát nebo nesplňujete podmínky hlasování', 'error');
     }
 }
 

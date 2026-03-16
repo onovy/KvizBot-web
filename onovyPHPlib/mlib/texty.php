@@ -85,7 +85,7 @@ function edit_text($id) {
 	}
     }
     if (!$nahled) {
-	$smarty->assign('message',$message);
+	smarty_message($message);
 	$smarty->assign('txt',get_text_o($id));
     }
     $smarty->assign('main','texty_edit');

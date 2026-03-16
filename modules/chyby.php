@@ -61,8 +61,7 @@ if ($auth->perm_c ?? null) {
 	$ok=true;
 	
 	if (empty($comment) && $stav == 'unconfirmed') {
-	    $smarty->assign('message','Musíte zadat komentář pro zamítnutí chyby');
-	    $smarty->assign('message_c','error');
+	    smarty_message('Musíte zadat komentář pro zamítnutí chyby', 'error');
 	    $ok = false;
 	}
 	if ($stav != 'open' && $ok) {
@@ -141,8 +140,7 @@ if ($w=='add') {
 	$cislo,$text,$link,$nick,db_escape_string($_SERVER['REMOTE_ADDR'])
     ));
     
-    $smarty->assign('message','Chyba odeslána, děkujeme');
-    $smarty->assign('message_c','message');
+    smarty_message('Chyba odeslána, děkujeme');
 }
 
 $smarty->assign('main','chyby');

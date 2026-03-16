@@ -46,8 +46,7 @@ if ($w=='perm') {
 	    $perm,$auth->id
 	));
 	if (empty($fa2[0])) {
-	    $smarty->assign('message','Nemůžete přidělit právo, které sám nemáte');
-	    $smarty->assign('message_c','error');
+	    smarty_message('Nemůžete přidělit právo, které sám nemáte', 'error');
 	} else {
     	    // zamezeni duplicit prav
 	    $fa=db_fquery(sprintf(
@@ -59,11 +58,9 @@ if ($w=='perm') {
 		    'INSERT INTO perm (perm,nick) VALUES ("%s",%d)',
 		    $perm,$idn
 	        ));
-		$smarty->assign('message','Právo přidáno');
-		$smarty->assign('message_c','message');
+		smarty_message('Právo přidáno');
 	    } else {
-		$smarty->assign('message','Uživatel již toto právo má');
-		$smarty->assign('message_c','error');
+		smarty_message('Uživatel již toto právo má', 'error');
 	    }
 	}
     }
@@ -83,15 +80,13 @@ if ($w=='perm') {
 	    $fa['perm'],$auth->id
 	));
 	if (empty($fa2[0])) {
-	    $smarty->assign('message','Nemůžete odebrat úroveň práva, kterou sám nemáte');
-	    $smarty->assign('message_c','error');
+	    smarty_message('Nemůžete odebrat úroveň práva, kterou sám nemáte', 'error');
 	} else {
 	    $q=db_query(sprintf(
 		'DELETE FROM perm WHERE id=%d LIMIT 1',
 		$perm_id
 	    ));
-	    $smarty->assign('message','Právo odebráno');
-	    $smarty->assign('message_c','message');
+	    smarty_message('Právo odebráno');
 	}
 
     }
@@ -122,8 +117,7 @@ if ($w=='pass') {
 	db_escape_string($passH), $nick
     ));
     
-    $smarty->assign('message','Heslo nastaveno');
-    $smarty->assign('message_c','message');
+    smarty_message('Heslo nastaveno');
 }
 
 // --- TABULKA PRAV ---

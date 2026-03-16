@@ -49,17 +49,14 @@ if ($auth->perm_o ?? null) {
 		$otazka,$odpoved,$schvaleni == 0 ? -1 : $schvaleni,$tema,$auth->id
 	    ));
     	    if ($q) {
-		$smarty->assign('message', 'Otázka přidána');
-		$smarty->assign('message_c', 'message');
+		smarty_message('Otázka přidána');
 	    } else {
-		$smarty->assign('message', 'Otázka nebyla přidána');
-		$smarty->assign('message_c', 'error');
+		smarty_message('Otázka nebyla přidána', 'error');
 	    }
     	    if ($schvaleni==0)
 	        schval_otazku(db_insert_id());
 	} else {
-	    $smarty->assign('message', $msg);
-	    $smarty->assign('message_c', 'error');
+	    smarty_message($msg, 'error');
 	    $smarty->assign('otazka',$otazka);
 	    $smarty->assign('odpoved',$odpoved);
 	    $smarty->assign('tema',$tema);
@@ -104,12 +101,10 @@ if ($auth->perm_o ?? null) {
 	    if ($schvaleni==0) {
 		schval_otazku($id);
 	    }
-	    $smarty->assign('message','Otázka upravena');
-	    $smarty->assign('message_c', 'message');
+	    smarty_message('Otázka upravena');
 	} else {
 	    $w='id';
-	    $smarty->assign('message', $msg);
-	    $smarty->assign('message_c', 'error');
+	    smarty_message($msg, 'error');
 	}
     }
 
@@ -411,8 +406,7 @@ if ($w=='temata') {
 	    $hidden=input_checkbox('hide');
 
 	    if (empty($nazev)) {
-		$smarty->assign('message','Nazev nesmi byt prazdny!');
-		$smarty->assign('message_c', 'error');
+		smarty_message('Nazev nesmi byt prazdny!', 'error');
             } else {
 		db_query(sprintf(
 		    'INSERT INTO temata (nazev,hidden) VALUES ("%s",%d)',

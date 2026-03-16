@@ -36,3 +36,9 @@ function fa2smarty($line,$array) {
 }
 
 $smarty->assign('main_onovyPHPlib',0);
+
+function smarty_message($msg, $color='message') {
+    global $smarty;
+    $smarty->assign('message', $msg);
+    $smarty->assign('message_c', $color);
+}
