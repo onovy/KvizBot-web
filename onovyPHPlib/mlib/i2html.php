@@ -82,9 +82,9 @@ function i2html($input,$typo=true) {
  $s=stri_replace("[/size]","</p>",$s);
 
  // aktivni promenne
- if (strpos($s,'{poslední zmìna}')) {
+ if (strpos($s,'{poslednÃ­ zmÄ›na}')) {
     $fa=db_fquery('SELECT DATE_FORMAT(last_action,"%d. %m. %Y") FROM admins ORDER BY admins.last_action DESC LIMIT 1');
-    $s=stri_replace("{poslední zmìna}",$fa[0],$s);
+    $s=stri_replace("{poslednÃ­ zmÄ›na}",$fa[0],$s);
  }
  
  

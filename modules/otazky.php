@@ -6,9 +6,9 @@ function space_seen($text) {
 
 function check_otazka($otazka,$odpoved,$tema) {
     // TODO: Overovani podle pravidel pro otazky
-    if ($otazka=='') return 'MusÌte zadat ot·zku';
-    if ($odpoved=='') return 'MusÌte zadat odpovÏÔ';
-    if ($tema==0) return 'Vyberte tÈma';
+    if ($otazka=='') return 'Mus√≠te zadat ot√°zku';
+    if ($odpoved=='') return 'Mus√≠te zadat odpovƒõƒè';
+    if ($tema==0) return 'Vyberte t√©ma';
     
     // otazka OK
     return '';
@@ -22,7 +22,7 @@ function schval_otazku($id) {
 }
 
 $smarty->assign('menu','otazky');
-$smarty->assign('title','Ot·zky');
+$smarty->assign('title','Ot√°zky');
 
 $w=input_array('w',array('','add','add2','schvaleni','id','search','edit','add_tema','stats','temata','list','del'));
 if ($auth->perm_o ?? null) {
@@ -49,10 +49,10 @@ if ($auth->perm_o ?? null) {
 		$otazka,$odpoved,$schvaleni == 0 ? -1 : $schvaleni,$tema,$auth->id
 	    ));
     	    if ($q) {
-		$smarty->assign('message', 'Ot·zka p¯id·na');
+		$smarty->assign('message', 'Ot√°zka p≈ôid√°na');
 		$smarty->assign('message_c', 'message');
 	    } else {
-		$smarty->assign('message', 'Ot·zka nebyla p¯id·na');
+		$smarty->assign('message', 'Ot√°zka nebyla p≈ôid√°na');
 		$smarty->assign('message_c', 'error');
 	    }
     	    if ($schvaleni==0)
@@ -104,7 +104,7 @@ if ($auth->perm_o ?? null) {
 	    if ($schvaleni==0) {
 		schval_otazku($id);
 	    }
-	    $smarty->assign('message','Ot·zka upravena');
+	    $smarty->assign('message','Ot√°zka upravena');
 	    $smarty->assign('message_c', 'message');
 	} else {
 	    $w='id';
@@ -310,7 +310,7 @@ if ($auth->perm_a ?? null) {
 		}
 	    }
 	    if (!$ok) {
-		$smarty->assign('mazani_message', '<font color="red">©patn˝ form·t ËÌsla ot·zky</font>');
+		$smarty->assign('mazani_message', '<font color="red">≈†patn√Ω form√°t ƒç√≠sla ot√°zky</font>');
 		break;
 	    }
 	}
@@ -320,10 +320,10 @@ if ($auth->perm_a ?? null) {
 	    	$where
 	    ));
 	    if (db_affected_rows()>=1) {
-		$smarty->assign('mazani_message', '<font color="green">Deaktivov·no podle ' .
-		    $where. ' ' . db_affected_rows() . ' ot·zek</font>');
+		$smarty->assign('mazani_message', '<font color="green">Deaktivov√°no podle ' .
+		    $where. ' ' . db_affected_rows() . ' ot√°zek</font>');
 	    } else {
-		$smarty->assign('mazani_message', '<font color="red">Ot·zka neexistuje</font>');
+		$smarty->assign('mazani_message', '<font color="red">Ot√°zka neexistuje</font>');
 	    }
 	}
     }
@@ -349,7 +349,7 @@ if ($w=='schvaleni') {
 	    $count++;
 	}
     }
-    $smarty->assign('schvaleni_message','<font color="green">Schv·leno '.$count.' ot·zek</font>');
+    $smarty->assign('schvaleni_message','<font color="green">Schv√°leno '.$count.' ot√°zek</font>');
 }
 
 // schvaleni

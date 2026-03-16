@@ -18,7 +18,7 @@ function check_table($name,$data,$really)
   $sql.=")";
   if ($really) {
    db_query($sql);
-   return '<font style="color: blue">Tabulka '.$name.' vytvo¯ena</font>'."\n";
+   return '<font style="color: blue">Tabulka '.$name.' vytvo≈ôena</font>'."\n";
   } else 
    return '<font style="color: red">Tabulka '.$name.' neexistuje</font>'."\n";
  }
@@ -33,9 +33,9 @@ function check_table($name,$data,$really)
      // Typ pole nesedi
      if ($really) {
       db_query('ALTER TABLE '.$name.' CHANGE '.$l['Field'].' '.$l['Field'].' '.$value['Type']);
-      $errors.='Poloæka '.$l['Field'].' opravena'."\n";
+      $errors.='Polo≈æka '.$l['Field'].' opravena'."\n";
      } else {
-      $errors.='Poloæka '.$l['Field'].' m· v DB typ '.$l['Type'].', ale v definici je '.$value['Type']."\n";
+      $errors.='Polo≈æka '.$l['Field'].' m√° v DB typ '.$l['Type'].', ale v definici je '.$value['Type']."\n";
      }
     }
     $found=true;
@@ -45,9 +45,9 @@ function check_table($name,$data,$really)
   if (!$found) {
    if ($really) {
     db_query('ALTER TABLE '.$name.' DROP '.$l['Field']);
-    $errors.='Poloæka '.$l['Field'].' odebr·na z DB'."\n";
+    $errors.='Polo≈æka '.$l['Field'].' odebr√°na z DB'."\n";
    } else {
-    $errors.='Poloæka '.$l['Field'].' nenalezena v definici'."\n";
+    $errors.='Polo≈æka '.$l['Field'].' nenalezena v definici'."\n";
    }  
   }
  }
@@ -60,14 +60,14 @@ function check_table($name,$data,$really)
   if (!$found) {
    if ($really) {
     db_query('ALTER TABLE '.$name.' ADD '.$value['Field'].' '.$value['Type'].' '.$value['Add']);
-    $errors.='Poloæka '.$value['Field'].' p¯id·na do DB'."\n";
+    $errors.='Polo≈æka '.$value['Field'].' p≈ôid√°na do DB'."\n";
    } else {
-    $errors.='Poloæka '.$value['Field'].' nenalezena v DB'."\n";
+    $errors.='Polo≈æka '.$value['Field'].' nenalezena v DB'."\n";
    }
   }
  }
  if (empty($errors)) {
-  $errors='<font style="color: green">Tabulka '.$name.' je vpo¯·dku'."</font>\n";
+  $errors='<font style="color: green">Tabulka '.$name.' je vpo≈ô√°dku'."</font>\n";
  } else {
   if ($really)
    $errors='<font style="color: blue">Opravy v tabulce '.$name.":\n".$errors."</font>\n";
@@ -99,15 +99,15 @@ function modules_sql_init(&$errors) {
 	$count=db_fquery_noe('SELECT COUNT(*) FROM '.$lib_config['mlib_auth_table_name']);
 	if ($count !== false && $count[0] == 0) {
 	    if ($really) {
-	        $errors.="<font style='color: blue'>Generuji uæivatele pro modul AUTH:\n";
+	        $errors.="<font style='color: blue'>Generuji u≈æivatele pro modul AUTH:\n";
 		$pass = bin2hex(random_bytes(12));
 	        db_query(sprintf(
 	    	    'INSERT INTO '.$lib_config['mlib_auth_table_name'].' (user,pass) VALUES ("admin","%s")',
 		    db_escape_string(password_hash($pass, PASSWORD_ARGON2ID))
 		));
-		$errors.=" Uæ. jmÈno: <strong>admin</strong>\n Heslo: <strong>".$pass."</strong></font>\n";
+		$errors.=" U≈æ. jm√©no: <strong>admin</strong>\n Heslo: <strong>".$pass."</strong></font>\n";
 	    } else {
-		$errors.="<font style='color: red'>Neexistuje æ·dn˝ uæivatel pro modul AUTH</font>\n";
+		$errors.="<font style='color: red'>Neexistuje ≈æ√°dn√Ω u≈æivatel pro modul AUTH</font>\n";
 	    }
 	}
     }
@@ -128,7 +128,7 @@ function modules_sql_init(&$errors) {
 	    !empty($lib_config['mlib_texty_count'])
 	    ) {
 	    $add=$lib_config['mlib_texty_count'] - $count[0];
-	    if ($add>4) $zazn='˘';
+	    if ($add>4) $zazn='≈Ø';
 		elseif ($add>1) $zazn='y';
 		    else $zazn='';
 
@@ -140,9 +140,9 @@ function modules_sql_init(&$errors) {
 		if ($add>4) $prid='o';
 		    elseif ($add>1) $prid='y';
 			else $prid='';
-		$errors.="<font style='color: blue'>Do tabulky pro modul TEXTY byl".$prid." p¯id·n".$prid." ".($add)." z·znam".$zazn."</font>\n";
+		$errors.="<font style='color: blue'>Do tabulky pro modul TEXTY byl".$prid." p≈ôid√°n".$prid." ".($add)." z√°znam".$zazn."</font>\n";
 	    } else {
-		$errors.="<font style='color: red'>V tabulce pro modul TEXTY chybÌ ".($add)." z·znam".$zazn."</font>\n";
+		$errors.="<font style='color: red'>V tabulce pro modul TEXTY chyb√≠ ".($add)." z√°znam".$zazn."</font>\n";
 	    }
 	}
     }

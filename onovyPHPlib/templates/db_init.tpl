@@ -1,4 +1,4 @@
-<h2>Inicializace databáze</h2>
+<h2>Inicializace databÃ¡ze</h2>
 
 <pre>
 {$errors}
@@ -7,5 +7,5 @@
 {if $really!=1}
     <a href="?really=1">Opravit</a>
 {else}
-    <a href="?really=0">Zpìt</a>
+    <a href="?really=0">ZpÄ›t</a>
 {/if}

@@ -2,5 +2,5 @@
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
-Na Vá¹ nick botka do nìkolika minut ode¹le odkaz, na kterı kliknìte
-pro dokonèení registrace. Poté si mù¾ete nastavit heslo.
+Na VÃ¡Å¡ nick botka do nÄ›kolika minut odeÅ¡le odkaz, na kterÃ½ kliknÄ›te
+pro dokonÄenÃ­ registrace. PotÃ© si mÅ¯Å¾ete nastavit heslo.

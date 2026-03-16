@@ -6,7 +6,7 @@ var editors_pos = 0;
 var tags =
     new Array("B","I","U","A","COLOR","SIZE");
 var tags_name =
-    new Array("Tuènì","Kurzíva","Podtr¾ení","Odkaz","Barva","Velikost");
+    new Array("TuÄnÄ›","KurzÃ­va","PodtrÅ¾enÃ­","Odkaz","Barva","Velikost");
 var tags_img =
     new Array("bold","italic","underline","link","color","size");
 var tags_style =
@@ -158,7 +158,7 @@ function ot2html_writeTextArea() {
 }
 
 function ot2html_writeHistory() {
-    document.writeln("Otevøené tagy:<br /><textarea name=\"editorH-" + this.id + "\" id=\"editorH-" + this.id + "\" cols=\"15\" rows=\"10\" readonly=\"readonly\"></textarea><br />");
+    document.writeln("OtevÅ™enÃ© tagy:<br /><textarea name=\"editorH-" + this.id + "\" id=\"editorH-" + this.id + "\" cols=\"15\" rows=\"10\" readonly=\"readonly\"></textarea><br />");
 }
 
 function ot2html_repaintHistory() {

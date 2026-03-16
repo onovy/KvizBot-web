@@ -1,10 +1,10 @@
 <form method='post' action='hlasovani.htm'>
 <fieldlist>
-Odpovμο:
+OdpovΔ›Δ:
 <input type='text' name='odpoved' maxlength='100' />
-<input type='submit' value='Pψidat' />
+<input type='submit' value='PΕ™idat' />
 <input type='hidden' name='w' value='{$w}' />
 <input type='hidden' name='otazka' value='{$otazka_id}' /><br />
-Pψidat dalΉν odpovμο?: <input type='checkbox' name='next' />
+PΕ™idat dalΕ΅Γ­ odpovΔ›Δ?: <input type='checkbox' name='next' />
 </fieldlist>
 </form>

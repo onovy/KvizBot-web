@@ -16,15 +16,15 @@ function show_error_noe($error) {
 }
 
 function error_notnumeric($var) {
-    show_error('Promìnná \''.$var.'\' musí bıt èíslo!');
+    show_error('PromÄ›nnÃ¡ \''.$var.'\' musÃ­ bÃ½t ÄÃ­slo!');
 }
 
 function error_notchar($var) {
-    show_error('Promìnná \''.$var.'\' musí bıt jeden znak!');
+    show_error('PromÄ›nnÃ¡ \''.$var.'\' musÃ­ bÃ½t jeden znak!');
 }
 
 function error_notarray($var,$array) {
-    $error='Vstupní promìnná "'. HE($var) . '" musí nabıvat jednu z hodnot: ';
+    $error='VstupnÃ­ promÄ›nnÃ¡ "'. HE($var) . '" musÃ­ nabÃ½vat jednu z hodnot: ';
     $first=1;
     foreach ($array as $name=>$val) {
 	if ($first) $first=0; else $error.=', ';
@@ -34,5 +34,5 @@ function error_notarray($var,$array) {
 }
 
 function error_notperm() {
-    show_error('Nemáte dostateèná práva!');
+    show_error('NemÃ¡te dostateÄnÃ¡ prÃ¡va!');
 }

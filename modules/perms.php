@@ -19,7 +19,7 @@ if ($w=='perm') {
 	));
 	$idn=$fa[0];
 	if (empty($idn)) {
-	    show_error('U¾ivatel nenalezen!');
+	    show_error('UÅ¾ivatel nenalezen!');
 	}
     } else {
 	$idn=input_num('idn');
@@ -33,7 +33,7 @@ if ($w=='perm') {
     $smarty->assign('idn',$idn);
     
     if ($idn == $auth->id) {
-	show_error('Nemù¾ete editovat práva sám sobì');
+	show_error('NemÅ¯Å¾ete editovat prÃ¡va sÃ¡m sobÄ›');
     }
 
     if ($w2=='add_perm') {
@@ -46,7 +46,7 @@ if ($w=='perm') {
 	    $perm,$auth->id
 	));
 	if (empty($fa2[0])) {
-	    $smarty->assign('message','Nemù¾ete pøidìlit právo, které sám nemáte');
+	    $smarty->assign('message','NemÅ¯Å¾ete pÅ™idÄ›lit prÃ¡vo, kterÃ© sÃ¡m nemÃ¡te');
 	    $smarty->assign('message_c','error');
 	} else {
     	    // zamezeni duplicit prav
@@ -59,10 +59,10 @@ if ($w=='perm') {
 		    'INSERT INTO perm (perm,nick) VALUES ("%s",%d)',
 		    $perm,$idn
 	        ));
-		$smarty->assign('message','Právo pøidáno');
+		$smarty->assign('message','PrÃ¡vo pÅ™idÃ¡no');
 		$smarty->assign('message_c','message');
 	    } else {
-		$smarty->assign('message','U¾ivatel ji¾ toto právo má');
+		$smarty->assign('message','UÅ¾ivatel jiÅ¾ toto prÃ¡vo mÃ¡');
 		$smarty->assign('message_c','error');
 	    }
 	}
@@ -76,21 +76,21 @@ if ($w=='perm') {
 	    $perm_id
 	));
 	if ($fa['nick'] == $auth->id) {
-	    show_error('Nemù¾ete vzít právo sám sobì');
+	    show_error('NemÅ¯Å¾ete vzÃ­t prÃ¡vo sÃ¡m sobÄ›');
 	}
 	$fa2=db_fquery(sprintf(
 	    'SELECT id FROM perm WHERE perm="%s" AND nick=%d',
 	    $fa['perm'],$auth->id
 	));
 	if (empty($fa2[0])) {
-	    $smarty->assign('message','Nemù¾ete odebrat úroveò práva, kterou sám nemáte');
+	    $smarty->assign('message','NemÅ¯Å¾ete odebrat ÃºroveÅˆ prÃ¡va, kterou sÃ¡m nemÃ¡te');
 	    $smarty->assign('message_c','error');
 	} else {
 	    $q=db_query(sprintf(
 		'DELETE FROM perm WHERE id=%d LIMIT 1',
 		$perm_id
 	    ));
-	    $smarty->assign('message','Právo odebráno');
+	    $smarty->assign('message','PrÃ¡vo odebrÃ¡no');
 	    $smarty->assign('message_c','message');
 	}
 
@@ -108,7 +108,7 @@ if ($w=='perm') {
     $smarty->assign('perm_list',sql2smarty($q,array('perm','name')));
     
     $smarty->assign('main','perms_editor');
-    $smarty->assign('title','Práva - editace');
+    $smarty->assign('title','PrÃ¡va - editace');
     return;
 }
 
@@ -177,4 +177,4 @@ $q=db_query(
 );
 $smarty->assign('perms_types',sql2smarty($q,array('level','name')));
 $smarty->assign('main','perms');
-$smarty->assign('title','Práva');
+$smarty->assign('title','PrÃ¡va');

@@ -1,4 +1,4 @@
-<h2>⁄prava ot·zky</h2>
+<h2>√öprava ot√°zky</h2>
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
@@ -7,20 +7,20 @@
 <input type='hidden' name='id' value='{$id}'>
 <table border='0'>
 <tr>
-    <td>Schv·len· ot·zka:</td>
+    <td>Schv√°len√° ot√°zka:</td>
     <td>{$otazka_s}
 </tr><tr>
-    <td>Ot·zka:</td><td><input type='text' name='otazka' maxlength='100' size='70' value='{$change_otazka|escape}'></td>
+    <td>Ot√°zka:</td><td><input type='text' name='otazka' maxlength='100' size='70' value='{$change_otazka|escape}'></td>
 </tr><tr>
-    <td>Schv·len· odpoveÔ:</td>
+    <td>Schv√°len√° odpoveƒè:</td>
     <td>{$odpoved_s}
 </tr><tr>
-    <td>OdpoveÔ:</td><td><input type='text' name='odpoved' maxlength='100' size='70' value='{$change_odpoved|escape}'></td>
+    <td>Odpoveƒè:</td><td><input type='text' name='odpoved' maxlength='100' size='70' value='{$change_odpoved|escape}'></td>
 </tr><tr>
-    <td>Schv·lenÈ tÈma:</td>
+    <td>Schv√°len√© t√©ma:</td>
     <td>{$tema_nazev|escape}
 </tr><tr>
-    <td>TÈma:</td>
+    <td>T√©ma:</td>
     <td>
 	<select name='tema'>
 	    <option value='0'>- vyberte -</option>
@@ -41,15 +41,15 @@
 	{elseif $game==3}
 	    Xchat + IRC
 	{else}
-	    Deaktivov·no
+	    Deaktivov√°no
 	{/if}
     </td>
 </tr><tr>
-    <td>Pozn·mka:</td>
+    <td>Pozn√°mka:</td>
     <td><input type='text' name='comment' value='{$comment|escape}'>
 {if $auth->perm_a|default:false}
 </tr><tr>
-    <td>Schv·lenÌ:</td>
+    <td>Schv√°len√≠:</td>
     <td>
 	<select name='schvaleni'>
 	    <option value='0'>- nikdo -</option>

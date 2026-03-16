@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul s funkcemi s èísli
+ * Modul s funkcemi s ÄÃ­sli
  *
  * @category    Module
  * @package     Module

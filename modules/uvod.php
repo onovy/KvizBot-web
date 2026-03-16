@@ -4,7 +4,7 @@ $w=input_array('w',array('', 'edit'));
 $smarty->assign('texty_edit_perm', $auth->perm_w ?? null);
 
 $smarty->assign('menu','uvod');
-$smarty->assign('title','Úvod');
+$smarty->assign('title','Ãšvod');
 
 if ($w=='edit' && ($auth->perm_w ?? null)) {
     edit_text(1);

@@ -36,7 +36,7 @@ function Editor(name, id)
   document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" I \" STYLE=\"font-style: italic; width: 30px;\" \" onClick=\"" + name + ".addTag(" + TAG_ITALIC + ");\">");
   document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" U \" STYLE=\"text-decoration: underline; width: 30px;\" onClick=\"" + name + ".addTag(" + TAG_UNDERLINE + ");\">");
   document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" A \" onClick=\"" + name + ".addTag(" + TAG_HREF + ");\">");
-  document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" A (nové okno)\" onClick=\"" + name + ".addTag(" + TAG_HREF_NW + ");\">");
+  document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" A (novÃ© okno)\" onClick=\"" + name + ".addTag(" + TAG_HREF_NW + ");\">");
   document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" Barva \" STYLE=\"color: red;\" onClick=\"" + name + ".addTag(" + TAG_COLOR + ");\">");
   document.writeln("<INPUT TYPE=\"BUTTON\" VALUE=\" Velikost \" STYLE=\"color: green;\" onClick=\"" + name + ".addTag(" + TAG_SIZE + ");\">");
 

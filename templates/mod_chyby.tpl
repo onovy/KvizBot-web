@@ -1,32 +1,32 @@
 <h2>{$title|escape}</h2>
 
 <p>
-    <a href='?w=list&amp;filter=open'>Seznam nahlá¹enıch chyb</a>
+    <a href='?w=list&amp;filter=open'>Seznam nahlÃ¡Å¡enÃ½ch chyb</a>
 </p>
 <p>
-    <a href='?w=list&amp;filter=open&owner=me'>Seznam mnou nahlá¹enıch chyb</a>
+    <a href='?w=list&amp;filter=open&owner=me'>Seznam mnou nahlÃ¡Å¡enÃ½ch chyb</a>
 </p>
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
 <p>
-Následujícím formuláøem mu¾ete oznámit chybu v otázce. Pøeètìte si prosím
-nejdøív informace napsané ní¾e.
+NÃ¡sledujÃ­cÃ­m formulÃ¡Å™em muÅ¾ete oznÃ¡mit chybu v otÃ¡zce. PÅ™eÄtÄ›te si prosÃ­m
+nejdÅ™Ã­v informace napsanÃ© nÃ­Å¾e.
 </p>
 
 <form method='post' action='chyby.htm'>
 <input type='hidden' name='w' value='add' />
 <table class='form'>
 <tr>
-    <td>Èíslo otázky:</td>
+    <td>ÄŒÃ­slo otÃ¡zky:</td>
     <td><input type='text' name='cislo' maxlength='10' /></td>
 </tr>
 <tr>
-    <td>Odkaz na dùkaz:</td>
+    <td>Odkaz na dÅ¯kaz:</td>
     <td><input type='text' name='link' maxlength='200' /></td>
 </tr>
 <tr>
-    <td>Komentáø&nbsp;k&nbsp;chybì:</td>
+    <td>KomentÃ¡Å™&nbsp;k&nbsp;chybÄ›:</td>
     <td><textarea name='text' cols='{if $topmenu}20{else}40{/if}' rows='10'></textarea></td>
 </tr>
 <tr>
@@ -37,10 +37,10 @@ nejdøív informace napsané ní¾e.
     <td>!POZOR!</td>
     <td>
 	<p>
-	Pokud nezadáte èíslo otázky, bude chyba vyøizována s nejmen¹í
-	dùle¾itostí a v pøípadì nemo¾nosti dohledání otázky nebude vyøízena.
-	Pokud nezadáte odkaz na dùkaz a nebude se jednat o pøeklep, NEBUDE
-	stí¾nost vyøízena. Za relevantní odkaz se pova¾uje èlánek z:
+	Pokud nezadÃ¡te ÄÃ­slo otÃ¡zky, bude chyba vyÅ™izovÃ¡na s nejmenÅ¡Ã­
+	dÅ¯leÅ¾itostÃ­ a v pÅ™Ã­padÄ› nemoÅ¾nosti dohledÃ¡nÃ­ otÃ¡zky nebude vyÅ™Ã­zena.
+	Pokud nezadÃ¡te odkaz na dÅ¯kaz a nebude se jednat o pÅ™eklep, NEBUDE
+	stÃ­Å¾nost vyÅ™Ã­zena. Za relevantnÃ­ odkaz se povaÅ¾uje ÄlÃ¡nek z:
 	</p>
 	<ul>
 	    <li><a href='http://cs.wikipedia.org/'>http://cs.wikipedia.org/</a></li>
@@ -48,11 +48,11 @@ nejdøív informace napsané ní¾e.
 	    <li><a href='http://encarta.msn.com/'>http://encarta.msn.com/</a></li>
 	    <li><a href='http://www.cojeco.cz/'>http://www.cojeco.cz/</a></li>
 	    <li><a href='http://encyclopedia.jrank.org/'>http://encyclopedia.jrank.org/</a></li>
-	    <li><a href='http://www.cj.cz/'>http://www.cj.cz/</a> -- pravidla èeského pravopisu</li>
-	    <li><a href='http://www.slovnik.cz/'>http://www.slovnik.cz/</a> -- pøeklad cizích slov</li>
+	    <li><a href='http://www.cj.cz/'>http://www.cj.cz/</a> -- pravidla ÄeskÃ©ho pravopisu</li>
+	    <li><a href='http://www.slovnik.cz/'>http://www.slovnik.cz/</a> -- pÅ™eklad cizÃ­ch slov</li>
 	</ul>
 	<p>
-	Pokud bude udán jinı odkaz, NEBUDE chyba opravena.
+	Pokud bude udÃ¡n jinÃ½ odkaz, NEBUDE chyba opravena.
 	</p>
     </td>
 </tr>

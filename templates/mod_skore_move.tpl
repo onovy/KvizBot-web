@@ -1,4 +1,4 @@
-<h2>Pøevedení skóre</h2>
+<h2>PÅ™evedenÃ­ skÃ³re</h2>
 <font color='red'>{$error|escape}</font>
 
 <p>

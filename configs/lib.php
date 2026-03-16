@@ -1,8 +1,8 @@
 <?php
 
-$lib_config['charset']='iso-8859-2';
+$lib_config['charset']='utf-8';
 
-$lib_config['locale']='CZ_cs.ISO-8859-2';
+$lib_config['locale']='CZ_cs.UTF-8';
 
 // Knihovny webu (include z libs/$.php)
 $lib_config['web_libs']=array(

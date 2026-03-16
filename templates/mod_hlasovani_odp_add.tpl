@@ -1,4 +1,4 @@
-<h2>Pψidαnν odpovμοi</h2>
+<h2>PΕ™idΓ΅nΓ­ odpovΔ›Δi</h2>
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 

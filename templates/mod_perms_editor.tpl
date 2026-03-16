@@ -6,11 +6,11 @@
 <strong>{$nick|escape}</strong>
 </p>
 
-<h3>Aktu·lnÌ pr·va</h3>
+<h3>Aktu√°ln√≠ pr√°va</h3>
 <table class='table'>
 <tr>
     <th>L</th>
-    <th>N·zev</th>
+    <th>N√°zev</th>
     <th></th>
 </tr>
 {section name=sec1 loop=$perms}
@@ -22,14 +22,14 @@
 {/section}
 </table>
 
-<h3>P¯id·nÌ pr·va</h3>
+<h3>P≈ôid√°n√≠ pr√°va</h3>
 <form method='post' action='perms.htm'>
 <input type='hidden' name='w' value='perm' />
 <input type='hidden' name='w2' value='add_perm' />
 <input type='hidden' name='idn' value='{$idn}' />
 <table class='form'>
 <tr>
-    <th>Pr·vo:</th>
+    <th>Pr√°vo:</th>
     <td>
 	<select name='perm'>
 {section name=sec1 loop=$perm_list}
@@ -39,7 +39,7 @@
     </td>
 </tr><tr>
     <td></td>
-    <td><input type='submit' value='P¯idat' /></td>
+    <td><input type='submit' value='P≈ôidat' /></td>
 </tr>
 </table>
 </form>

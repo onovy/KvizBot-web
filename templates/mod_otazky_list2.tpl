@@ -1,10 +1,10 @@
-<a href='?w=list'>Zpìt</a><br><br>
+<a href='?w=list'>ZpÄ›t</a><br><br>
 
 <table class='table'>
 <tr>
     <th>ID</th>
-    <th>Otázka</th>
-    <th>Odpovìï</th>
+    <th>OtÃ¡zka</th>
+    <th>OdpovÄ›Ä</th>
     <th>Hra</th>
 </tr>
 {section name=sec1 loop=$otazky}

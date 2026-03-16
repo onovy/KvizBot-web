@@ -13,15 +13,15 @@ $consts['local_config_rules']=array(
 
 $consts['months_name']=array(
     1 => 'leden',
-    2 => 'únor',
-    3 => 'bøezen',
+    2 => 'Ãºnor',
+    3 => 'bÅ™ezen',
     4 => 'duben',
-    5 => 'kvìten',
-    6 => 'èerven',
-    7 => 'èervenec',
+    5 => 'kvÄ›ten',
+    6 => 'Äerven',
+    7 => 'Äervenec',
     8 => 'srpen',
-    9 => 'záøí',
-    10=> 'øíjen',
+    9 => 'zÃ¡Å™Ã­',
+    10=> 'Å™Ã­jen',
     11=> 'listopad',
     12=> 'prosinec'
 );

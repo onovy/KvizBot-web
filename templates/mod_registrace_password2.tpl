@@ -2,5 +2,5 @@
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
-Registrace byla úspì¹nì dokonèena, nyní se mù¾ete pøihlásit tlaèítkem
-'Pøihlásit se' v levém menu.
+Registrace byla ÃºspÄ›Å¡nÄ› dokonÄena, nynÃ­ se mÅ¯Å¾ete pÅ™ihlÃ¡sit tlaÄÃ­tkem
+'PÅ™ihlÃ¡sit se' v levÃ©m menu.

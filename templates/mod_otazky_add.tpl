@@ -1,4 +1,4 @@
-<h2>Pøidání otázky</h2>
+<h2>PÅ™idÃ¡nÃ­ otÃ¡zky</h2>
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
@@ -6,11 +6,11 @@
 <input type='hidden' name='w' value='add2'>
 <table border='0'>
 <tr>
-    <td>Otázka:</td><td><input type='text' name='otazka' maxlength='100' size='70' value='{$otazka|default:''}'></td>
+    <td>OtÃ¡zka:</td><td><input type='text' name='otazka' maxlength='100' size='70' value='{$otazka|default:''}'></td>
 </tr><tr>
-    <td>Odpoveï:</td><td><input type='text' name='odpoved' maxlength='100' size='70' value='{$odpoved|default:''}'></td>
+    <td>OdpoveÄ:</td><td><input type='text' name='odpoved' maxlength='100' size='70' value='{$odpoved|default:''}'></td>
 </tr><tr>
-    <td>Téma:</td>
+    <td>TÃ©ma:</td>
     <td>
 	<select name='tema'>
 	    <option value='0'>- vyberte -</option>
@@ -21,7 +21,7 @@
     </td>
 {if $auth->perm_a|default:false}
 </tr><tr>
-    <td>Schválení:</td>
+    <td>SchvÃ¡lenÃ­:</td>
     <td>
 	<select name='schvaleni'>
 	    <option value='0'>- nikdo -</option>
@@ -32,9 +32,9 @@
     </td>
 {/if}
 </tr><tr>
-    <td></td><td><input type='submit' value='Pøidat'></td>
+    <td></td><td><input type='submit' value='PÅ™idat'></td>
 </tr><tr>
-    <td colspan=2>Pøed pøidáním otázky do Kvízu si prosím pøeètìte <a href='licence-otazek.htm' target='_blank'>licencování</a></td>
+    <td colspan=2>PÅ™ed pÅ™idÃ¡nÃ­m otÃ¡zky do KvÃ­zu si prosÃ­m pÅ™eÄtÄ›te <a href='licence-otazek.htm' target='_blank'>licencovÃ¡nÃ­</a></td>
 </tr>
 </table>
 </form>

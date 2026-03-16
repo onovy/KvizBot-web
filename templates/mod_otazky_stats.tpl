@@ -1,13 +1,13 @@
 <h2>Statistiky</h2>
-Celkem otázek: <b>{$count}</b><br>
-Z toho zatím neschváleno: <b>{$neschvaleno}</b><br>
+Celkem otÃ¡zek: <b>{$count}</b><br>
+Z toho zatÃ­m neschvÃ¡leno: <b>{$neschvaleno}</b><br>
 <br>
-Podle autorù a témat:
+Podle autorÅ¯ a tÃ©mat:
 <table class='table'>
 <tr>
     <th>Nick</th>
-    <th>Téma</th>
-    <th>Poèet otázek</th>
+    <th>TÃ©ma</th>
+    <th>PoÄet otÃ¡zek</th>
 </tr>
 {section name=sec1 loop=$nicks}
 <tr>
@@ -19,11 +19,11 @@ Podle autorù a témat:
 </table>
 
 <br>
-Podle témat:
+Podle tÃ©mat:
 <table class='table'>
 <tr>
-    <th>Téma</td>
-    <th>Poèet otázek</td>
+    <th>TÃ©ma</td>
+    <th>PoÄet otÃ¡zek</td>
 </tr>
 {section name=sec1 loop=$temata}
 <tr>
@@ -40,11 +40,11 @@ Podle témat:
 </table>
 
 <br>
-Podle autorù:
+Podle autorÅ¯:
 <table class='table'>
 <tr>
     <th>Autor</th>
-    <th>Poèet otázek</th>
+    <th>PoÄet otÃ¡zek</th>
 </tr>
 {section name=sec1 loop=$autori}
 <tr>

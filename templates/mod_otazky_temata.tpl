@@ -1,4 +1,4 @@
-<h2>TÈmata</h2>
+<h2>T√©mata</h2>
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
@@ -7,21 +7,21 @@
 <input type='hidden' name='w2' value='add'>
 <table class='form'>
 <tr>
-    <td>N·zev:</td>
+    <td>N√°zev:</td>
     <td><input type='text' name='nazev'></td>
 </tr><tr>
-    <td>Schov·n?:</td>
+    <td>Schov√°n?:</td>
     <td><input type='checkbox' name='hide'></td>
 </tr><tr>
     <td></td>
-    <td><input type='submit' value='P¯idat'></td>
+    <td><input type='submit' value='P≈ôidat'></td>
 </tr>
 </table>
 </form>
 <table class='table'>
 <tr>
-    <th>N·zev</th>
-    <th>Schov·n?</th>
+    <th>N√°zev</th>
+    <th>Schov√°n?</th>
 </tr>
 {section name=sec1 loop=$temata_list}
 <tr>

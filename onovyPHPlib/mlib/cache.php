@@ -60,11 +60,11 @@ function cache_getcache($context,$file) {
 }
 
 /**
- * Zapsaní dat do disk cache
+ * ZapsanÃ­ dat do disk cache
  *
  * @param $context - context
  * @param $file - nazev souboru
- * @param $data - data pro ulození
+ * @param $data - data pro ulozenÃ­
  */
 function cache_putcache($context,$file,$data) {
     $s1   = substr($file,0,1);
@@ -83,7 +83,7 @@ function cache_putcache($context,$file,$data) {
 }
 
 /**
- * Vycistení cache (maze pouze nepouzivane soubory)
+ * VycistenÃ­ cache (maze pouze nepouzivane soubory)
  */
 function cache_cleancache() {
     global $cache_time;
@@ -96,7 +96,7 @@ function cache_cleancache() {
 }
 
 /**
- * Rekurzivni projiti adresaru a smazaní nepouzivanych souboru
+ * Rekurzivni projiti adresaru a smazanÃ­ nepouzivanych souboru
  *
  * @internal
  * @param $file - adresar, ktery projit
@@ -126,7 +126,7 @@ function cache_purgecache() {
 }
 
 /**
- * Rekurzivni projiti adresaru a smazaní vsech souboru
+ * Rekurzivni projiti adresaru a smazanÃ­ vsech souboru
  *
  * @internal
  * @param $file - adresar, ktery projit
@@ -152,7 +152,7 @@ function  cache_purgecache_($file,$l) {
  * Rekurzivni vytvoreni adresaru
  *
  * @internal
- * @param $path - adresáø
+ * @param $path - adresÃ¡Å™
  */
 function cache_RecursiveMkdir($path) {
     if (!file_exists($path)) {

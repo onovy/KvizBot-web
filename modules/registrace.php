@@ -15,7 +15,7 @@ if ($w == 'hash') {
     ));
     $id = db_fetch_array($q);
     if (!$id) {
-	$smarty->assign('message', 'Nick neexistuje, nebo nemá ¾ádné body!');
+	$smarty->assign('message', 'Nick neexistuje, nebo nemÃ¡ Å¾Ã¡dnÃ© body!');
 	$smarty->assign('message_c', 'error');
 	$ok = false;
     }
@@ -29,7 +29,7 @@ if ($w == 'hash') {
 	));
 	$fa = db_fetch_array($q);
 	if (!$fa) {
-	    $smarty->assign('message', 'Nick není v místnosti!');
+	    $smarty->assign('message', 'Nick nenÃ­ v mÃ­stnosti!');
 	    $smarty->assign('message_c', 'error');
 	    $ok = false;
 	}
@@ -42,7 +42,7 @@ if ($w == 'hash') {
 	));
 	$fa = db_fetch_array($q);
 	if ($fa) {
-	    $smarty->assign('message', 'Po¾adavek byl ji¾ odeslán!');
+	    $smarty->assign('message', 'PoÅ¾adavek byl jiÅ¾ odeslÃ¡n!');
 	    $smarty->assign('message_c', 'error');
 	    $ok = false;
 	}
@@ -55,7 +55,7 @@ if ($w == 'hash') {
 	    $id, db_escape_string($hash), db_escape_string($_SERVER['REMOTE_ADDR'])
 	));
     
-	$smarty->assign('message', 'Registrace vytvoøena');
+	$smarty->assign('message', 'Registrace vytvoÅ™ena');
 	$smarty->assign('message_c', 'message');
 	$smarty->assign('main', 'registrace_hash');
     } else {
@@ -77,14 +77,14 @@ if ($w == 'password' || $w == 'password2') {
     ));
     $fa = db_fetch_array($q);
     if (!$fa) {
-	$smarty->assign('message', '©patný kód!');
+	$smarty->assign('message', 'Å patnÃ½ kÃ³d!');
 	$smarty->assign('message_c', 'error');
 	$ok = false;
     }
     
     if ($ok) {
 	if (!$fa['sent']) {
-	    $smarty->assign('message', 'Kód nebyl je¹tì zaslán!');
+	    $smarty->assign('message', 'KÃ³d nebyl jeÅ¡tÄ› zaslÃ¡n!');
 	    $smarty->assign('message_c', 'error');
 	
 	    $ok = false;
@@ -93,7 +93,7 @@ if ($w == 'password' || $w == 'password2') {
     
     if ($ok) {
 	if ($fa['used']) {
-	    $smarty->assign('message', 'Kód byl ji¾ pou¾it!');
+	    $smarty->assign('message', 'KÃ³d byl jiÅ¾ pouÅ¾it!');
 	    $smarty->assign('message_c', 'error');
 	
 	    $ok = false;
@@ -102,7 +102,7 @@ if ($w == 'password' || $w == 'password2') {
     
     if ($ok) {
 	if ($fa['ip'] != $_SERVER['REMOTE_ADDR']) {
-	    $smarty->assign('message', 'Potvrzení registrace je nutné dìlat ze stejné IP!');
+	    $smarty->assign('message', 'PotvrzenÃ­ registrace je nutnÃ© dÄ›lat ze stejnÃ© IP!');
 	    $smarty->assign('message_c', 'error');
 	
 	    $ok = false;
@@ -110,7 +110,7 @@ if ($w == 'password' || $w == 'password2') {
     }
 
     if (($w == 'password2') && ($_REQUEST['pass'] != $_REQUEST['pass2'])) {
-	$smarty->assign('message', 'Hesla nesouhlasí');
+	$smarty->assign('message', 'Hesla nesouhlasÃ­');
 	$smarty->assign('message_c', 'error');
 	$w = 'password';
     }

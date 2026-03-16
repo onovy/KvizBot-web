@@ -77,7 +77,7 @@ function edit_text($id) {
 	    if ($q)
 		$message='<font color="green">Upraveno</font>';
 	    else
-		$message='<font color="red">Chyba pøi upravování</font>';
+		$message='<font color="red">Chyba pÅ™i upravovÃ¡nÃ­</font>';
 	} else {
 	    $smarty->assign('nahled',ot2html($_REQUEST['txt'],false));
 	    $smarty->assign('txt',$_REQUEST['txt']);

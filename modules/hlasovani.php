@@ -4,7 +4,7 @@ $w=input_array('w',array('','hlas',
 ));
 
 $smarty->assign('menu','hlasovani');
-$smarty->assign('title','Hlasování');
+$smarty->assign('title','HlasovÃ¡nÃ­');
 
 if ($auth->perm_w ?? null) {
     $otazka='';
@@ -24,7 +24,7 @@ if ($auth->perm_w ?? null) {
 	    $otazka, $min_score
 	));
 	$otazka=db_insert_id();
-	$smarty->assign('message','Otázka pøidána');
+	$smarty->assign('message','OtÃ¡zka pÅ™idÃ¡na');
 	$smarty->assign('message_c','message');
 	$w='add_odpoved';
     }
@@ -43,7 +43,7 @@ if ($auth->perm_w ?? null) {
 	    $w='add_odpoved';
 	}
 
-	$smarty->assign('message','Odpovìï pøidána');
+	$smarty->assign('message','OdpovÄ›Ä pÅ™idÃ¡na');
 	$smarty->assign('message_c','message');
     }
 
@@ -73,7 +73,7 @@ if ($auth->perm_w ?? null) {
 	    'UPDATE hlasovani SET active=1,timestmp=timestmp WHERE id=%d',
 	    $id
 	));
-	$smarty->assign('message','Hlasování aktivováno');
+	$smarty->assign('message','HlasovÃ¡nÃ­ aktivovÃ¡no');
 	$smarty->assign('message_c','message');
     }
 
@@ -85,7 +85,7 @@ if ($auth->perm_w ?? null) {
 	    'UPDATE hlasovani SET active=0,timestmp=timestmp WHERE id=%d',
 	    $id
 	));
-	$smarty->assign('message','Hlasování deaktivováno');
+	$smarty->assign('message','HlasovÃ¡nÃ­ deaktivovÃ¡no');
 	$smarty->assign('message_c','message');
     }
 }
@@ -169,10 +169,10 @@ if ($w=='hlas') {
 	    'INSERT INTO hlasovani_hlasy (otazka,odpoved,nick,ip) VALUES (%d,%d,%d,"%s")',
 	    $otazka,$odpoved,$auth->id,$_SERVER['REMOTE_ADDR']
         ));
-	$smarty->assign('message','Díky za hlas');
+	$smarty->assign('message','DÃ­ky za hlas');
 	$smarty->assign('message_c','message');
     } else {
-	$smarty->assign('message','Nemù¾ete hlasovat vícekrát nebo nesplòujete podmínky hlasování');
+	$smarty->assign('message','NemÅ¯Å¾ete hlasovat vÃ­cekrÃ¡t nebo nesplÅˆujete podmÃ­nky hlasovÃ¡nÃ­');
 	$smarty->assign('message_c','error');
     }
 }

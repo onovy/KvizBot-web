@@ -1,7 +1,7 @@
 <h2>{$title|escape}</h2>
 
 <p>
-<a href='?w=list&amp;filter=open'>Zpìt na seznam chyb</a>
+<a href='?w=list&amp;filter=open'>ZpÄ›t na seznam chyb</a>
 </p>
 
 {include file="../onovyPHPlib/templates/message.tpl"}
@@ -21,11 +21,11 @@
 </tr>
 {if $auth->perm_o|default:false}
 <tr>
-    <th>Otázka</th>
+    <th>OtÃ¡zka</th>
     <td>{$info->otazka|escape}</td>
 </tr>
 <tr>
-    <th>Odpovìï</th>
+    <th>OdpovÄ›Ä</th>
     <td>{$info->odpoved|escape}</td>
 </tr>
 {/if}
@@ -34,7 +34,7 @@
     <td>{$info->text}</td>
 </tr>
 <tr>
-    <th>Odkaz na dùkaz</th>
+    <th>Odkaz na dÅ¯kaz</th>
     <td><a href='{$info->link|escape}'>{$info->link|escape}</a></td>
 </tr>
 <tr>
@@ -63,7 +63,7 @@
 </tr>
 {/if}
 <tr>
-    <th>Pøidáno</th>
+    <th>PÅ™idÃ¡no</th>
     <td>{$info->pridano|escape}</td>
 </tr>
 {if $info->o_stav!='open'}
@@ -72,7 +72,7 @@
     {if $info->o_stav=='close'}
 	Opraveno
     {else}
-	Zamítnuto
+	ZamÃ­tnuto
     {/if}
     </th>
     <td>{$info->uzavreno|escape}</td>
@@ -80,7 +80,7 @@
 {/if}
 {if $info->comment}
 <tr>
-    <th>Komentáø</th>
+    <th>KomentÃ¡Å™</th>
     <td>{$info->comment|escape}</td>
 </tr>
 {/if}
@@ -88,12 +88,12 @@
 
 {section name=sec1 loop=$refer}
 {if $smarty.section.sec1.first}
-    <h3>Související chyby</h3>
+    <h3>SouvisejÃ­cÃ­ chyby</h3>
     <table class='table'>
     <tr>
 	<th>Stav</th>
-        <th>Pøidáno</th>
-        <th>Uzavøeno</th>
+        <th>PÅ™idÃ¡no</th>
+        <th>UzavÅ™eno</th>
         <th>Nick</th>
 {if $auth->perm_c|default:false}
         <th>IP</th>
@@ -129,23 +129,23 @@
 
 
 {if $info->o_stav=='open' && $auth->perm_c|default:false}
-<h3>Zmìnit stav na</h3>
+<h3>ZmÄ›nit stav na</h3>
 <form method='post'>
 <input type='hidden' name='w' value='set_stav' />
 <input type='hidden' name='chyba' value='{$chyba_id}' />
 <table class='form'>
 <tr>
     <td><input type='radio' name='stav' value='open'{if $info->o_stav=='open'} checked="checked"{/if}></td>
-    <td>Otevøená </td>
+    <td>OtevÅ™enÃ¡ </td>
 </tr><tr>
     <td><input type='radio' name='stav' value='close'{if $info->o_stav=='close'} checked="checked"{/if}></td>
-    <td>Opravená</td>
+    <td>OpravenÃ¡</td>
 </tr><tr>
     <td><input type='radio' name='stav' value='unconfirmed'{if $info->o_stav=='unconfirmed'} checked="checked"{/if}></td>
-    <td>Zamítnutá </td>
+    <td>ZamÃ­tnutÃ¡ </td>
 </tr><tr>
     <td></td>
-    <td>Komentáø: <textarea name='comment'>{$info->comment|escape}</textarea></td>
+    <td>KomentÃ¡Å™: <textarea name='comment'>{$info->comment|escape}</textarea></td>
 </tr><tr>
     <td></td>
     <td><input type='submit' value='Nastavit' /></td>

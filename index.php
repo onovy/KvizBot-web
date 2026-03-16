@@ -8,7 +8,7 @@ $page=input_array_noe('page',array(
     'licence-otazek','stats', 'registrace', 'skore_graf'
 ));
 if ($page === false) {
-    show_error('Str·nka nenalezena!');
+    show_error('Str√°nka nenalezena!');
 }
 if (empty($page)) $page='uvod';
 if (!empty($_GET['topmenu'] ?? null)) {

@@ -1,10 +1,10 @@
 <form method='post' action='hlasovani.htm'>
 <fieldlist>
-Otázka:
+OtÃ¡zka:
 <input type='text' name='otazka' maxlength='100' /><br />
-Min. skóre:
+Min. skÃ³re:
 <input type='text' name='min_score' />
-<input type='submit' value='Pøidat' />
+<input type='submit' value='PÅ™idat' />
 <input type='hidden' name='w' value='{$w}' />
 </fieldlist>
 </form>

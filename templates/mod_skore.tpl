@@ -1,7 +1,7 @@
 <h2>{$title|escape}</h2>
 
 {if $auth->id != 0}
-<a href='skore.htm?w=info&user={$auth->id|escape}'>Moje skσre</a>
+<a href='skore.htm?w=info&user={$auth->id|escape}'>Moje skΓ³re</a>
 {/if}
 
 <form method='get' action='skore.htm'>
@@ -15,7 +15,7 @@ Hledat: <input type='text' name='nick' />
 {if !$topmenu}
 <div style='float: left;'>
 {/if}
-TOP celkovιho skσre:<br />
+TOP celkovΓ©ho skΓ³re:<br />
 <br />
 <table class='table'>
     <tr>
@@ -50,7 +50,7 @@ TOP celkovιho skσre:<br />
 <br /><br />
 {/if}
 
-TOP mμsνθnνho skσre:<br />
+TOP mΔ›sΓ­ΔnΓ­ho skΓ³re:<br />
 {$top_month_name_p} |
 <strong>{$top_month_name|escape}</strong> |
 {$top_month_name_n}<br />

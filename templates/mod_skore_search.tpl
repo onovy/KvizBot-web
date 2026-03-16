@@ -1,4 +1,4 @@
-<h2>Skóre - hledání</h2>
+<h2>SkÃ³re - hledÃ¡nÃ­</h2>
 <table class='table'>
     <tr>
 	<th>Nick</td>

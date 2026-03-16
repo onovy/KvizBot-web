@@ -8,8 +8,8 @@
  */
 
 /*
- * V tomto souboru jsou pou¾ity èásti kódu a grafické obrázky z projektu
- * PHP Advanced Transfer Manager (http://phpatm.free.fr/) licencovanı
+ * V tomto souboru jsou pouÅ¾ity ÄÃ¡sti kÃ³du a grafickÃ© obrÃ¡zky z projektu
+ * PHP Advanced Transfer Manager (http://phpatm.free.fr/) licencovanÃ½
  * podle licence GNU GPL 2
  */
 

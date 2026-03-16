@@ -3,14 +3,14 @@
 <h2>{$title|escape} - editace</h2>
 {/if}
 {if $nahled!=''}
-<h3>Náhled</h3>
+<h3>NÃ¡hled</h3>
 <div class='nahled'>
 {$nahled}
 </div>
 <br /><br />
 <p class='error'>
-    Pamatujte na to, ¾e tohle je pouze náhled, pro ulo¾ení stisknìte tlaèítko
-    Ulo¾it ve spodní èásti tohoto formuláøe
+    Pamatujte na to, Å¾e tohle je pouze nÃ¡hled, pro uloÅ¾enÃ­ stisknÄ›te tlaÄÃ­tko
+    UloÅ¾it ve spodnÃ­ ÄÃ¡sti tohoto formulÃ¡Å™e
 </p>
 <br /><br />
 {/if}
@@ -23,7 +23,7 @@ Text:<br />
 	</script>
 {/literal}
 
-<input type='submit' value='Ulo¾it' name='upravit' />
-<input type='submit' value='Náhled' name='nahled' />
+<input type='submit' value='UloÅ¾it' name='upravit' />
+<input type='submit' value='NÃ¡hled' name='nahled' />
 
 </form>

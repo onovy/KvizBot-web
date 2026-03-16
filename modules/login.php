@@ -5,6 +5,6 @@ if(!isset($_SERVER['PHP_AUTH_USER'])) {
 } else {
     if ($auth->id==0) auth_show401();
     $smarty->assign('menu','login');
-    $smarty->assign('title','Pøihlá¹ení');
+    $smarty->assign('title','PÅ™ihlÃ¡Å¡enÃ­');
     $smarty->assign('main','login');
 }

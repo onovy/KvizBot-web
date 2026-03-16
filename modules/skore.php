@@ -5,7 +5,7 @@ $start_y=2005;
 $start_m=5;
 
 $smarty->assign('menu','skore');
-$smarty->assign('title','SkÛre');
+$smarty->assign('title','Sk√≥re');
 
 $w=input_array('w',array('','search','info','move'));
 
@@ -42,7 +42,7 @@ if ($w=='info') {
     $smarty->assign('pozice',$pozice);
     $pozice_all = $pozice;
     $smarty->assign('body',po3cislech($body,'&nbsp;'));
-    if (empty($added)) $added='D¯Ìve neæ 26. 9. 2005';
+    if (empty($added)) $added='D≈ô√≠ve ne≈æ 26. 9. 2005';
     $smarty->assign('added',$added);
 
     $history=array();
@@ -53,7 +53,7 @@ if ($w=='info') {
     list($pozice,$body,$nick,$added)=infouser($id,'month','score_kviz1');
     if ($body!=0) {
 	$history[$pos] = new \stdClass();
-	$history[$pos]->name='KvÌz 1.0';
+	$history[$pos]->name='Kv√≠z 1.0';
 	$history[$pos]->body_orig=$body;
 	$history[$pos]->body=po3cislech($body,'&nbsp;');
 	$history[$pos]->pozice=$pozice;
@@ -128,7 +128,7 @@ if ($w=='move' && ($auth->perm_a ?? null)) {
     ));
     $done = false;
     if ($fa['id']) {
-	$smarty->assign('error', 'CÌlov˝ nick jiæ existuje, zmÏnu nenÌ moænÈ provÈst!');	
+	$smarty->assign('error', 'C√≠lov√Ω nick ji≈æ existuje, zmƒõnu nen√≠ mo≈æn√© prov√©st!');	
     } else {
 	if (!empty($_POST['confirm'])) {
 	    $q = db_query(sprintf(
@@ -157,7 +157,7 @@ if ($show_m==-1 || $show_y==-1) {
 }
 $table_month='score_'.$show_y.'_'.$show_m;
 if (!db_table_exists($table_month)) {
-    show_error('SkÛre pro tento mÏsÌc neexistuje');
+    show_error('Sk√≥re pro tento mƒõs√≠c neexistuje');
 }
 
 // TOP ALL

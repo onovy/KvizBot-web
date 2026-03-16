@@ -1,10 +1,10 @@
 <h2>FullText</h2>
-Hledanı øetìzec: {$text|escape}<br>
-Vısledky:
+HledanÃ½ Å™etÄ›zec: {$text|escape}<br>
+VÃ½sledky:
 <table class='table'>
 <tr>
-    <th>Otázka</th>
-    <th>Odpoveï</th>
+    <th>OtÃ¡zka</th>
+    <th>OdpoveÄ</th>
 </tr>
 {section name=sec1 loop=$result}
 <tr>

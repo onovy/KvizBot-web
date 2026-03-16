@@ -3,14 +3,14 @@
 {include file="../onovyPHPlib/templates/message.tpl"}
 
 {if $auth->perm_w|default:false}
-    <a href='?w=add_otazka'>Pøidat otázku</a><br />
+    <a href='?w=add_otazka'>PÅ™idat otÃ¡zku</a><br />
 {/if}
 
 <br />
-<strong>U ka¾dého hlasování je nutné hlasovat zvlá¹»!</strong><br />
-<strong>Urèité hlasování je podmínìno pøihlá¹ením a získáním urèitého poètu bodù</strong><br />
+<strong>U kaÅ¾dÃ©ho hlasovÃ¡nÃ­ je nutnÃ© hlasovat zvlÃ¡Å¡Å¥!</strong><br />
+<strong>UrÄitÃ© hlasovÃ¡nÃ­ je podmÃ­nÄ›no pÅ™ihlÃ¡Å¡enÃ­m a zÃ­skÃ¡nÃ­m urÄitÃ©ho poÄtu bodÅ¯</strong><br />
 <br />
-<a href='hlasovani.htm?inactive=1'>Zobrazit i neaktivní</a>
+<a href='hlasovani.htm?inactive=1'>Zobrazit i neaktivnÃ­</a>
 <br />
 {section name=sec1 loop=$otazky}
 <strong>
@@ -18,7 +18,7 @@
 </strong>
 <br />
 {if $otazky[sec1]->min_score!=0}
-Minimální poèet bodù: {$otazky[sec1]->min_score|escape}
+MinimÃ¡lnÃ­ poÄet bodÅ¯: {$otazky[sec1]->min_score|escape}
 {/if}
 {if $auth->perm_w|default:false}
     {if $otazky[sec1]->active}
@@ -26,7 +26,7 @@ Minimální poèet bodù: {$otazky[sec1]->min_score|escape}
     {else}
 	<form method='post' style='display:inline'><input type='hidden' name='w' value='active' /><input type='hidden' name='hlasovani' value='{$otazky[sec1]->id}' /><input type='submit' value='Aktivovat' /></form>
     {/if}
-    | <a href='?w=add_odpoved&amp;otazka={$otazky[sec1]->id}'>Pøidat odpovìï</a>
+    | <a href='?w=add_odpoved&amp;otazka={$otazky[sec1]->id}'>PÅ™idat odpovÄ›Ä</a>
     | <a href='?w=ips&amp;otazka={$otazky[sec1]->id}'>Hlasy</a>
 {/if}
 <br />

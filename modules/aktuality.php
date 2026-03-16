@@ -11,7 +11,7 @@ if ($auth->perm_w ?? null) {
             'INSERT INTO aktuality (nazev,text,autor) VALUES ("%s","%s",%d)',
             $nazev,$text,$auth->id
         ));
-        $smarty->assign('message','Pøidána');
+        $smarty->assign('message','PÅ™idÃ¡na');
         $smarty->assign('message_c','message');
     }
 
@@ -22,7 +22,7 @@ if ($auth->perm_w ?? null) {
             'DELETE FROM aktuality WHERE id=%d',
             $id
         ));
-        $smarty->assign('message','Smazána');
+        $smarty->assign('message','SmazÃ¡na');
         $smarty->assign('message_c','message');
     }
 }

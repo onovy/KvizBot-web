@@ -1,6 +1,6 @@
 <?php
 /**
- * Inicializace promìnných, naètení konfigurace
+ * Inicializace promÄ›nnÃ½ch, naÄtenÃ­ konfigurace
  */
 
 // Nacteni konfigurace

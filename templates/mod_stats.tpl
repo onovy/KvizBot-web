@@ -1,5 +1,5 @@
 <h3>{$title|escape}</h3>
-Ve frontì: {$fronta}<br />
-Ji¾ zobrazeno: {$zobrazeno}<br />
+Ve frontÄ›: {$fronta}<br />
+JiÅ¾ zobrazeno: {$zobrazeno}<br />
 Min: {$min}<br />
 Max: {$max}<br />

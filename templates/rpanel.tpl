@@ -1,6 +1,6 @@
 <div id="ostatni">
 
-TOP mμsνθnνho skσre:<br />
+TOP mΔ›sΓ­ΔnΓ­ho skΓ³re:<br />
 <table>
     <tr>
 	<th>P</th>
@@ -18,7 +18,7 @@ TOP mμsνθnνho skσre:<br />
 {/section}
 </table>
 <br />
-TOP celkovιho skσre:<br />
+TOP celkovΓ©ho skΓ³re:<br />
 <table>
     <tr>
 	<th>P</th>

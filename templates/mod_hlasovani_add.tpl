@@ -1,2 +1,2 @@
-<h2>Pøidání otázky</h2>
+<h2>PÅ™idÃ¡nÃ­ otÃ¡zky</h2>
 {include file="mod_hlasovani_form.tpl"}

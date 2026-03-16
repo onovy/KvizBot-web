@@ -1,4 +1,4 @@
-<h2>Pøihlá¹ení</h2>
+<h2>PÅ™ihlÃ¡Å¡enÃ­</h2>
 <p>
-Byl jste úspì¹nì pøihlá¹en
+Byl jste ÃºspÄ›Å¡nÄ› pÅ™ihlÃ¡Å¡en
 </p>

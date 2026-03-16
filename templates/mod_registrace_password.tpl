@@ -2,7 +2,7 @@
 
 {include file="../onovyPHPlib/templates/message.tpl"}
 
-Nastavení hesla pro pøihlá¹ení do webu:
+NastavenÃ­ hesla pro pÅ™ihlÃ¡Å¡enÃ­ do webu:
 <form method='post' action='/registrace.htm'>
 <fieldset>
 <input type='hidden' name='w' value='password2' />
@@ -10,6 +10,6 @@ Nastavení hesla pro pøihlá¹ení do webu:
 Heslo: <input type='password' name='pass' />
 Heslo znovu: <input type='password' name='pass2' />
 <br />
-<input type='submit' value='Dokonèit registraci' />
+<input type='submit' value='DokonÄit registraci' />
 </fieldset>
 </form>

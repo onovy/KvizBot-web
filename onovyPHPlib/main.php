@@ -1,6 +1,6 @@
 <?php
 /**
- * NaËtenÌ z·kladnÌch knihoven, modul˘ a knihoven webu
+ * Naƒçten√≠ z√°kladn√≠ch knihoven, modul≈Ø a knihoven webu
  */
 
 define('ONOVY_PHP_LIB',1);
@@ -24,13 +24,13 @@ if ($local_config['verbose']>=1) {
 
     foreach ($consts['lib_config_rules'] as $rule) {
 	if (!isset($lib_config[$rule])) {
-	    print WEB_DIR . '/configs/lib.php: '.$rule.' nenÌ nastaveno!<br />';
+	    print WEB_DIR . '/configs/lib.php: '.$rule.' nen√≠ nastaveno!<br />';
 	}
     }
     
     foreach ($consts['local_config_rules'] as $rule) {
 	if (!isset($local_config[$rule])) {
-	    print WEB_DIR . '/configs/local.php: '.$rule.' nenÌ nastaveno!<br />';
+	    print WEB_DIR . '/configs/local.php: '.$rule.' nen√≠ nastaveno!<br />';
 	}
     }
 }
@@ -56,12 +56,12 @@ $smarty->assign('CHARSET',$lib_config['charset']);
 
 // Moduly
 foreach ($lib_config['modules'] as $lib) {
-    if ($local_config['verbose']>=2) print 'NaËÌt·m modul ' . OLIB_DIR . '/mlib/'.$lib.'.php<br />';
+    if ($local_config['verbose']>=2) print 'Naƒç√≠t√°m modul ' . OLIB_DIR . '/mlib/'.$lib.'.php<br />';
     require_once OLIB_DIR . '/mlib/'.$lib.'.php';
 }
 
 // Knihovny webu
 foreach ($lib_config['web_libs'] as $lib) {
-    if ($local_config['verbose']>=2) print 'NaËÌt·m knihovnu webu: ' . WEB_DIR . '/libs/'.$lib.'.php<br />';
+    if ($local_config['verbose']>=2) print 'Naƒç√≠t√°m knihovnu webu: ' . WEB_DIR . '/libs/'.$lib.'.php<br />';
     require_once WEB_DIR . '/libs/'.$lib.'.php';
 }

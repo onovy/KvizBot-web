@@ -2,7 +2,7 @@
 
 <table class='table'>
 <tr>
-    <th>Odpovμο</th>
+    <th>OdpovΔ›Δ</th>
     <th>Nick</th>
     <th>IP</th>
     <th>Reverz</th>

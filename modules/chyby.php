@@ -4,12 +4,12 @@ if (!$auth->id) {
     error_notperm();
 }
 
-$stavy['open']='Otevøená';
-$stavy['close']='Opravená';
-$stavy['unconfirmed']='Zamítnutá';
+$stavy['open']='OtevÅ™enÃ¡';
+$stavy['close']='OpravenÃ¡';
+$stavy['unconfirmed']='ZamÃ­tnutÃ¡';
 
 $smarty->assign('menu','chyby');
-$smarty->assign('title','Chyby v otázkách');
+$smarty->assign('title','Chyby v otÃ¡zkÃ¡ch');
 
 $w=input_array('w',array('','add','list','info','set_stav'));
 
@@ -61,7 +61,7 @@ if ($auth->perm_c ?? null) {
 	$ok=true;
 	
 	if (empty($comment) && $stav == 'unconfirmed') {
-	    $smarty->assign('message','Musíte zadat komentáø pro zamítnutí chyby');
+	    $smarty->assign('message','MusÃ­te zadat komentÃ¡Å™ pro zamÃ­tnutÃ­ chyby');
 	    $smarty->assign('message_c','error');
 	    $ok = false;
 	}
@@ -141,7 +141,7 @@ if ($w=='add') {
 	$cislo,$text,$link,$nick,$_SERVER['REMOTE_ADDR']
     ));
     
-    $smarty->assign('message','Chyba odeslána, dìkujeme');
+    $smarty->assign('message','Chyba odeslÃ¡na, dÄ›kujeme');
     $smarty->assign('message_c','message');
 }
 

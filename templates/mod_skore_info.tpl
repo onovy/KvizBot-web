@@ -1,4 +1,4 @@
-<h2>Skóre - info o hráèi</h2>
+<h2>SkÃ³re - info o hrÃ¡Äi</h2>
 <h3>
     Nick:
     <a href='https://xchat.cz/whoiswho/profile.php?nick={$nick|escape:"url"}'>
@@ -21,10 +21,10 @@
 </h3>
 <table class='table'>
     <tr>
-	<th>Celkové skóre</th>
+	<th>CelkovÃ© skÃ³re</th>
 	<td align='right'>{$body}</td>
     </tr><tr>
-	<th>Celkové poøadí</th>
+	<th>CelkovÃ© poÅ™adÃ­</th>
 	<td align='right'>{$pozice}.</td>
     </tr><tr>
 	<th>Hraje od</th>
@@ -33,7 +33,7 @@
 </table>
 <br />
 
-<strong>Celkové umístìní:</strong><br />
+<strong>CelkovÃ© umÃ­stÄ›nÃ­:</strong><br />
 <table class='table'>
     <tr>
 	<th>P</th>
@@ -87,10 +87,10 @@
 </table>
 
 <br />
-<strong>Skóre po mìsících:</strong><br />
+<strong>SkÃ³re po mÄ›sÃ­cÃ­ch:</strong><br />
 <table class='table'>
     <tr>
-	<th>Mìsíc a rok</th>
+	<th>MÄ›sÃ­c a rok</th>
 	<th>Body</th>
 	<th>Pozice</th>
 	<th></th>
@@ -132,11 +132,11 @@
 </small>
 
 {if $auth->perm_a|default:false}
-<h3>Pøevést skóre</h3>
+<h3>PÅ™evÃ©st skÃ³re</h3>
 <form method='post' action='skore.htm'>
 <input type='hidden' name='w' value='move' />
 <input type='hidden' name='id' value='{$id}' />
-Cílovı nick: <input type='text' name='nick' />
-<input type='submit' value='Pøevést' />
+CÃ­lovÃ½ nick: <input type='text' name='nick' />
+<input type='submit' value='PÅ™evÃ©st' />
 </form>
 {/if}

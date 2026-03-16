@@ -1,6 +1,6 @@
 <h2>{$title|escape}</h2>
 
-<strong>Celkem hráèù online:</strong> {$count}<br />
+<strong>Celkem hrÃ¡ÄÅ¯ online:</strong> {$count}<br />
 <table class='table'>
 <tr>
     <th>Nick</th>
@@ -51,10 +51,10 @@
 
 <br />
 
-<img src='rrd/online.png' alt='Graf online u¾ivatelù' /><br />
-<img src='rrd/online_week.png' alt='Graf online u¾ivatelù' /><br />
-<img src='rrd/online_month.png' alt='Graf online u¾ivatelù' /><br />
-<img src='rrd/online_year.png' alt='Graf online u¾ivatelù' /><br />
+<img src='rrd/online.png' alt='Graf online uÅ¾ivatelÅ¯' /><br />
+<img src='rrd/online_week.png' alt='Graf online uÅ¾ivatelÅ¯' /><br />
+<img src='rrd/online_month.png' alt='Graf online uÅ¾ivatelÅ¯' /><br />
+<img src='rrd/online_year.png' alt='Graf online uÅ¾ivatelÅ¯' /><br />
 <small>
 <a href='/rrd/online.rrd' >RRD</a>
 </small>

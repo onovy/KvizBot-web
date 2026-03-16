@@ -9,7 +9,7 @@
 <input type='hidden' name='w' value='add' />
 <table border='0'>
     <tr>
-	<td>Název:</td>
+	<td>NÃ¡zev:</td>
 	<td><input type='text' name='nazev' /></td>
     </tr><tr>
 	<td>Text:</td>
@@ -20,7 +20,7 @@
 	</td>
     </tr><tr>
 	<td></td>
-	<td><input type='submit' value='Pøidat' /></td>
+	<td><input type='submit' value='PÅ™idat' /></td>
     </tr>
 </table>
 </fieldlist>
@@ -28,7 +28,7 @@
 {/if}
 
 {if $offset>=10}
-<a href='?offset={$offset-10}'>Novìj¹í</a>
+<a href='?offset={$offset-10}'>NovÄ›jÅ¡Ã­</a>
 {/if}
 
 {section name=sec1 loop=$aktuality}
@@ -36,10 +36,10 @@
 <h3>{$aktuality[sec1]->nazev|escape} {if $auth->perm_w|default:false}<form method='post' style='display:inline' onsubmit="return confirm('Opravdu smazat?');"><input type='hidden' name='w' value='del' /><input type='hidden' name='id' value='{$aktuality[sec1]->id}' /><input type='submit' value='smazat' /></form>{/if}</h3>
 <ul>
     <li><span>Autor:</span> {$aktuality[sec1]->autor|escape}</li>
-    <li><span>Èas:</span> {$aktuality[sec1]->kdy|escape}</li>
+    <li><span>ÄŒas:</span> {$aktuality[sec1]->kdy|escape}</li>
 </ul>
 {$aktuality[sec1]->text}
 </div>
 {/section}
 
-<a href='?offset={$offset+10}'>Star¹í</a>
+<a href='?offset={$offset+10}'>StarÅ¡Ã­</a>

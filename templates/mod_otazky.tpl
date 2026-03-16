@@ -1,19 +1,19 @@
 <h2>{$title|escape}</h2>
 
 <h3>Pravidla a licence</h3>
-<a href='pravidla_otazky.htm'>Pravidla</a>, které musí splòovat v¹echny otázky.<br />
-<a href='licence-otazek.htm'>Licence</a>, pod kterou jsou v¹echny otázky pøidávány.
+<a href='pravidla_otazky.htm'>Pravidla</a>, kterÃ© musÃ­ splÅˆovat vÅ¡echny otÃ¡zky.<br />
+<a href='licence-otazek.htm'>Licence</a>, pod kterou jsou vÅ¡echny otÃ¡zky pÅ™idÃ¡vÃ¡ny.
 
 {if $auth->perm_o|default:false}
 <h3>Editace</h3>
-<a href='?w=add'>Pøidat otázku</a>
+<a href='?w=add'>PÅ™idat otÃ¡zku</a>
 <table border=0>
 <form method='get'>
 <input type='hidden' name='w' value='id' />
 <tr>
     <td>ID:</td>
     <td><input type='text' name='id'></td>
-    <td><input type='submit' value='Najít'></td>
+    <td><input type='submit' value='NajÃ­t'></td>
 </tr>
 </form>
 
@@ -23,7 +23,7 @@
 <tr>
     <td>FullText:</td>
     <td><input type='text' name='text'></td>
-    <td><input type='submit' value='Najít'></td>
+    <td><input type='submit' value='NajÃ­t'></td>
 </tr>
 </form>
 
@@ -31,7 +31,7 @@
 
 {if $auth->perm_a|default:false}
 <br />
-<strong>Deaktivovat otázku:</strong><br />
+<strong>Deaktivovat otÃ¡zku:</strong><br />
 {$mazani_message|default:''}
 <table>
 <form method='post'>
@@ -51,7 +51,7 @@
 
 
 {if $auth->id!=0}
-<h3>Schválení</h3>
+<h3>SchvÃ¡lenÃ­</h3>
 {$schvaleni_message|default:''}
 <form method='post'>
 <input type='hidden' name='w' value='schvaleni' />
@@ -59,11 +59,11 @@
 <tr>
     <th></th>
     <th>ID</th>
-    <th>Otázka</th>
-    <th>Odpovìï</th>
-    <th>Téma</th>
-    <th>U¾ivatel</th>
-    <th>Komentáø</th>
+    <th>OtÃ¡zka</th>
+    <th>OdpovÄ›Ä</th>
+    <th>TÃ©ma</th>
+    <th>UÅ¾ivatel</th>
+    <th>KomentÃ¡Å™</th>
 </tr>
 {section name=sec1 loop=$schvaleni}
     <tr>
@@ -77,18 +77,18 @@
     </tr>
 {/section}
 </table>
-<input type='submit' value='Schválit' />
+<input type='submit' value='SchvÃ¡lit' />
 </form>
 {/if}
 
-<h3>Oznámení chyby</h3>
-<a href='chyby.htm'>Oznámit</a> chybu v otázce.
+<h3>OznÃ¡menÃ­ chyby</h3>
+<a href='chyby.htm'>OznÃ¡mit</a> chybu v otÃ¡zce.
 
 {if $auth->id!=0}
-<h3>Témata</h3>
-<a href='?w=list'>Procházet otázky podle témat</a><br>
+<h3>TÃ©mata</h3>
+<a href='?w=list'>ProchÃ¡zet otÃ¡zky podle tÃ©mat</a><br>
 {if $auth->perm_a|default:false}
-<a href='?w=temata'>Editovat témata</a><br>
+<a href='?w=temata'>Editovat tÃ©mata</a><br>
 {/if}
 {/if}
 

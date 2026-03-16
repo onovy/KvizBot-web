@@ -188,7 +188,7 @@ $errors.="\nCelkem tabulek: ".$count;
 
 $smarty->assign('errors',$errors);
 $smarty->assign('really',$really);
-$smarty->assign('title','Inicializace databáze');
+$smarty->assign('title','Inicializace databÃ¡ze');
 $smarty->assign('main','db_init');
 $smarty->assign('main_onovyPHPlib',1);
 
