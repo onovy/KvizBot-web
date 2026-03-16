@@ -39,7 +39,6 @@ if ($local_config['verbose']>=1) {
 setlocale(LC_ALL,$lib_config['locale']);
 
 // Podpurne knihovny
-require_once OLIB_DIR . '/lib/str_ireplace.php';
 require_once OLIB_DIR . '/lib/strings.php';
 
 // Zakladni knihovny

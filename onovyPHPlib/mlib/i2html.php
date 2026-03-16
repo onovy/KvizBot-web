@@ -49,27 +49,27 @@ function i2html($input,$typo=true) {
    $s .= str_repeat($end, $count);
  }
  
- $s=stri_replace("[b]","<strong>",$s);
- $s=stri_replace("[/b]","</strong>",$s);
- $s=stri_replace("[i]","<i>",$s);
- $s=stri_replace("[/i]","</i>",$s);
- $s=stri_replace("[u]","<span style='text-decoration: underline;'>",$s);
- $s=stri_replace("[/u]","</span>",$s);
- $s=stri_replace("[h1]","<h1>",$s);
- $s=stri_replace("[/h1]","</h1>",$s);
- $s=stri_replace("[h2]","<h2>",$s);
- $s=stri_replace("[/h2]","</h2>",$s);
- $s=stri_replace("[h3]","<h3>",$s);
- $s=stri_replace("[/h3]","</h3>",$s);
- $s=stri_replace("[h4]","<h4>",$s);
- $s=stri_replace("[/h4]","</h4>",$s);
- $s=stri_replace("[br]","<br />",$s);
- $s=stri_replace("[table]","<table>",$s);
- $s=stri_replace("[/table]","</table>",$s);
- $s=stri_replace("[tr]","<tr>",$s);
- $s=stri_replace("[/tr]","</tr>",$s);
- $s=stri_replace("[td]","<td>",$s);
- $s=stri_replace("[/td]","</td>",$s);
+ $s=str_ireplace("[b]","<strong>",$s);
+ $s=str_ireplace("[/b]","</strong>",$s);
+ $s=str_ireplace("[i]","<i>",$s);
+ $s=str_ireplace("[/i]","</i>",$s);
+ $s=str_ireplace("[u]","<span style='text-decoration: underline;'>",$s);
+ $s=str_ireplace("[/u]","</span>",$s);
+ $s=str_ireplace("[h1]","<h1>",$s);
+ $s=str_ireplace("[/h1]","</h1>",$s);
+ $s=str_ireplace("[h2]","<h2>",$s);
+ $s=str_ireplace("[/h2]","</h2>",$s);
+ $s=str_ireplace("[h3]","<h3>",$s);
+ $s=str_ireplace("[/h3]","</h3>",$s);
+ $s=str_ireplace("[h4]","<h4>",$s);
+ $s=str_ireplace("[/h4]","</h4>",$s);
+ $s=str_ireplace("[br]","<br />",$s);
+ $s=str_ireplace("[table]","<table>",$s);
+ $s=str_ireplace("[/table]","</table>",$s);
+ $s=str_ireplace("[tr]","<tr>",$s);
+ $s=str_ireplace("[/tr]","</tr>",$s);
+ $s=str_ireplace("[td]","<td>",$s);
+ $s=str_ireplace("[/td]","</td>",$s);
  $s=preg_replace("/\[img (.*?)\]/i","<img src=\"/img/c/\\1\" alt='Obrazek' />",$s);
  $s=preg_replace("/\[img_l (.*?)\]/i","<img src=\"/img/c/\\1\" class='left' alt='Obrazek' />",$s);
  $s=preg_replace("/\[img_thumb (.*?)\]/i","<a href=\"/img/c/\\1\"><img src=\"/img/c/thumb/\\1\" alt='Obrazek' /></a>",$s);
@@ -77,14 +77,14 @@ function i2html($input,$typo=true) {
  $s=preg_replace("/\[a_nw (.*?)\]/i","<a href=\"\\1\" onclick=\"window.open(this.href,'_blank');return false;\">",$s);
  $s=preg_replace("/\[color (.*?)\]/i","<span style=\"color: \\1;\">",$s);
  $s=preg_replace("/\[size (.*?)\]/i","<p style=\"font-size: \\1em\">",$s);
- $s=stri_replace("[/a]","</a>",$s);
- $s=stri_replace("[/color]","</span>",$s);
- $s=stri_replace("[/size]","</p>",$s);
+ $s=str_ireplace("[/a]","</a>",$s);
+ $s=str_ireplace("[/color]","</span>",$s);
+ $s=str_ireplace("[/size]","</p>",$s);
 
  // aktivni promenne
  if (strpos($s,'{poslední změna}')) {
     $fa=db_fquery('SELECT DATE_FORMAT(last_action,"%d. %m. %Y") FROM admins ORDER BY admins.last_action DESC LIMIT 1');
-    $s=stri_replace("{poslední změna}",$fa[0],$s);
+    $s=str_ireplace("{poslední změna}",$fa[0],$s);
  }
  
  
