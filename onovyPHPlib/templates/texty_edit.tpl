@@ -14,7 +14,7 @@
 </p>
 <br /><br />
 {/if}
-{if $message!=''}<p>{$message}</p>{/if}
+{include file="message.tpl"}
 <form method='post'>
 Text:<br />
 {literal}
