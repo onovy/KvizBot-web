@@ -62,5 +62,5 @@ function input_checkbox($var) {
 }
 
 function HE($s) {
- return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'ISO8859-1');
+	return htmlspecialchars($s, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401);
 }
