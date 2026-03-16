@@ -24,12 +24,6 @@ $local_config['sql_pass']='';
 $local_config['sql_host']='localhost';
 $local_config['sql_charset']='utf8mb4';
 
-// Nastaveni databaze - phpbb
-$local_config['phpbb_sql_name']='xkviz_phpbb';
-$local_config['phpbb_sql_user']='xkviz';
-$local_config['phpbb_sql_pass']='';
-$local_config['phpbb_sql_host']='localhost';
-
 // Nastaveni SMARTY
 $local_config['compile_check']=true;
 

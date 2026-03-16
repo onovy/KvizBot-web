@@ -59,7 +59,6 @@ There is no build step and no package manager. Setup is manual:
    - `web_dir` — absolute filesystem path to the web root
    - `web_www` — public base URL
    - MySQL credentials: `sql_name`, `sql_user`, `sql_pass`, `sql_host`
-   - (optional) phpBB MySQL credentials for a separate DB
    - `compile_check`, `use_cache`, `verbose`, `error_reporting`
 
 2. **Directory permissions** — the web server process must be able to write to:
