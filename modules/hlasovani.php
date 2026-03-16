@@ -143,7 +143,7 @@ if ($w=='hlas') {
     // overeni IP
     $fa2=db_fquery(sprintf(
 	'SELECT id FROM hlasovani_hlasy WHERE otazka=%d AND ip="%s"',
-	$otazka,$_SERVER['REMOTE_ADDR']
+	$otazka,db_escape_string($_SERVER['REMOTE_ADDR'])
     ));
     if (!empty($fa2['id'])) $hlasuj=false;
     
@@ -167,7 +167,7 @@ if ($w=='hlas') {
     if ($hlasuj) {
 	db_query(sprintf(
 	    'INSERT INTO hlasovani_hlasy (otazka,odpoved,nick,ip) VALUES (%d,%d,%d,"%s")',
-	    $otazka,$odpoved,$auth->id,$_SERVER['REMOTE_ADDR']
+	$otazka,$odpoved,$auth->id,db_escape_string($_SERVER['REMOTE_ADDR'])
         ));
 	$smarty->assign('message','Díky za hlas');
 	$smarty->assign('message_c','message');

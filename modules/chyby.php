@@ -138,7 +138,7 @@ if ($w=='add') {
 
     db_query(sprintf(
 	'INSERT INTO otazky_chyby (cislo,text,link,nick,pridano,stav,ip) VALUES (%d,"%s","%s",%d,now(),"open","%s")',
-	$cislo,$text,$link,$nick,$_SERVER['REMOTE_ADDR']
+	$cislo,$text,$link,$nick,db_escape_string($_SERVER['REMOTE_ADDR'])
     ));
     
     $smarty->assign('message','Chyba odeslána, děkujeme');
