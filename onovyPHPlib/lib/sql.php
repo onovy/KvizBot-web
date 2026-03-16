@@ -56,7 +56,7 @@ function db_fquery_noe($q) {
 function db_insert_id() {
     global $db_link;
     
-    return $db_link->$insert_id;
+    return $db_link->insert_id;
 }
 
 function db_escape_string($s) {

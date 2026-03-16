@@ -34,10 +34,10 @@ function input_string($var) {
 
 function input_char($var) {
  $a=array_merge($_GET,$_POST);
- if (strlen($a[$var] ?? null) != 1) {
+ if (strlen($a[$var] ?? '') != 1) {
     error_notchar($var);
  }
- return db_escape_string($a[$var] ?? null);
+ return db_escape_string($a[$var] ?? '');
 }
 
 function input_array($var,$array) {
