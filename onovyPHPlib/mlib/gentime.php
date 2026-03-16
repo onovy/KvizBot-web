@@ -25,7 +25,7 @@ define('MODULE_GENTIME',1);
  */
 function smarty_ondisplay($tpl_source, $template) {
     global $script_start_time;
-    $gentime=round(microtime_float()-$script_start_time,4);
+    $gentime=round(microtime(true)-$script_start_time,4);
     return preg_replace('/<!--\$gentime\/\/-->/U',$gentime,$tpl_source);
 }
 

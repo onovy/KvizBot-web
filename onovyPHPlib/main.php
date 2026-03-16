@@ -5,11 +5,7 @@
 
 define('ONOVY_PHP_LIB',1);
 
-function microtime_float() {
-    list($usec, $sec) = explode(" ", microtime());
-    return ((float)$usec + (float)$sec);
-}
-$script_start_time=microtime_float();
+$script_start_time=microtime(true);
 
 // Nacteni konstant
 require_once OLIB_DIR . '/lib/consts.php';

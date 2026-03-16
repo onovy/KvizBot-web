@@ -14,7 +14,7 @@ Guidance for AI coding agents working on this repository.
 
 | Component | Technology |
 |-----------|------------|
-| Language | PHP 7.3+ (uses `PASSWORD_ARGON2ID`, null-coalescing operators, `random_bytes()`) |
+| Language | PHP 8.1+ |
 | Database | MySQL/MariaDB via `mysqli` extension |
 | Templates | [Smarty](https://smarty.php.net/) (vendored in `onovyPHPlib/extlib/Smarty/`) |
 | Caching | Disk-based (`cache/`) + APCu for password verification |

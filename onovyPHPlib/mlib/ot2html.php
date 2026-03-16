@@ -151,7 +151,7 @@ function ot2html($in,$use_cache=true) {
 	    continue;
 	}
 	// H(3-$maxh)
-	if (str_startsWith($l,'==')) {
+	if (str_starts_with($l,'==')) {
 	    $h=str_findFirstNotOf($l,'=');
 	    if ($h == -1) {
 		$out .= $l;
