@@ -3,7 +3,7 @@ if (!$auth->perm_p) {
     error_notperm();
 }
 
-$w=input_string('w',array('','pass','perm'));
+$w=input_array('w',array('','pass','perm'));
 
 $smarty->assign('menu','perms');
 
