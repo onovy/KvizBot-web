@@ -23,11 +23,11 @@ define('MODULE_GENTIME',1);
  * @param &$smarty - reference na Smarty tridu
  * @return vystupni data
  */
-function smarty_ondisplay($tpl_source, &$smarty) {
+function smarty_ondisplay($tpl_source, $template) {
     global $script_start_time;
     $gentime=round(microtime_float()-$script_start_time,4);
     return preg_replace('/<!--\$gentime\/\/-->/U',$gentime,$tpl_source);
 }
 
-// Zaregistrovani vystupniho filteru v tride Smarty		   
-$smarty->register_outputfilter("smarty_ondisplay");
+// Zaregistrovani vystupniho filteru v tride Smarty
+$smarty->registerFilter('output', 'smarty_ondisplay');
