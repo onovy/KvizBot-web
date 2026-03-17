@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul pro konverzi textu (novejsi verze)
+ * Module for text conversion (newer version)
  *
  * @category    Module
  * @package     Module
@@ -42,10 +42,10 @@ $simple_tags=array(
 $maxh=5;
 
 /**
- * Konverze textu na HTML (novejsi verze)
+ * Convert text to HTML (newer version)
  *
- * @param $input - vstupni text
- * @return zkonvertovany text
+ * @param $input - input text
+ * @return converted text
  */
 function ot2html($in,$use_cache=true) {
     global $maxh;
@@ -58,7 +58,7 @@ function ot2html($in,$use_cache=true) {
 	}
     }
     
-    // Typografie a escape
+    // Typography and escaping
     if (defined('MODULE_TYPO')) {
 	$in = typo(htmlspecialchars($in));
     } else {
@@ -72,7 +72,7 @@ function ot2html($in,$use_cache=true) {
     $table_open = false;
 
     foreach ($lines as $l) {
-	// Seznamy
+	// Lists
 	if ($l[0] == '*' || $l[0] == '#') {
 	    if ($table_open) {
 		ot2html_table_close($out);
@@ -98,7 +98,7 @@ function ot2html($in,$use_cache=true) {
 	    }
 	}
 
-	// Tabulky
+	// Tables
 	if ($l[0]=='^' || $l[0]=='|') {
 	    $s=$l;
 	    if (!$table_open) {
@@ -165,7 +165,7 @@ function ot2html($in,$use_cache=true) {
 	    continue;
 	}
 	
-	// Odstavce
+	// Paragraphs
 	if (empty($l)) {
 	    $out .= "\n</p><p>\n";
 	    continue;
@@ -225,7 +225,7 @@ function ot2html_simple_tags($l) {
 	    $tag = substr($tmp,1 + ($link?1:0),$len - 1 - ($link?1:0));
     	    $params = explode(' ',$tag);
     	    $l = substr ($l,$start + $len + 1 + ($open?0:1) + ($link?1:0));
-	    if ($link) { // Odkaz
+	    if ($link) { // Link
 		if (empty($params[1])) {
 		    $title=$params[0];
 		} else {

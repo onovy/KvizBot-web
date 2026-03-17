@@ -1,8 +1,8 @@
 <?php
 /**
- * Modul pro mereni casu generovani stranky.
- * Pred zobrazenim vystupnich dat se provede zamena <!--$gentim//--> za hodnotu
- * casu
+ * Module for measuring page generation time.
+ * Before output is displayed, <!--$gentime//--> is replaced with the
+ * generation time value.
  *
  * @category    Module
  * @package     Module
@@ -15,13 +15,13 @@ if (!defined('ONOVY_PHP_LIB')) die;
 define('MODULE_GENTIME',1);
 
 /**
- * Konverze <!--$gentime//--> pred odeslanim textu prohlizeci na konkretni cas
- * generace stranky
+ * Replace <!--$gentime//--> with the actual page generation time before
+ * sending output to the browser
  *
  * @internal
- * @param $tpl_source - vstupni data
- * @param &$smarty - reference na Smarty tridu
- * @return vystupni data
+ * @param $tpl_source - input data
+ * @param &$smarty - reference to the Smarty class
+ * @return output data
  */
 function smarty_ondisplay($tpl_source, $template) {
     global $script_start_time;
@@ -29,5 +29,5 @@ function smarty_ondisplay($tpl_source, $template) {
     return preg_replace('/<!--\$gentime\/\/-->/U',$gentime,$tpl_source);
 }
 
-// Zaregistrovani vystupniho filteru v tride Smarty
+// Register output filter in the Smarty class
 $smarty->registerFilter('output', 'smarty_ondisplay');

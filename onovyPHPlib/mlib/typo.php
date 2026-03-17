@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul pro typografickou upravu textu
+ * Module for typographic text processing
  *
  * @category    Module
  * @package     Module
@@ -13,11 +13,11 @@ if (!defined('ONOVY_PHP_LIB')) die;
 define('MODULE_TYPO',1);
 
 /**
- * Typograficka uprava textu
+ * Typographic text processing
  *
- * @param $s - vstupni text
- * @param $cache - ulozit do cache? true/false
- * @return vystupni text
+ * @param $s - input text
+ * @param $cache - store in cache? true/false
+ * @return output text
  */
 function typo($s,$cache=true) {
     if ($cache && defined('MODULE_CACHE')) {
@@ -26,30 +26,30 @@ function typo($s,$cache=true) {
 	if ($cached !== false) return $cached;
     }
 
-    // spojovani jednopismennych slov s dalsimy pomoci '&nbsp;'
+    // join single-letter words to the next word using '&nbsp;'
     $s=preg_replace('/(?:(?<=^\w)|(?<=\s\w))\s+(?=\w)/','&nbsp;',$s);
     
-    // spojovani cisel pomoci '&nbsp;'
+    // join numbers using '&nbsp;'
     $s=preg_replace('/(?<=\d)\s+(?=\d)/','&nbsp;',$s); 
 
-    // spojovani datumu pomoci '&nbsp;'
+    // join date parts using '&nbsp;'
     $s=preg_replace('/(\d{1,2})\. (\d{1,2})\. (\d{2,4})/','\1.&nbsp;\2.&nbsp;\3',$s);  // 1. 1. 2000
-    $s=preg_replace('/(\d{1,2})\. (\w+) (\d{2,4})/','\1.&nbsp;\2&nbsp;\3',$s);         // 1. kvetna 2000
+    $s=preg_replace('/(\d{1,2})\. (\w+) (\d{2,4})/','\1.&nbsp;\2&nbsp;\3',$s);         // 1. January 2000
     $s=preg_replace('/(\d{1,2})\. (\d{1,2})\./','\1.&nbsp;\2.&nbsp;\3',$s);            // 1. 1.
-    $s=preg_replace('/(\d{1,2})\. (\w+)/','\1.&nbsp;\2',$s);                           // 1. kvetna
+    $s=preg_replace('/(\d{1,2})\. (\w+)/','\1.&nbsp;\2',$s);                           // 1. January
 
     // x-y
     $s=preg_replace('/(\d+)-(\d+)/','\1&#8211;\2',$s);
 
-    // uvozovky
+    // quotation marks
     $s=preg_replace('/&quot;(.+?)&quot;/','&#8222;\1&#8220;',$s); // "text"
     $s=preg_replace('/\'(.+?)\'/','&#8218;\1&#8216;',$s); 	  // 'text'
 
-    // rozmery (10x20 a 10x20x30)
+    // dimensions (10x20 and 10x20x30)
     $s=preg_replace('/(\d+)x(\d+)x(\d+)/','\1&#215;\2&#215;\3',$s);// 10x20x30
     $s=preg_replace('/(\d+)x(\d+)/','\1&#215;\2',$s);              // 10x10
 
-    // prevody symbolu
+    // symbol conversions
     $s=str_replace('&lt;-&gt;','&#8596',$s); // <->
     $s=str_replace('-&gt;','&#8594;',$s);    // ->
     $s=str_replace('&lt;-','&#8592',$s);     // <-

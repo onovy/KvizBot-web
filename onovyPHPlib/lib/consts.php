@@ -1,7 +1,7 @@
 <?php
 $consts['lib_config_rules']=array(
     'charset','locale','modules',
-// Moduly
+// Modules
     'mlib_texty_table_name','mlib_auth_table_name','mlib_cache_cache_time',
     'mlib_c_year_from_year','mlib_texty_count'
 );

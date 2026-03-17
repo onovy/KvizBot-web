@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul pro manipulaci s diskovou cache.
+ * Module for disk cache manipulation.
  *
  * @category    Module
  * @package     Module
@@ -13,7 +13,7 @@ if (!defined('ONOVY_PHP_LIB')) die;
 define('MODULE_CACHE',1);
 
 /**
- * Overeni, jestli neni nutne provest vycisteni cache
+ * Check whether cache cleanup is needed
  */
 function cache_checkcache() {
     global $lib_config;
@@ -32,11 +32,11 @@ function cache_checkcache() {
 }
 
 /**
- * Precteni dat z disk cache
+ * Read data from disk cache
  *
  * @param $context - context
- * @param $file - nazev souboru
- * @return obsah cache nebo false, pokud soubor neexistuje
+ * @param $file - file name
+ * @return cache contents or false if the file does not exist
  */
 function cache_getcache($context,$file) {
     global $local_config;
@@ -119,7 +119,7 @@ function  cache_recursecleancache($file) {
 }
 
 /**
- * Rekurzivni vytvoreni adresaru
+ * Recursively create directory
  *
  * @internal
  * @param $path - directory

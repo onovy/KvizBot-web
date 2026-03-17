@@ -1,20 +1,20 @@
 <?php
 /**
- * Načtení základních knihoven, modulů a knihoven webu
+ * Load core libraries, modules, and web libraries
  */
 
 define('ONOVY_PHP_LIB',1);
 
 $script_start_time=microtime(true);
 
-// Nacteni konstant
+// Load constants
 require_once OLIB_DIR . '/lib/consts.php';
 
-// Poslani hlavicky pred moznym vystupem chyb
+// Send header before any possible error output
 if ($header)
     require_once OLIB_DIR . '/lib/header.php';
 
-// Pokud verbose>=1 tak overit konfiguraci
+// If verbose>=1, verify configuration
 if ($local_config['verbose']>=1) {
     print 'Verbosita je '.$local_config['verbose'].'<br />';
 
@@ -31,13 +31,13 @@ if ($local_config['verbose']>=1) {
     }
 }
 
-// Nastaveni locale
+// Set locale
 setlocale(LC_ALL,$lib_config['locale']);
 
-// Podpurne knihovny
+// Support libraries
 require_once OLIB_DIR . '/lib/strings.php';
 
-// Zakladni knihovny
+// Core libraries
 require_once OLIB_DIR . '/lib/sql.php';
 require_once OLIB_DIR . '/lib/error.php';
 require_once OLIB_DIR . '/lib/smarty.php';
@@ -49,13 +49,13 @@ $smarty->assign('WEB_WWW',$local_config['web_www']);
 
 $smarty->assign('CHARSET',$lib_config['charset']);
 
-// Moduly
+// Modules
 foreach ($lib_config['modules'] as $lib) {
     if ($local_config['verbose']>=2) print 'Načítám modul ' . OLIB_DIR . '/mlib/'.$lib.'.php<br />';
     require_once OLIB_DIR . '/mlib/'.$lib.'.php';
 }
 
-// Knihovny webu
+// Web libraries
 foreach ($lib_config['web_libs'] as $lib) {
     if ($local_config['verbose']>=2) print 'Načítám knihovnu webu: ' . WEB_DIR . '/libs/'.$lib.'.php<br />';
     require_once WEB_DIR . '/libs/'.$lib.'.php';

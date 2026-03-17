@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul pro zobrazovani a editaci textu ve spojeni s DB
+ * Module for displaying and editing texts stored in the DB
  *
  * @category    Module
  * @package     Module
@@ -13,9 +13,9 @@ if (!defined('ONOVY_PHP_LIB')) die;
 define('MODULE_TEXTY',1);
 
 /**
- * Zobrazi text nacteny z DB podle ID
+ * Display text loaded from DB by ID
  *
- * @param $id - ID textu
+ * @param $id - text ID
  */
 function show_text($id) {
     global $smarty;
@@ -27,20 +27,20 @@ function show_text($id) {
 }
 
 /**
- * Nacte text z DB a zkonvertuje pres modul ot2html
+ * Load text from DB and convert it via the ot2html module
  *
- * @param $id - ID textu
- * @return nacteny text
+ * @param $id - text ID
+ * @return loaded text
  */
 function get_text($id) {
     return ot2html(get_text_o($id));
 }
 
 /**
- * Nacte text z DB
+ * Load raw text from DB
  *
- * @param $id - ID textu
- * @return nacteny text
+ * @param $id - text ID
+ * @return loaded text
  */
 function get_text_o($id) {
     global $lib_config;
@@ -53,7 +53,7 @@ function get_text_o($id) {
 }
 
 /**
- * Zobrazi formular pro editaci textu, pripadne provede upravu
+ * Display edit form for a text entry, and optionally perform the update
  *
  * @param $id - ID textu
  */
@@ -92,7 +92,7 @@ function edit_text($id) {
     $smarty->assign('main_onovyPHPlib',1);
 }
 
-// overeni existence tabulky
+// verify that the table exists
 if ($local_config['verbose']>=1) {
     $fa=db_query_noe('DESCRIBE '.$lib_config['mlib_texty_table_name'])
 	or print 'Tabulka pro modul TEXTY ('.$lib_config['mlib_texty_table_name'].') neexistuje<br />';

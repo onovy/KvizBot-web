@@ -121,7 +121,7 @@ if ($w=='hlas') {
     $otazka=input_num('otazka');
     $hlasuj=true;
 
-    // active otazka
+    // active question
     $fa2=db_fquery(sprintf(
 	'SELECT id, min_score FROM hlasovani WHERE id=%d AND active=1',
 	$otazka
@@ -129,28 +129,28 @@ if ($w=='hlas') {
     if (empty($fa2['id'])) $hlasuj=false;
     $min_score = $fa2['min_score'];
     
-    // otazka vs. odpoved
+    // question vs. answer
     $fa2=db_fquery(sprintf(
 	'SELECT otazka FROM hlasovani_odpovedi WHERE id=%d',
 	$odpoved
     ));
     if ($fa2['otazka']!=$otazka) $hlasuj=false;
 
-    // overeni IP
+    // check IP
     $fa2=db_fquery(sprintf(
 	'SELECT id FROM hlasovani_hlasy WHERE otazka=%d AND ip="%s"',
 	$otazka,db_escape_string($_SERVER['REMOTE_ADDR'])
     ));
     if (!empty($fa2['id'])) $hlasuj=false;
     
-    // overeni nicku
+    // check nick
     $fa2=db_fquery(sprintf(
 	'SELECT id FROM hlasovani_hlasy WHERE otazka=%d AND nick=%d',
 	$otazka,$auth->id
     ));
     if (!empty($fa2['id'])) $hlasuj=false;
     
-    // overeni min_score
+    // check min_score
     if ($min_score) {
 	$fa2=db_fquery(sprintf(
 	    'SELECT body FROM nicks WHERE id=%d',
@@ -159,7 +159,7 @@ if ($w=='hlas') {
 	if ($fa2['body'] < $min_score) $hlasuj=false;
     }
 
-    // hlasovani
+    // cast vote
     if ($hlasuj) {
 	db_query(sprintf(
 	    'INSERT INTO hlasovani_hlasy (otazka,odpoved,nick,ip) VALUES (%d,%d,%d,"%s")',

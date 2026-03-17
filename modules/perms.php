@@ -7,7 +7,7 @@ $w=input_array('w',array('','pass','perm'));
 
 $smarty->assign('menu','perms');
 
-// --- EDITOR PRAV ---
+// --- PERMISSION EDITOR ---
 if ($w=='perm') {
     $w2=input_string('w2',array('','add_perm','del_perm'));
 
@@ -40,7 +40,7 @@ if ($w=='perm') {
 	csrf_verify();
 	$perm=input_char('perm');
 
-	// overeni jestli mam pravo pridat toto pravo
+	// verify that I have the right to grant this permission
 	$fa2=db_fquery(sprintf(
 	    'SELECT id FROM perm WHERE perm="%s" AND nick=%d',
 	    $perm,$auth->id
@@ -48,7 +48,7 @@ if ($w=='perm') {
 	if (empty($fa2[0])) {
 	    smarty_message('Nemůžete přidělit právo, které sám nemáte', 'error');
 	} else {
-    	    // zamezeni duplicit prav
+    	    // prevent duplicate permissions
 	    $fa=db_fquery(sprintf(
 		'SELECT id FROM perm WHERE perm="%s" AND nick=%d',
 		$perm,$idn
@@ -107,7 +107,7 @@ if ($w=='perm') {
     return;
 }
 
-// --- NASTAVENI HESLA PRO WEB ---
+// --- WEB PASSWORD SETTINGS ---
 if ($w=='pass') {
     csrf_verify();
     $nick=input_string('nick');
@@ -120,7 +120,7 @@ if ($w=='pass') {
     smarty_message('Heslo nastaveno');
 }
 
-// --- TABULKA PRAV ---
+// --- PERMISSIONS TABLE ---
 $q=db_query(
     'SELECT perm FROM perm_names ORDER BY perm'
 );
@@ -132,7 +132,7 @@ $q=db_query(
 $perms=sql2smarty($q,array('nick','perm'));
 $perms_mat=array();
 
-// Naplneni prazdne tabulky
+// Populate empty table
 foreach ($perms as $k=>$v) {
     $perms_mat[$v->nick]=array();
     foreach ($perms_list as $k2=>$v2) {
@@ -140,12 +140,12 @@ foreach ($perms as $k=>$v) {
     }   
 }
 
-// Zapnuti prav ktere maji
+// Enable permissions that users have
 foreach ($perms as $k=>$v) {
     $perms_mat[$v->nick][$v->perm]=$v->perm;
 }
 
-// Predelani na ciselne indexovane pole
+// Convert to numerically indexed array
 $out=array();
 $pos=0;
 foreach ($perms_mat as $k=>$v) {

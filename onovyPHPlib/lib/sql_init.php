@@ -30,7 +30,7 @@ function check_table($name,$data,$really)
    $value['Type']=strtr($value['Type'],'"','\'');
    if ($l['Field']==$value['Field']) {
     if ($l['Type']!=$value['Type']) {
-     // Typ pole nesedi
+      // Column type mismatch
      if ($really) {
       db_query('ALTER TABLE '.$name.' CHANGE '.$l['Field'].' '.$l['Field'].' '.$value['Type']);
       $errors.='Položka '.$l['Field'].' opravena'."\n";
@@ -82,7 +82,7 @@ function modules_sql_init(&$errors) {
     global $lib_config;
     global $really;
 
-    if (defined('MODULE_AUTH')) { // Vytvoreni tabulek pro modul AUTH
+    if (defined('MODULE_AUTH')) { // Create tables for the AUTH module
 	// USERS
 	$errors.=check_table($lib_config['mlib_auth_table_name'],array(
 	    array( 'Field' => 'id',
@@ -112,7 +112,7 @@ function modules_sql_init(&$errors) {
 	}
     }
 
-    if (defined('MODULE_TEXTY')) { // Vytvoreni tabulek pro modul TEXTY
+    if (defined('MODULE_TEXTY')) { // Create tables for the TEXTY module
 	// TEXTY
 	$errors.=check_table($lib_config['mlib_texty_table_name'],array(
 	    array( 'Field' => 'id',
@@ -121,7 +121,7 @@ function modules_sql_init(&$errors) {
 	    array( 'Field' => 'txt',
 	           'Type'  => 'text'),
 	    ),$really);
-	// vytvoreni zaznamu uvnitr tabulky
+	// create records inside the table
 	$count=db_fquery_noe('SELECT COUNT(*) FROM '.$lib_config['mlib_texty_table_name']);
 	if ($count !== false &&
 	    $count[0] < $lib_config['mlib_texty_count'] &&

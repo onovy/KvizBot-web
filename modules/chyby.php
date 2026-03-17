@@ -111,7 +111,7 @@ if ($auth->perm_c ?? null) {
 	$info->text = nl2br(HE($info->text));
 	$smarty->assign('info', $info);
 
-	// Nacteni seznamu souvisejicich chyb (stejne ID otazky)
+	// Load list of related bug reports (same question ID)
 	$refer=db_query(sprintf(
 	    'SELECT otazky_chyby.id,stav,DATE_FORMAT(pridano,"%%d. %%m. %%Y %%H:%%i") AS pridano,DATE_FORMAT(uzavreno,"%%d. %%m. %%Y %%H:%%i") AS uzavreno,nick_old,otazky_chyby.nick AS nick_id, nicks.nick, ip FROM otazky_chyby LEFT JOIN nicks ON (nicks.id = otazky_chyby.nick) WHERE cislo=%d AND otazky_chyby.id!=%d ORDER BY otazky_chyby.pridano',
 	    $fa['cislo'], $id

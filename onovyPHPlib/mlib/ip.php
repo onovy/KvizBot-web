@@ -1,6 +1,6 @@
 <?php
 /**
- * Modul pro praci s IP
+ * Module for working with IP addresses
  *
  * @category    Module
  * @package     Module
@@ -13,7 +13,7 @@ if (!defined('ONOVY_PHP_LIB')) die;
 define('MODULE_IP',1);
 
 /**
-  * Prevede IP na trosku viditelnejsi format (napr. reverzni zaznam k ip)
+  * Convert IP to a more human-readable format (e.g. reverse DNS record)
   *
   * @param $ip
   * @return $text

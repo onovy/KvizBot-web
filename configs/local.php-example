@@ -1,31 +1,31 @@
 <?php
 
-// Absolutni cesta k adresari s webem (bez / na konci)
+// Absolute path to the web root directory (without trailing /)
 $local_config['web_dir']='/var/www/html';
 
-// Adresa webu (bez / na konci)
+// Web base URL (without trailing /)
 $local_config['web_www']='http://www.xkviz.net';
 
 // Verbose
-// 1 -- overuje vse mozne a pise varovani
-// 2 -- pise debug veci
+// 1 -- checks everything possible and prints warnings
+// 2 -- prints debug information
 $local_config['verbose']=0;
 
-// Uroven reportovani chyb v PHP
+// PHP error reporting level
 $local_config['error_reporting']=E_ALL & ~E_NOTICE;
 
-// Presmerovavat na prefix (prazdny retezec znamena NIKDY nepresmerovavat) 
+// Redirect to prefix (empty string means NEVER redirect)
 $local_config['http_redir_with_prefix']='www.';
 
-// Nastaveni databaze
+// Database settings
 $local_config['sql_name']='xkviz';
 $local_config['sql_user']='xkviz';
 $local_config['sql_pass']='';
 $local_config['sql_host']='localhost';
 $local_config['sql_charset']='utf8mb4';
 
-// Nastaveni SMARTY
+// Smarty settings
 $local_config['compile_check']=true;
 
-// Nastaveni cache
+// Cache settings
 $local_config['use_cache']=true;

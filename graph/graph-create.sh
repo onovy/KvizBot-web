@@ -1,4 +1,4 @@
-# cas v minulosti!
+# start time must be in the past!
 rrdtool create online.rrd -s 300 \
 DS:data:GAUGE:600:0:2000 \
 RRA:AVERAGE:0.5:1:2000 \

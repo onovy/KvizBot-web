@@ -4,25 +4,25 @@ $lib_config['charset']='utf-8';
 
 $lib_config['locale']='cs_CZ.UTF-8';
 
-// Knihovny webu (include z libs/$.php)
+// Web libraries (included from libs/$.php)
 $lib_config['web_libs']=array(
     'auth','rpanel'
 );
 
-// Moduly:
-//  typo - typograficka uprava textu
-//  gentime - pocitani doby generace stranky
-//  c_year - rok pro copyright v paticce
-//  texty - texty z DB
-//  ot2html - novejsi verze konvertoru textu
-//  num - funkce pro praci s cisly
-//  cache - funkce pro praci s diskovou cache
-//  ip - funkce pro praci s IP adresou
+// Modules:
+//  typo - typographic text processing
+//  gentime - page generation time measurement
+//  c_year - year for copyright in the footer
+//  texty - texts from DB
+//  ot2html - newer version of text converter
+//  num - functions for working with numbers
+//  cache - functions for working with disk cache
+//  ip - functions for working with IP addresses
 $lib_config['modules']=array(
     'gentime','c_year','texty','ot2html','typo','num','cache','ip'
 );
 
-// Konfigurace modulu
+// Module configuration
 
 // Texty
 $lib_config['mlib_texty_table_name']='texty';

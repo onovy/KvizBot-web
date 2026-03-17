@@ -13,11 +13,11 @@ if (!defined('ONOVY_PHP_LIB')) die;
 define('MODULE_NUM',1);
 
 /**
- * Rozdeli cislo po 3 cislicich (10000 -> 10 000)
+ * Split number into groups of 3 digits (10000 -> 10 000)
  *
- * @param $s - vstup
- * @param $splitter - znak, kterym rozdelit cislo
- * @return vystup
+ * @param $s - input
+ * @param $splitter - character to use as thousands separator
+ * @return output
  */
 function po3cislech($s,$splitter=' ') { 
     for ($a=strlen($s)-3; $a>=0 ; $a-=3) {

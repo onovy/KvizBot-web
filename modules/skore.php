@@ -49,7 +49,7 @@ if ($w=='info') {
     $max = 0;
     $pos=0;
 
-    // Kviz 1
+    // Quiz 1
     list($pozice,$body,$nick,$added)=infouser($id,'month','score_kviz1');
     if ($body!=0) {
 	$history[$pos] = new \stdClass();

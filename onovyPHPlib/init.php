@@ -1,9 +1,9 @@
 <?php
 /**
- * Inicializace proměnných, načtení konfigurace
+ * Initialization of variables, loading configuration
  */
 
-// Nacteni konfigurace
+// Load configuration
 require_once dirname(__FILE__) . '/../configs/lib.php';
 require_once dirname(__FILE__) . '/../configs/web.php';
 require_once dirname(__FILE__) . '/../configs/local.php';

@@ -5,12 +5,12 @@ function space_seen($text) {
 }
 
 function check_otazka($otazka,$odpoved,$tema) {
-    // TODO: Overovani podle pravidel pro otazky
+    // TODO: Validate according to question rules
     if ($otazka=='') return 'Musíte zadat otázku';
     if ($odpoved=='') return 'Musíte zadat odpověď';
     if ($tema==0) return 'Vyberte téma';
     
-    // otazka OK
+    // question OK
     return '';
 }
 
@@ -27,7 +27,7 @@ $smarty->assign('title','Otázky');
 $w=input_array('w',array('','add','add2','schvaleni','id','search','edit','add_tema','stats','temata','list','del'));
 if ($auth->perm_o ?? null) {
     if ($w=='add' || $w=='add2' || $w=='id') {
-	$smarty->assign('pravidla',get_text(3)); // Pravidla pro psani otazek
+	$smarty->assign('pravidla',get_text(3)); // Rules for writing questions
     }
     
     if ($w=='add2') {
@@ -36,7 +36,7 @@ if ($auth->perm_o ?? null) {
 	$odpoved=input_string('odpoved');
 	$tema=input_num('tema');
 	
-	// overeni otazky a odpovedi
+	// validate question and answer
 	$msg=check_otazka($otazka,$odpoved,$tema);
 	if ($msg=='') {
 	    if ($auth->perm_a ?? null) {
@@ -64,7 +64,7 @@ if ($auth->perm_o ?? null) {
 	$w='add';
     }
 
-    // realna editace otazky
+    // actual question edit
     if ($w=='edit') {
 	csrf_verify();
 	$id=input_num('id');
@@ -73,7 +73,7 @@ if ($auth->perm_o ?? null) {
 	$tema=input_num('tema');
 	$comment=input_string('comment');
 
-	// overeni otazky a odpovedi
+	// validate question and answer
 	$msg=check_otazka($otazka,$odpoved,$tema);
 	if ($msg=='') {
 	    if (!$auth->perm_a ?? null) {
@@ -109,11 +109,11 @@ if ($auth->perm_o ?? null) {
     }
 
     if ($w=='add') {
-	// listovani temat
+	// list topics
 	$q=db_query('SELECT id,nazev FROM temata WHERE hidden=0 ORDER BY nazev');
 	$smarty->assign('temata',sql2smarty($q,array('id','nazev')));
 
-	// listovani schvalovacu
+	// list approvers
 	if ($auth->perm_a ?? null) {
 	    $q=db_query('SELECT n.id,n.nick FROM perm p LEFT JOIN nicks n ON p.nick=n.id WHERE perm="v" ORDER BY n.nick');
 	    $smarty->assign('schvaleni',sql2smarty($q,array('id','nick')));
@@ -167,7 +167,7 @@ if ($auth->perm_o ?? null) {
 	}
     }
 
-    // editace otazky
+    // edit question
     if ($w=='id') {
 	$id=input_num('id');
 	
@@ -184,7 +184,7 @@ if ($auth->perm_o ?? null) {
 	    $id
 	));
 
-	// listovani temat
+	// list topics
 	$q=db_query('SELECT id,nazev FROM temata WHERE hidden=0 ORDER BY nazev');
 	$smarty->assign('temata',sql2smarty($q,array('id','nazev')));
 
@@ -194,7 +194,7 @@ if ($auth->perm_o ?? null) {
 	    return;
 	}
 
-	// listovani schvalovacu
+	// list approvers
 	if ($auth->perm_a ?? null) {
 	    $q=db_query('SELECT n.id,n.nick FROM perm p LEFT JOIN nicks n ON p.nick=n.id WHERE perm="v" ORDER BY n.nick');
 	    $schvaleni=sql2smarty($q,array('id','nick'));
@@ -237,13 +237,13 @@ if ($auth->perm_o ?? null) {
 	$tema=input_num_0('tema');
 	if ($tema!=0) {
 	    if ($auth->perm_v ?? null) {
-		// listovani vsech otazek
+		// list all questions
 		$q=db_query(sprintf(
 		    'SELECT id,otazka,odpoved,game FROM otazky WHERE tema=%d ORDER BY id',
 		    $tema
 		));
 	    } else {
-		// listovani vsech otazek uzivatele
+		// list all questions for the current user
 		$q=db_query(sprintf(
 		    'SELECT id,otazka,odpoved,game FROM otazky WHERE tema=%d AND owner=%d ORDER BY id',
 		    $tema,$auth->id
@@ -254,12 +254,12 @@ if ($auth->perm_o ?? null) {
 	    $smarty->assign('main','otazky_list2');
 	} else {
 	    if ($auth->perm_v ?? null) {
-		// listovani vsech temat
+		// list all topics
 		$q=db_query(
 		    'SELECT temata.id,temata.nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id GROUP BY temata.id, temata.nazev ORDER BY temata.nazev'
 		);
 	    } else {
-		// listovani temat uzivatele
+		// list topics for the current user
 		$q=db_query(sprintf(
 		    'SELECT temata.id,temata.nazev,count(otazky.id) AS pocet FROM temata LEFT JOIN otazky ON otazky.tema=temata.id WHERE otazky.owner=%d GROUP BY temata.id, temata.nazev ORDER BY temata.nazev',
 		    $auth->id
@@ -322,7 +322,7 @@ if ($auth->perm_a ?? null) {
     }
 }
 
-// realne schvaleni
+// perform actual approval
 if ($w=='schvaleni') {
     csrf_verify();
     if ($auth->perm_a ?? null) {
@@ -345,7 +345,7 @@ if ($w=='schvaleni') {
     $smarty->assign('schvaleni_message','<font color="green">Schváleno '.$count.' otázek</font>');
 }
 
-// schvaleni
+// approval queue
 if ($auth->id!=0) {
     if ($auth->perm_a ?? null) {
 	$schvaleni_admin = 'OR schvaleni=-1';
@@ -396,7 +396,7 @@ if ($auth->id!=0) {
     $smarty->assign('schvaleni',$schvaleni);
 }
 
-// temata
+// topics
 if ($w=='temata') {
     if ($auth->perm_a ?? null) {
 	$w2=input_array('w2',array('','add'));
@@ -423,25 +423,25 @@ if ($w=='temata') {
     }
 }
 
-// statistiky
+// statistics
 if ($w=='stats') {
-    // statistiky podle autoru a temat
+    // statistics by author and topic
     $q=db_query('SELECT nicks.nick AS nick,COUNT(otazky.id) AS count,temata.nazev AS tema FROM otazky LEFT JOIN nicks ON otazky.owner=nicks.id LEFT JOIN temata ON otazky.tema=temata.id WHERE game > 0 GROUP BY otazky.tema,nicks.id ORDER BY nicks.nick,temata.nazev');
     $smarty->assign('nicks',sql2smarty($q,array('nick','count','tema')));
 
-    // statistiky podle temat
+    // statistics by topic
     $q=db_query('SELECT COUNT(otazky.id) AS count,temata.nazev AS tema FROM otazky LEFT JOIN temata ON otazky.tema=temata.id WHERE game > 0 GROUP BY otazky.tema ORDER BY count DESC');
     $smarty->assign('temata',sql2smarty($q,array('count','tema')));
 
-    // statistiky podle autoru
+    // statistics by author
     $q=db_query('SELECT nicks.nick AS nick,COUNT(otazky.id) AS count FROM otazky LEFT JOIN nicks ON otazky.owner=nicks.id WHERE game > 0 GROUP BY nicks.nick ORDER BY count DESC');
     $smarty->assign('autori',sql2smarty($q,array('nick','count')));
 
-    // celkovy pocet otazek
+    // total question count
     $fa=db_fquery('SELECT COUNT(*) FROM otazky WHERE game > 0');
     $smarty->assign('count',$fa[0]);
 
-    // celkovy pocet neschv. otazek
+    // total unapproved question count
     $fa=db_fquery('SELECT COUNT(*) FROM otazky WHERE game > 0 AND schvaleni!=0');
     $smarty->assign('neschvaleno',$fa[0]);
 
