@@ -60,7 +60,7 @@ function ot2html($in,$use_cache=true) {
     
     // Typografie a escape
     if (defined('MODULE_TYPO')) {
-	$in = typo(htmlspecialchars($in),false);
+	$in = typo(htmlspecialchars($in));
     } else {
 	$in = htmlspecialchars($in);
     }
