@@ -22,7 +22,8 @@ define('MODULE_TYPO',1);
 function typo($s,$cache=true) {
     if ($cache && defined('MODULE_CACHE')) {
 	$md5=md5($s);
-	cache_getcache('typo',$md5);
+	$cached=cache_getcache('typo',$md5);
+	if ($cached !== false) return $cached;
     }
 
     // spojovani jednopismennych slov s dalsimy pomoci '&nbsp;'
