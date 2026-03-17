@@ -108,7 +108,7 @@ if ($auth->perm_c ?? null) {
 	$fa['ip']=printable_ip($fa['ip']);
 	
 	$info = fa2smarty($fa,array('id','cislo','link','text','o_stav','stav','pridano','uzavreno','nick_old','nick_id','nick','ip', 'otazka', 'odpoved', 'comment'));
-	$info->text = NL2BR(HE($info->text));
+	$info->text = nl2br(HE($info->text));
 	$smarty->assign('info', $info);
 
 	// Nacteni seznamu souvisejicich chyb (stejne ID otazky)
