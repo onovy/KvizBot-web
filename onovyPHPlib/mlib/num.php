@@ -27,18 +27,3 @@ function po3cislech($s,$splitter=' ') {
     return $s;
 }
 
-function priceformat($s,$type='round') { 
-    if ($type=='round') { 
-        $s=round($s,2); 
-    } elseif ($type=='ceil') { 
-        $s=ceil($s*100)/100; 
-    } 
-     
-    $ar=explode(".",$s); 
-    if (strlen($ar[1])==0) { $ar[1].='0'; } 
-    if (strlen($ar[1])==1) { $ar[1].='0'; } 
-     
-    $out=po3cislech($ar[0],'&nbsp;').',&nbsp;'.$ar[1]; 
-     
-    return $out; 
-} 
