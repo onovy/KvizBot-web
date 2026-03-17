@@ -54,5 +54,19 @@ function my_auth_user() {
     }
 }
 
+function auth_show401() {
+    global $smarty;
+
+    header('WWW-Authenticate: Basic realm="Autorizace"');
+    header('HTTP/1.0 401 Unauthorized');
+    setcookie("logout", 0, ["path" => "/", "secure" => true, "httponly" => true, "samesite" => "Strict"]);
+
+    $smarty->assign('title','Autorizace selhala');
+    $smarty->assign('main','no_access');
+    $smarty->assign('main_onovyPHPlib',1);
+    $smarty->display('main.tpl');
+    exit;
+}
+
 my_auth_user();
 $smarty->assign('auth',$auth);

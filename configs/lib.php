@@ -10,7 +10,6 @@ $lib_config['web_libs']=array(
 );
 
 // Moduly:
-//  auth - Autorizace uzivatelu pres HTTP auth
 //  typo - typograficka uprava textu
 //  gentime - pocitani doby generace stranky
 //  c_year - rok pro copyright v paticce
@@ -20,7 +19,7 @@ $lib_config['web_libs']=array(
 //  cache - funkce pro praci s diskovou cache
 //  ip - funkce pro praci s IP adresou
 $lib_config['modules']=array(
-    'gentime','c_year','texty','ot2html','typo','num','cache','auth','ip'
+    'gentime','c_year','texty','ot2html','typo','num','cache','ip'
 );
 
 // Konfigurace modulu
@@ -28,8 +27,6 @@ $lib_config['modules']=array(
 // Texty
 $lib_config['mlib_texty_table_name']='texty';
 $lib_config['mlib_texty_count']=4;
-// Auth
-$lib_config['mlib_auth_table_name']='auth_table_not_use';
 // Cache
 $lib_config['mlib_cache_cache_time']=60 * 60 * 24 * 7; // 7 dni
 // C_year
