@@ -29,9 +29,6 @@ function typo($s,$cache=true) {
     // spojovani jednopismennych slov s dalsimy pomoci '&nbsp;'
     $s=preg_replace('/(?:(?<=^\w)|(?<=\s\w))\s+(?=\w)/','&nbsp;',$s);
     
-    // spojovani spojek po carce s dalsim slovem pomoci '&nbsp;'
-//    $s=preg_replace('/,\s+(\w\w\w\w)\s+(\w+)/',', \1&nbsp;\2',$s); -- neni psano v typografickych pravidlech
-
     // spojovani cisel pomoci '&nbsp;'
     $s=preg_replace('/(?<=\d)\s+(?=\d)/','&nbsp;',$s); 
 
