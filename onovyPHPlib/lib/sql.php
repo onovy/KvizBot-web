@@ -66,18 +66,6 @@ function db_escape_string($s) {
     return $db_link->real_escape_string($s);
 }
 
-function sql_time_format($s) {
-    return 'DATE_FORMAT('.$s.',"%d. %m. %Y %H:%i") AS '.$s;
-}
-
-function sql_date_format($s) {
-    return 'DATE_FORMAT('.$s.',"%d. %m. %Y") AS '.$s;
-}
-
-function db_num_rows($q) {
-    return $q->num_rows;
-}
-
 function db_affected_rows() {
     global $db_link;
     
