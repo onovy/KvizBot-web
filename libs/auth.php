@@ -37,6 +37,7 @@ function my_auth_user() {
 	    return false;
 	}
 
+	$auth = new \stdClass();
 	$q=db_query(sprintf(
 	    'SELECT perm FROM perm WHERE nick=%d',
 	    $f['id']
