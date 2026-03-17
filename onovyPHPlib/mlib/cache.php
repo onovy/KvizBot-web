@@ -119,36 +119,6 @@ function  cache_recursecleancache($file) {
 }
 
 /**
- * Vymazani cele cache
- */
-function cache_purgecache() {
-    cache_purgecache_(WEB_DIR.'/cache',0);
-}
-
-/**
- * Recursively traverse directory and delete all files
- *
- * @internal
- * @param $file - directory to traverse
- * @param $l - level - recursion depth
- */
-function  cache_purgecache_($file,$l) {
-    if (is_dir($file)) {
-	$dir = opendir($file);
-	while (($subfile = readdir($dir)) !== false) {
-	    if ($subfile != '.' && $subfile != '..' && $subfile != '.htaccess') {
-		cache_purgecache_($file . '/' . $subfile,$l+1);
-	    }
-	}
-	if ($l!=0) {
-	    rmdir($file);
-	}
-    } else {
-	unlink($file);
-    }
-}
-
-/**
  * Rekurzivni vytvoreni adresaru
  *
  * @internal
