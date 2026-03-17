@@ -12,7 +12,6 @@ $lib_config['web_libs']=array(
 // Moduly:
 //  auth - Autorizace uzivatelu pres HTTP auth
 //  i2html - konvertor textu
-//  mime - mime prevodnik
 //  typo - typograficka uprava textu
 //  gentime - pocitani doby generace stranky
 //  c_year - rok pro copyright v paticce
